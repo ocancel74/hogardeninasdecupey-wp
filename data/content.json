@@ -96,64 +96,104 @@
     "subtitle": "Personas comprometidas que guían nuestra misión con dedicación y liderazgo.",
 
     "INSTRUCCIONES": [
-      "Para cambiar un nombre: edita el campo 'nombre' de esa persona.",
-      "Para cambiar un cargo: edita el campo 'cargo'.",
-      "Para agregar una foto: sube el archivo a assets/images/directores/ con el nombre que indica 'foto'.",
+      "Para cambiar nombre/cargo: edita los campos 'nombre', 'cargo' y 'descripcion'.",
+      "Para agregar foto: sube el archivo a assets/images/directores/ con el nombre exacto del campo 'foto'.",
       "Si no hay foto, se mostrará un ícono automáticamente.",
-      "Para agregar un nuevo director: copia un bloque {} y pégalo dentro de 'miembros', separado por coma.",
-      "Para eliminar un director: borra su bloque {} completo (incluyendo la coma anterior)."
+      "Para agregar director: copia un bloque {} y pégalo dentro de 'miembros', separado por coma.",
+      "Para eliminar: borra el bloque {} completo incluyendo la coma anterior.",
+      "Para la sección Administración: edita los bloques dentro de 'administracion'."
     ],
 
     "miembros": [
       {
-        "nombre": "Nombre Apellido",
+        "nombre": "Teresita Loubriel Rosado, CPA",
         "cargo": "Presidenta",
-        "foto": "assets/images/directores/presidenta.jpg",
-        "descripcion": ""
+        "descripcion": "Secretaria Retirada",
+        "foto": "assets/images/directores/presidenta.jpg"
       },
       {
-        "nombre": "Nombre Apellido",
-        "cargo": "Vicepresidenta",
-        "foto": "assets/images/directores/vicepresidenta.jpg",
-        "descripcion": ""
+        "nombre": "José M. Izquierdo Encarnación, Ing.",
+        "cargo": "Vice-Presidente",
+        "descripcion": "Presidente Rotarios CPY",
+        "foto": "assets/images/directores/vicepresidente.jpg"
       },
       {
-        "nombre": "Nombre Apellido",
-        "cargo": "Secretaria",
-        "foto": "assets/images/directores/secretaria.jpg",
-        "descripcion": ""
-      },
-      {
-        "nombre": "Nombre Apellido",
+        "nombre": "Edna Jiménez, CPA",
         "cargo": "Tesorera",
-        "foto": "assets/images/directores/tesorera.jpg",
-        "descripcion": ""
+        "descripcion": "",
+        "foto": "assets/images/directores/tesorera.jpg"
       },
       {
-        "nombre": "Nombre Apellido",
-        "cargo": "Vocal",
-        "foto": "assets/images/directores/vocal-1.jpg",
-        "descripcion": ""
+        "nombre": "Lucy García Quevedo",
+        "cargo": "Secretaria",
+        "descripcion": "Psicóloga",
+        "foto": "assets/images/directores/secretaria.jpg"
       },
       {
-        "nombre": "Nombre Apellido",
+        "nombre": "Carlos A. Lázaro León, Ing.",
         "cargo": "Vocal",
-        "foto": "assets/images/directores/vocal-2.jpg",
-        "descripcion": ""
+        "descripcion": "Presidente Carlos A. Lázaro León & Assoc., LTD",
+        "foto": "assets/images/directores/vocal-lazaro.jpg"
       },
       {
-        "nombre": "Nombre Apellido",
+        "nombre": "Gia L. Morales Talavera",
         "cargo": "Vocal",
-        "foto": "assets/images/directores/vocal-3.jpg",
-        "descripcion": ""
+        "descripcion": "Procuradora/Abogada",
+        "foto": "assets/images/directores/vocal-morales.jpg"
       },
       {
-        "nombre": "Nombre Apellido",
+        "nombre": "Maribel Torres - Baerga",
         "cargo": "Vocal",
-        "foto": "assets/images/directores/vocal-4.jpg",
-        "descripcion": ""
+        "descripcion": "Trabajadora Social Clínica",
+        "foto": "assets/images/directores/vocal-torres.jpg"
+      },
+      {
+        "nombre": "Rebecca Molina",
+        "cargo": "Vocal",
+        "descripcion": "Administradora de Panel Clínico y Bienestar Salud",
+        "foto": "assets/images/directores/vocal-molina.jpg"
+      },
+      {
+        "nombre": "Lcdo. Roberto Montalvo",
+        "cargo": "Vocal",
+        "descripcion": "",
+        "foto": "assets/images/directores/vocal-montalvo.jpg"
       }
-    ]
+    ],
+
+    "administracion": {
+      "titulo": "Administración",
+      "miembros": [
+        {
+          "nombre": "Sor Mirna Vélez",
+          "cargo": "Directora Ejecutiva",
+          "descripcion": "",
+          "foto": "assets/images/directores/directora-ejecutiva.jpg",
+          "tipo": "individual"
+        },
+        {
+          "nombre": "Empleados Administrativos y Directora",
+          "cargo": "",
+          "descripcion": "",
+          "foto": "assets/images/directores/admin-empleados.jpg",
+          "tipo": "grupo"
+        },
+        {
+          "nombre": "Tutoras y Coordinadoras Educativas",
+          "cargo": "",
+          "descripcion": "",
+          "foto": "assets/images/directores/admin-tutoras.jpg",
+          "tipo": "grupo"
+        },
+        {
+          "nombre": "Hermanas de Amigo",
+          "cargo": "",
+          "descripcion": "Hna. Jessica Alvarán, Hna. Rebecca Otorino, Hna. Josefina Calero, Hna. Sabrina Ulloa",
+          "foto": "assets/images/directores/admin-hermanas.jpg",
+          "tipo": "grupo"
+        }
+      ]
+    }
   },
 
   "patrocinadores": {

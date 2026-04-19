@@ -197,21 +197,41 @@ function renderDirectores(dir) {
   setText('dir-subtitle', dir.subtitle);
 
   const gridEl = document.getElementById('directors-grid');
-  if (!gridEl || !dir.miembros) return;
+  if (!gridEl) return;
 
-  gridEl.innerHTML = dir.miembros.map(m => {
-    const avatarInner = m.foto
-      ? `<img src="${m.foto}" alt="${m.nombre}" class="director-avatar" onerror="this.parentElement.innerHTML='<div class=director-avatar-placeholder>👩</div>'" />`
-      : `<div class="director-avatar-placeholder">👩</div>`;
+  // Build individual director cards
+  const buildCard = (m, isGrupo = false) => {
+    const photoInner = m.foto
+      ? `<img src="${m.foto}" alt="${m.nombre}" onerror="this.parentElement.innerHTML='<div class=director-photo-placeholder>👤</div>'" />`
+      : `<div class="director-photo-placeholder">👤</div>`;
     return `
-      <div class="director-card reveal">
-        <div class="director-avatar-wrap">${avatarInner}</div>
-        <h3>${m.nombre}</h3>
-        <div class="cargo">${m.cargo}</div>
-        ${m.descripcion ? `<p>${m.descripcion}</p>` : ''}
+      <div class="director-card ${isGrupo ? 'director-card--grupo' : ''} reveal">
+        <div class="director-photo-wrap">${photoInner}</div>
+        <div class="director-info">
+          <h3>${m.nombre}</h3>
+          ${m.cargo ? `<span class="cargo">${m.cargo}</span>` : ''}
+          ${m.descripcion ? `<p class="desc">${m.descripcion}</p>` : ''}
+        </div>
       </div>
     `;
-  }).join('');
+  };
+
+  // Junta de directores
+  if (dir.miembros) {
+    gridEl.innerHTML = dir.miembros.map(m => buildCard(m)).join('');
+  }
+
+  // Administración section
+  const adminSection = document.getElementById('admin-section');
+  if (adminSection && dir.administracion) {
+    const adm = dir.administracion;
+    adminSection.innerHTML = `
+      <h3 class="admin-subtitle">${adm.titulo}</h3>
+      <div class="admin-grid">
+        ${adm.miembros.map(m => buildCard(m, m.tipo === 'grupo')).join('')}
+      </div>
+    `;
+  }
 }
 
 function renderPatrocinadores(pat) {
