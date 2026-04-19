@@ -202,7 +202,8 @@ function renderHistoria(historia) {
   }
 
   // Logo central
-  html += `<img src="assets/images/logo.png" alt="Hogar de Niñas Cupey" class="historia-logo"
+  const logoSrc = historia.logoMedio || 'assets/images/logo.png';
+  html += `<img src="${logoSrc}" alt="Hogar de Niñas Cupey" class="historia-logo"
     onerror="this.style.display='none'" />`;
 
   // Para qué existimos
