@@ -193,18 +193,19 @@ function renderHistoria(historia) {
 
   let html = `<h2 class="section__title" style="margin-bottom:2rem">${historia.title || ''}</h2>`;
 
-  // Secciones de texto
+  // Secciones de texto — el logo se inserta después del primer párrafo (índice 0)
+  const logoSrc = historia.logoMedio || 'assets/images/logo.png';
   if (historia.secciones) {
-    historia.secciones.forEach(s => {
+    historia.secciones.forEach((s, i) => {
       if (s.subtitulo) html += `<span class="historia-subtitulo">${s.subtitulo}</span>`;
       html += `<p>${s.texto}</p>`;
+      // Logo va después del primer párrafo, antes del segundo
+      if (i === 0) {
+        html += `<img src="${logoSrc}" alt="Hogar de Niñas Cupey" class="historia-logo"
+          onerror="this.style.display='none'" />`;
+      }
     });
   }
-
-  // Logo central
-  const logoSrc = historia.logoMedio || 'assets/images/logo.png';
-  html += `<img src="${logoSrc}" alt="Hogar de Niñas Cupey" class="historia-logo"
-    onerror="this.style.display='none'" />`;
 
   // Para qué existimos
   const pq = historia.paraQueExistimos;
