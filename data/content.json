@@ -297,19 +297,19 @@
       {
         "nombre": "Fundación Banco Popular",
         "logo": "assets/images/patrocinadores/banco-popular.png",
-        "url": "https://www.bancopopular.com",
+        "url": "https://www.fundacionbancopopular.org/",
         "linkText": "Clic para conocer más"
       },
       {
         "nombre": "Fundación MAPFRE",
         "logo": "assets/images/patrocinadores/mapfre.png",
-        "url": "https://www.fundacionmapfre.org",
+        "url": "https://www.fundacionmapfre.org/en/",
         "linkText": "Clic para conocer más"
       },
       {
         "nombre": "Fondos Unidos de Puerto Rico",
         "logo": "assets/images/patrocinadores/fondos-unidos.png",
-        "url": "https://www.fondosunidos.org",
+        "url": "https://unitedwaypr.org/en/",
         "linkText": "Clic para conocer más"
       },
       {
@@ -321,31 +321,31 @@
       {
         "nombre": "HiTech Auto Care",
         "logo": "assets/images/patrocinadores/hitech.png",
-        "url": "#",
+        "url": "https://hitechautocarepr.com/en/",
         "linkText": "Clic para conocer más"
       },
       {
         "nombre": "Hermanas Carvajal Fuentes",
         "logo": "assets/images/patrocinadores/carvajal-fuentes.png",
-        "url": "#",
+        "url": "http://www.premioshermanascarvajal.org/",
         "linkText": "Clic para conocer más"
       },
       {
         "nombre": "CECFL",
         "logo": "assets/images/patrocinadores/cecfl.png",
-        "url": "#",
+        "url": "https://cecflpr.org/home",
         "linkText": "Clic para conocer más"
       },
       {
         "nombre": "Departamento de Justicia",
         "logo": "assets/images/patrocinadores/depto-justicia.png",
-        "url": "https://www.justicia.pr.gov",
+        "url": "https://www.justicia.pr.gov/",
         "linkText": "Clic para conocer más"
       },
       {
         "nombre": "Fundación Ángel Ramos",
         "logo": "assets/images/patrocinadores/angel-ramos.png",
-        "url": "https://www.fundacionangelramos.com",
+        "url": "https://www.fundacionangelramos.org/",
         "linkText": "Clic para conocer más"
       }
     ]
