@@ -525,57 +525,92 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- DIRECTORES ---------- */
 .directors-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 .director-card {
   background: var(--color-white);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
 }
+.director-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-blue));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+.director-card:hover::before { transform: scaleX(1); }
 .director-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--color-primary);
 }
+.director-avatar-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1.25rem;
+}
+.director-avatar-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.director-card:hover .director-avatar-wrap::after { opacity: 1; }
 .director-avatar {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 1rem;
+  object-position: top center;
   border: 3px solid var(--color-accent);
+  display: block;
 }
 .director-avatar-placeholder {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  background: var(--color-accent);
-  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #f7b8d4 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   border: 3px solid var(--color-primary);
 }
 .director-card h3 {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--color-text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
 }
 .director-card .cargo {
-  color: var(--color-primary);
+  display: inline-block;
+  color: var(--color-white);
+  background: var(--color-primary);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.85rem;
+  border-radius: 50px;
   margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
 }
 .director-card p {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
@@ -1067,6 +1102,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .sponsors-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 1100px) {
+  .directors-grid  { grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 900px) {
   .qs-grid         { grid-template-columns: 1fr; }
   .directors-grid  { grid-template-columns: repeat(2, 1fr); }
@@ -1093,7 +1132,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .section { padding: 3.5rem 0; }
   .hero__title { font-size: 2rem; }
 
-  .directors-grid  { grid-template-columns: 1fr; }
+  .directors-grid  { grid-template-columns: repeat(2, 1fr); }
   .services-grid   { grid-template-columns: 1fr; }
   .news-grid       { grid-template-columns: 1fr; }
   .sponsors-grid   { grid-template-columns: 1fr 1fr; }

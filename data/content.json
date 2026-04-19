@@ -94,42 +94,64 @@
   "directores": {
     "title": "Junta de Directores",
     "subtitle": "Personas comprometidas que guían nuestra misión con dedicación y liderazgo.",
+
+    "INSTRUCCIONES": [
+      "Para cambiar un nombre: edita el campo 'nombre' de esa persona.",
+      "Para cambiar un cargo: edita el campo 'cargo'.",
+      "Para agregar una foto: sube el archivo a assets/images/directores/ con el nombre que indica 'foto'.",
+      "Si no hay foto, se mostrará un ícono automáticamente.",
+      "Para agregar un nuevo director: copia un bloque {} y pégalo dentro de 'miembros', separado por coma.",
+      "Para eliminar un director: borra su bloque {} completo (incluyendo la coma anterior)."
+    ],
+
     "miembros": [
       {
         "nombre": "Nombre Apellido",
         "cargo": "Presidenta",
-        "foto": "assets/images/director-1.jpg",
-        "descripcion": "Líder comprometida con la misión del hogar desde hace más de 20 años."
+        "foto": "assets/images/directores/presidenta.jpg",
+        "descripcion": ""
       },
       {
         "nombre": "Nombre Apellido",
         "cargo": "Vicepresidenta",
-        "foto": "assets/images/director-2.jpg",
-        "descripcion": "Profesional con amplia experiencia en trabajo social y desarrollo comunitario."
+        "foto": "assets/images/directores/vicepresidenta.jpg",
+        "descripcion": ""
       },
       {
         "nombre": "Nombre Apellido",
         "cargo": "Secretaria",
-        "foto": "assets/images/director-3.jpg",
-        "descripcion": "Especialista en administración y gestión organizacional sin fines de lucro."
+        "foto": "assets/images/directores/secretaria.jpg",
+        "descripcion": ""
       },
       {
         "nombre": "Nombre Apellido",
         "cargo": "Tesorera",
-        "foto": "assets/images/director-4.jpg",
-        "descripcion": "Contadora pública con experiencia en finanzas de organizaciones sin fines de lucro."
+        "foto": "assets/images/directores/tesorera.jpg",
+        "descripcion": ""
       },
       {
         "nombre": "Nombre Apellido",
         "cargo": "Vocal",
-        "foto": "assets/images/director-5.jpg",
-        "descripcion": "Educadora dedicada al desarrollo integral de la niñez puertorriqueña."
+        "foto": "assets/images/directores/vocal-1.jpg",
+        "descripcion": ""
       },
       {
         "nombre": "Nombre Apellido",
         "cargo": "Vocal",
-        "foto": "assets/images/director-6.jpg",
-        "descripcion": "Abogada especialista en derechos de la niñez y familia."
+        "foto": "assets/images/directores/vocal-2.jpg",
+        "descripcion": ""
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Vocal",
+        "foto": "assets/images/directores/vocal-3.jpg",
+        "descripcion": ""
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Vocal",
+        "foto": "assets/images/directores/vocal-4.jpg",
+        "descripcion": ""
       }
     ]
   },

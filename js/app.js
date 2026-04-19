@@ -200,15 +200,15 @@ function renderDirectores(dir) {
   if (!gridEl || !dir.miembros) return;
 
   gridEl.innerHTML = dir.miembros.map(m => {
-    const avatarHtml = m.foto
+    const avatarInner = m.foto
       ? `<img src="${m.foto}" alt="${m.nombre}" class="director-avatar" onerror="this.parentElement.innerHTML='<div class=director-avatar-placeholder>👩</div>'" />`
       : `<div class="director-avatar-placeholder">👩</div>`;
     return `
       <div class="director-card reveal">
-        ${avatarHtml}
+        <div class="director-avatar-wrap">${avatarInner}</div>
         <h3>${m.nombre}</h3>
         <div class="cargo">${m.cargo}</div>
-        <p>${m.descripcion || ''}</p>
+        ${m.descripcion ? `<p>${m.descripcion}</p>` : ''}
       </div>
     `;
   }).join('');
