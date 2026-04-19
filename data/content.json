@@ -75,27 +75,85 @@
   },
 
   "historia": {
-    "title": "Nuestra Historia",
-    "introduccion": "Desde nuestra fundación, el Hogar de Niñas Cupey ha sido un refugio de esperanza para cientos de niñas en Puerto Rico.",
+    "title": "70 años trabajando por los nuestros",
+
+    "INSTRUCCIONES_FOTOS": "Sube 5 fotos a assets/images/historia/ con los nombres: foto-1.jpg, foto-2.jpg, foto-3.jpg, foto-4.jpg, foto-5.jpg",
+
+    "fotos": [
+      "assets/images/historia/foto-1.jpg",
+      "assets/images/historia/foto-2.jpg",
+      "assets/images/historia/foto-3.jpg",
+      "assets/images/historia/foto-4.jpg",
+      "assets/images/historia/foto-5.jpg"
+    ],
+
+    "secciones": [
+      {
+        "subtitulo": "Historia",
+        "texto": "Por los pasados setenta años, hemos ayudado a miles de niños y niñas en desventaja social y económica. Fundado en el año 1950 como el Hogar del Niño, a lo largo de treinta y dos años impactamos a miles de chicos que deambulaban en la ciudad de San Juan, brindándoles un albergue seguro, alimento y vestimenta. Nuestra labor ha estado desde siempre orientada a buscar siempre el mayor bienestar de los menores. Nuestra primera sede fue en la calle Arranga en Río Piedras y en el 1958 recibimos en donación un amplio solar en Cupey Alto donde está ubicada nuestra actual sede."
+      },
+      {
+        "subtitulo": "",
+        "texto": "A partir de 1982, el Hogar pasó a ser manejado por la Congregación de las Hermanas de Amistad Misioneras en Cristo Obrero (AMICO), atendiendo niñas, por lo que posteriormente se cambió el nombre a Hogar de Niñas de Cupey. Brindamos servicios de hogar a niñas víctimas de maltrato o abandono por parte de sus familiares y encargados, ofreciendo servicios especializados y de apoyo en las áreas de salud física, mental y espiritual, para contribuir así a la sanación y el bienestar de las chicas."
+      },
+      {
+        "subtitulo": "",
+        "texto": "En el verano de 2021 y en respuesta a los cambios que se requerían de las instituciones que albergan menores para cumplir con la Ley Federal 'Family First' de 2018, identificamos un nuevo norte y ampliamos nuestros servicios con un programa educativo dirigido a niñas en desventaja de la comunidad e integrando a la familia."
+      },
+      {
+        "subtitulo": "¿Por qué los nuevos servicios?",
+        "texto": "Numerosos eventos han impactado la vida de las familias puertorriqueñas a lo largo de los últimos cinco años. Huracanes, terremotos y la pandemia del COVID 19, han dejado un saldo de precariedad en los sectores más necesitados y han colocado a nuestros niños en posiciones de mayor vulnerabilidad. La experiencia de la educación a distancia a causa del confinamiento pandémico ha colocado a miles de niños en situaciones de rezago académico y en distintas situaciones de riesgo que van a dificultar su desempeño y su desarrollo en el futuro."
+      },
+      {
+        "subtitulo": "",
+        "texto": "Ante los nuevos retos que ha sufrido nuestro país y cómo ha afectado negativamente a la niñez, hemos querido responder dando una nota positiva estableciendo un programa de servicios complementarios para la niñez y apoyo a las familias, con el fin de prevenir el fracaso escolar y los riesgos que este puede traer a la vida futura de los niños. En agosto de 2021, abrimos nuestras puertas a niños y niñas ofreciendo los nuevos servicios."
+      },
+      {
+        "subtitulo": "",
+        "texto": "Las niñas residentes en el Hogar se benefician igualmente de nuestros servicios educativos."
+      }
+    ],
+
+    "paraQueExistimos": {
+      "subtitulo": "¿Para qué existimos?",
+      "mision": {
+        "titulo": "Misión",
+        "texto": "Proveer servicios integrales de excelencia a niños y jóvenes en desventaja social y económica, buscando el mejor interés y bienestar de los menores fundamentados en valores cristianos."
+      },
+      "vision": {
+        "titulo": "Visión",
+        "texto": "Contribuir a la formación de niños capaces de transformar sus vidas e impactar positivamente su entorno familiar."
+      },
+      "compromisos": {
+        "titulo": "Nuestros compromisos",
+        "lista": [
+          "Promoción de la responsabilidad",
+          "Comunidad de las familias",
+          "Prevención del maltrato",
+          "Educación centrada en valores",
+          "Los niños como agentes de transformación de sus familias",
+          "Que cada niño tenga un lugar y sea parte de la sociedad, desde el reconocimiento y valoración de la diferencia",
+          "Ser un oasis en la vida de las niñas para que tengan otros referentes para su vida adulta",
+          "Comprometidos con la gratitud, la honestidad, la prudencia, la humildad"
+        ]
+      },
+      "fortalezas": {
+        "titulo": "Nuestras fortalezas",
+        "lista": [
+          "Apertura del carisma congregacional a los signos de los tiempos",
+          "Infraestructura del Hogar",
+          "Planta física del Hogar",
+          "Compromiso de la Junta de Directores y la congregación con la continuidad organizacional",
+          "Comprometidos con poblaciones en necesidad, particularmente la niñez",
+          "Experiencia educativa",
+          "Participar en el diseño programático",
+          "Recursos Humanos",
+          "Alianzas para servicios terapéuticos"
+        ]
+      }
+    },
+
     "hitos": [
-      {
-        "anio": "1960",
-        "titulo": "Los Inicios",
-        "texto": "El Hogar de Niñas Cupey fue fundado con la misión de proveer un hogar seguro a niñas huérfanas y en situación de abandono en Puerto Rico. Un grupo de mujeres comprometidas con la fe y el servicio social unieron sus esfuerzos para hacer realidad este sueño.",
-        "imagen": "assets/images/historia-1960.jpg"
-      },
-      {
-        "anio": "1975",
-        "titulo": "Crecimiento y Expansión",
-        "texto": "Durante esta década, el hogar expandió su capacidad para atender a más niñas. Se construyeron nuevas instalaciones y se establecieron programas educativos formales en colaboración con el Departamento de Educación de Puerto Rico.",
-        "imagen": "assets/images/historia-1975.jpg"
-      },
-      {
-        "anio": "1990",
-        "titulo": "Nuevos Programas",
-        "texto": "Se implementaron programas de terapia, consejería y desarrollo de habilidades para la vida. El hogar comenzó a recibir reconocimiento a nivel nacional por su modelo integral de cuidado residencial.",
-        "imagen": "assets/images/historia-1990.jpg"
-      },
       {
         "anio": "2000",
         "titulo": "Modernización",
@@ -223,44 +281,70 @@
   },
 
   "patrocinadores": {
-    "title": "Nuestros Patrocinadores",
-    "subtitle": "Gracias a estas organizaciones y empresas que hacen posible nuestra misión.",
+    "title": "Patrocinadores",
+    "subtitle": "A lo largo de nuestra historia los siguientes auspiciadores han creído en nuestra misión:",
+
+    "INSTRUCCIONES": [
+      "Para cambiar un logo: sube la imagen a assets/images/patrocinadores/ con el nombre del campo 'logo'.",
+      "Para cambiar el link: edita el campo 'url' con la dirección web del patrocinador.",
+      "Para agregar un patrocinador: copia un bloque {} y pégalo dentro de 'lista', separado por coma.",
+      "Para eliminar: borra el bloque {} completo incluyendo la coma anterior."
+    ],
+
     "lista": [
       {
-        "nombre": "Fundación ABC",
-        "logo": "assets/images/sponsor-1.png",
-        "url": "#",
-        "categoria": "Patrocinador Principal"
+        "nombre": "Fundación Banco Popular",
+        "logo": "assets/images/patrocinadores/banco-popular.png",
+        "url": "https://www.bancopopular.com",
+        "linkText": "Clic para conocer más"
       },
       {
-        "nombre": "Empresa XYZ",
-        "logo": "assets/images/sponsor-2.png",
-        "url": "#",
-        "categoria": "Patrocinador Oro"
+        "nombre": "Fundación MAPFRE",
+        "logo": "assets/images/patrocinadores/mapfre.png",
+        "url": "https://www.fundacionmapfre.org",
+        "linkText": "Clic para conocer más"
       },
       {
-        "nombre": "Organización 123",
-        "logo": "assets/images/sponsor-3.png",
-        "url": "#",
-        "categoria": "Patrocinador Plata"
+        "nombre": "Fondos Unidos de Puerto Rico",
+        "logo": "assets/images/patrocinadores/fondos-unidos.png",
+        "url": "https://www.fondosunidos.org",
+        "linkText": "Clic para conocer más"
       },
       {
-        "nombre": "Corporación DEF",
-        "logo": "assets/images/sponsor-4.png",
-        "url": "#",
-        "categoria": "Patrocinador Plata"
+        "nombre": "Fundación Comunitaria de Puerto Rico",
+        "logo": "assets/images/patrocinadores/fundacion-comunitaria.png",
+        "url": "https://www.fcpr.org",
+        "linkText": "Clic para conocer más"
       },
       {
-        "nombre": "Grupo GHI",
-        "logo": "assets/images/sponsor-5.png",
+        "nombre": "HiTech Auto Care",
+        "logo": "assets/images/patrocinadores/hitech.png",
         "url": "#",
-        "categoria": "Colaborador"
+        "linkText": "Clic para conocer más"
       },
       {
-        "nombre": "Institución JKL",
-        "logo": "assets/images/sponsor-6.png",
+        "nombre": "Hermanas Carvajal Fuentes",
+        "logo": "assets/images/patrocinadores/carvajal-fuentes.png",
         "url": "#",
-        "categoria": "Colaborador"
+        "linkText": "Clic para conocer más"
+      },
+      {
+        "nombre": "CECFL",
+        "logo": "assets/images/patrocinadores/cecfl.png",
+        "url": "#",
+        "linkText": "Clic para conocer más"
+      },
+      {
+        "nombre": "Departamento de Justicia",
+        "logo": "assets/images/patrocinadores/depto-justicia.png",
+        "url": "https://www.justicia.pr.gov",
+        "linkText": "Clic para conocer más"
+      },
+      {
+        "nombre": "Fundación Ángel Ramos",
+        "logo": "assets/images/patrocinadores/angel-ramos.png",
+        "url": "https://www.fundacionangelramos.com",
+        "linkText": "Clic para conocer más"
       }
     ]
   },

@@ -176,44 +176,56 @@ function renderQuienesSomos(qs) {
 function renderHistoria(historia) {
   if (!historia) return;
 
-  setText('historia-title', historia.title);
-  setText('historia-intro', historia.introduccion);
-
-  const timelineEl = document.getElementById('timeline');
-  if (!timelineEl || !historia.hitos) return;
-
-  timelineEl.innerHTML = historia.hitos.map((hito, i) => {
-    const imgHtml = hito.imagen
-      ? `<img src="${hito.imagen}" alt="${hito.titulo}" class="timeline-img" onerror="this.style.display='none'" />`
-      : `<div class="timeline-img-placeholder">📜</div>`;
-    return `
-      <div class="timeline-item reveal">
-        ${i % 2 === 0 ? `
-          <div class="timeline-content">
-            ${imgHtml}
-            <h3>${hito.titulo}</h3>
-            <p>${hito.texto}</p>
-          </div>
-          <div class="timeline-dot-col">
-            <div class="timeline-dot"></div>
-            <span class="timeline-year">${hito.anio}</span>
-          </div>
-          <div class="timeline-empty"></div>
-        ` : `
-          <div class="timeline-empty"></div>
-          <div class="timeline-dot-col">
-            <div class="timeline-dot"></div>
-            <span class="timeline-year">${hito.anio}</span>
-          </div>
-          <div class="timeline-content">
-            ${imgHtml}
-            <h3>${hito.titulo}</h3>
-            <p>${hito.texto}</p>
-          </div>
-        `}
+  // ——— Galería de 5 fotos ———
+  const fotosEl = document.getElementById('historia-fotos');
+  if (fotosEl && historia.fotos) {
+    fotosEl.innerHTML = historia.fotos.map((src, i) => `
+      <div class="historia-fotos__item">
+        <img src="${src}" alt="Historia ${i + 1}"
+          onerror="this.parentElement.innerHTML='<div class=historia-foto-placeholder>📷</div>'" />
       </div>
-    `;
-  }).join('');
+    `).join('');
+  }
+
+  // ——— Cuerpo de texto ———
+  const bodyEl = document.getElementById('historia-body');
+  if (!bodyEl) return;
+
+  let html = `<h2 class="section__title" style="margin-bottom:2rem">${historia.title || ''}</h2>`;
+
+  // Secciones de texto
+  if (historia.secciones) {
+    historia.secciones.forEach(s => {
+      if (s.subtitulo) html += `<span class="historia-subtitulo">${s.subtitulo}</span>`;
+      html += `<p>${s.texto}</p>`;
+    });
+  }
+
+  // Logo central
+  html += `<img src="assets/images/logo.png" alt="Hogar de Niñas Cupey" class="historia-logo"
+    onerror="this.style.display='none'" />`;
+
+  // Para qué existimos
+  const pq = historia.paraQueExistimos;
+  if (pq) {
+    html += `<div class="para-que">
+      <h3 class="para-que__titulo">${pq.subtitulo}</h3>
+      <p class="para-que__mv"><strong>${pq.mision.titulo}</strong><br>${pq.mision.texto}</p>
+      <p class="para-que__mv"><strong>${pq.vision.titulo}</strong><br>${pq.vision.texto}</p>
+      <div class="compromisos-grid">
+        <div class="compromisos-col">
+          <h4>${pq.compromisos.titulo}</h4>
+          <ul>${pq.compromisos.lista.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>
+        <div class="compromisos-col">
+          <h4>${pq.fortalezas.titulo}</h4>
+          <ul>${pq.fortalezas.lista.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  bodyEl.innerHTML = html;
 }
 
 function renderDirectores(dir) {
@@ -271,15 +283,17 @@ function renderPatrocinadores(pat) {
 
   gridEl.innerHTML = pat.lista.map(s => {
     const logoHtml = s.logo
-      ? `<img src="${s.logo}" alt="${s.nombre}" class="sponsor-logo" onerror="this.parentElement.innerHTML='<div class=sponsor-logo-placeholder>🏢</div><span class=sponsor-name>${s.nombre}</span>'" />`
+      ? `<img src="${s.logo}" alt="${s.nombre}" class="sponsor-logo"
+          onerror="this.parentElement.innerHTML='<div class=sponsor-logo-placeholder>🏢</div>'" />`
       : `<div class="sponsor-logo-placeholder">🏢</div>`;
+    const linkUrl = s.url && s.url !== '#' ? s.url : null;
     return `
       <div class="sponsor-card reveal">
-        <a href="${s.url || '#'}" target="_blank" rel="noopener noreferrer">
-          ${logoHtml}
-          <span class="sponsor-name">${s.nombre}</span>
-        </a>
-        ${s.categoria ? `<span class="sponsor-category">${s.categoria}</span>` : ''}
+        <div class="sponsor-logo-wrap">${logoHtml}</div>
+        <span class="sponsor-name">${s.nombre}</span>
+        ${linkUrl
+          ? `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="sponsor-link">${s.linkText || 'Clic para conocer más'}</a>`
+          : `<span class="sponsor-link" style="visibility:hidden">—</span>`}
       </div>
     `;
   }).join('');
