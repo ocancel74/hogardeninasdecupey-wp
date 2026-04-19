@@ -79,7 +79,7 @@
 
     "INSTRUCCIONES_FOTOS": "Sube 5 fotos a assets/images/historia/ con los nombres: foto-1.jpg, foto-2.jpg, foto-3.jpg, foto-4.jpg, foto-5.jpg",
 
-    "logoMedio": "assets/images/historia/Logo-Hogar-de-Niñas-300x200.jpg",
+    "logoMedio": "assets/images/historia/logo-historia.jpg",
 
     "fotos": [
       "assets/images/historia/foto-1.jpg",
