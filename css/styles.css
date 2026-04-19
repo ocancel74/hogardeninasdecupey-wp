@@ -5,17 +5,19 @@
 
 /* ---------- VARIABLES ---------- */
 :root {
-  --color-primary:    #8B4A9E;   /* Morado principal */
-  --color-primary-dk: #6a3578;   /* Morado oscuro */
-  --color-accent:     #E8D5F5;   /* Morado muy claro */
-  --color-gold:       #C9A84C;   /* Dorado */
+  --color-primary:    #E91E8C;   /* Rosa/Magenta principal (logo) */
+  --color-primary-dk: #C2185B;   /* Rosa oscuro */
+  --color-accent:     #FCE4EC;   /* Rosa muy claro */
+  --color-blue:       #1565C0;   /* Azul del logo */
+  --color-blue-lt:    #E3F0FF;   /* Azul muy claro */
+  --color-gold:       #1565C0;   /* Azul como color de acento secundario */
   --color-dark:       #1a1a2e;   /* Fondo oscuro */
-  --color-dark-2:     #2d2d44;   /* Fondo oscuro secundario */
+  --color-dark-2:     #2a1a28;   /* Fondo oscuro secundario */
   --color-light:      #fafafa;   /* Fondo claro */
   --color-white:      #ffffff;
-  --color-text:       #333344;
-  --color-text-muted: #666680;
-  --color-border:     #e0e0f0;
+  --color-text:       #2a1a28;
+  --color-text-muted: #6b5b6e;
+  --color-border:     #f0d5e5;
 
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body:    'Inter', system-ui, sans-serif;
@@ -98,7 +100,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .btn--primary:hover {
   background: var(--color-primary-dk);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139,74,158,0.35);
+  box-shadow: 0 6px 20px rgba(233,30,140,0.35);
 }
 .btn--outline {
   border: 2px solid var(--color-white);
@@ -127,6 +129,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   background: rgba(255,255,255,0.97);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-bottom: 3px solid var(--color-primary);
   z-index: 1000;
   transition: var(--transition);
 }
@@ -277,7 +280,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary-dk) 0%, var(--color-dark) 100%);
+  background: linear-gradient(135deg, var(--color-primary-dk) 0%, var(--color-blue) 100%);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -294,7 +297,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(106,53,120,0.85) 0%, rgba(26,26,46,0.75) 100%);
+  background: linear-gradient(135deg, rgba(194,24,91,0.82) 0%, rgba(21,101,192,0.70) 100%);
   z-index: 1;
 }
 .hero__content {
@@ -510,7 +513,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .timeline-img-placeholder {
   width: 100%;
   height: 120px;
-  background: rgba(139,74,158,0.3);
+  background: rgba(233,30,140,0.2);
   border-radius: 8px;
   margin-bottom: 1rem;
   display: flex;
@@ -749,7 +752,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .news-img-placeholder {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #d4b3e8 100%);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #f7b8d4 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -894,7 +897,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .form-group textarea:focus {
   border-color: var(--color-primary);
   background: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(139,74,158,0.1);
+  box-shadow: 0 0 0 3px rgba(233,30,140,0.12);
 }
 .form-group input.error,
 .form-group textarea.error {
@@ -987,7 +990,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 0 6px 24px rgba(139,74,158,0.45);
+  box-shadow: 0 6px 24px rgba(233,30,140,0.45);
   z-index: 800;
   transition: var(--transition);
   font-size: 0.95rem;
@@ -997,7 +1000,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .donate-fab:hover {
   transform: translateY(-4px) scale(1.04);
-  box-shadow: 0 10px 30px rgba(139,74,158,0.55);
+  box-shadow: 0 10px 30px rgba(233,30,140,0.55);
   animation: none;
 }
 .donate-fab__icon { font-size: 1.1rem; }
@@ -1041,8 +1044,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   50%       { transform: translateY(-8px); opacity: 0.6; }
 }
 @keyframes pulse-fab {
-  0%, 100% { box-shadow: 0 6px 24px rgba(139,74,158,0.45); }
-  50%       { box-shadow: 0 6px 36px rgba(139,74,158,0.7); }
+  0%, 100% { box-shadow: 0 6px 24px rgba(233,30,140,0.45); }
+  50%       { box-shadow: 0 6px 36px rgba(233,30,140,0.7); }
 }
 
 .reveal {

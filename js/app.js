@@ -37,6 +37,7 @@ async function init() {
     return;
   }
 
+  renderNavbarLogo(data.site);
   renderNavbarSocial(data.site);
   renderHero(data.hero);
   renderQuienesSomos(data.quienesSomos);
@@ -63,6 +64,17 @@ async function init() {
 // ——————————————————————————————————————
 // RENDER FUNCTIONS
 // ——————————————————————————————————————
+
+function renderNavbarLogo(site) {
+  if (!site) return;
+  const img = document.getElementById('logo-img');
+  const txt = document.getElementById('logo-text');
+  if (img && site.logo) {
+    img.src = site.logo;
+    img.alt = site.name || 'Logo';
+  }
+  if (txt) txt.textContent = site.name || '';
+}
 
 function renderNavbarSocial(site) {
   const el = document.getElementById('navbar-social');
