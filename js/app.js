@@ -40,6 +40,7 @@ async function init() {
   renderNavbarLogo(data.site);
   renderNavbarSocial(data.site);
   renderHero(data.hero);
+  renderIntro(data.intro);
   renderQuienesSomos(data.quienesSomos);
   renderHistoria(data.historia);
   renderDirectores(data.directores);
@@ -104,9 +105,34 @@ function renderHero(hero) {
   if (ctaEl && hero.cta) {
     const { primary, secondary } = hero.cta;
     ctaEl.innerHTML = `
-      ${primary ? `<a href="${primary.href}" class="btn btn--outline">${primary.text}</a>` : ''}
-      ${secondary ? `<a href="${secondary.href}" class="btn btn--gold">${secondary.text}</a>` : ''}
+      ${primary ? `<a href="${primary.href}" class="btn btn--primary">${primary.text}</a>` : ''}
+      ${secondary ? `<a href="${secondary.href}" class="btn btn--outline">${secondary.text}</a>` : ''}
     `;
+  }
+}
+
+function renderIntro(intro) {
+  if (!intro) return;
+  setText('intro-title', intro.titulo);
+
+  const bodyEl = document.getElementById('intro-body');
+  if (bodyEl) {
+    let html = '';
+    if (intro.parrafos) {
+      html += intro.parrafos.map(p => `<p>${p}</p>`).join('');
+    }
+    if (intro.subSecciones) {
+      html += intro.subSecciones.map(s => `
+        ${s.subtitulo ? `<span class="intro__subtitulo">${s.subtitulo}</span>` : ''}
+        <p>${s.texto}</p>
+      `).join('');
+    }
+    bodyEl.innerHTML = html;
+  }
+
+  const ctaEl = document.getElementById('intro-cta');
+  if (ctaEl && intro.cta) {
+    ctaEl.innerHTML = `<a href="${intro.cta.href}" class="btn btn--primary">${intro.cta.text}</a>`;
   }
 }
 

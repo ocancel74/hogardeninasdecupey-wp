@@ -15,13 +15,39 @@
   },
 
   "hero": {
-    "title": "Transformando Vidas,<br>Construyendo Futuros",
-    "subtitle": "Brindamos amor, cuidado y oportunidades a niñas que más lo necesitan en Puerto Rico.",
+    "title": "Con más de 70 años",
+    "subtitle": "al servicio de los niños y niñas en desventaja social y económica, a través de servicios integrales en apoyo a la familia y a la comunidad. Servimos como facilidad residencial para niñas y un programa educativo complementario, buscando siempre el mayor interés y bienestar de cada niño y niña participante.",
     "backgroundImage": "assets/images/hero-bg.jpg",
     "cta": {
-      "primary": { "text": "Conoce Nuestra Historia", "href": "#historia" },
-      "secondary": { "text": "Dona Hoy", "href": "#como-ayudar" }
+      "primary": { "text": "Dona hoy", "href": "#como-ayudar" }
     }
+  },
+
+  "intro": {
+    "titulo": "70 años de historia y ahora ofreciendo nuevos servicios",
+    "parrafos": [
+      "Por más de 70 años hemos ayudado a miles de niños y niñas en desventaja social y económica. Comenzamos como un Hogar de niños brindándoles un albergue seguro, alimentación y vestimenta. Luego servimos exclusivamente de Hogar a niñas víctimas de maltrato u abandono por parte de sus familiares y encargados ofreciendo servicios especializados y de apoyo en las áreas de salud física, mental y espiritual.",
+      "Desde agosto de 2021 abrimos un nuevo centro educativo para niños y niñas y que ofrece servicios a la familia y la comunidad. También servimos como Facilidad Residencial para niñas."
+    ],
+    "subSecciones": [
+      {
+        "subtitulo": "¿Por qué los nuevos servicios?",
+        "texto": "Numerosos eventos han impactado la vida de las familias puertorriqueñas a lo largo de los últimos cinco años. Huracanes, terremotos y la pandemia del COVID 19, han dejado un saldo de precariedad en los sectores más necesitados y han colocado a nuestros niños en posiciones de mayor vulnerabilidad. La experiencia de la educación a distancia a causa del confinamiento pandémico ha colocado a miles de niños en situaciones de rezago académico y en distintas situaciones de riesgo que van a dificultar su desempeño y su desarrollo en el futuro."
+      },
+      {
+        "subtitulo": "",
+        "texto": "Nuestra <strong>Misión</strong> es proveer servicios integrales de excelencia a niños y jóvenes en desventaja social y económica, buscando el mejor interés y bienestar de los menores fundamentados en valores cristianos."
+      },
+      {
+        "subtitulo": "",
+        "texto": "Nuestra <strong>Visión</strong> es contribuir a la formación de niños capaces de transformar sus vidas e impactar su entorno familiar."
+      },
+      {
+        "subtitulo": "¿Cómo puedes ayudar?",
+        "texto": "Con una módica cantidad mensual o anual puedes convertirte en amigo de nuestra organización. También, puedes ser voluntario ayudando en distintas tareas y labores grandes y pequeñas. En cualquier momento puedes donar y patrocinar las actividades de recaudación de fondos que hacemos regularmente. Toda ayuda es buena y nos permite continuar nuestra misión de amor."
+      }
+    ],
+    "cta": { "text": "¿Cómo puedo ayudar?", "href": "#como-ayudar" }
   },
 
   "quienesSomos": {
