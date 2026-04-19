@@ -1,0 +1,337 @@
+{
+  "site": {
+    "name": "Hogar de Niñas Cupey",
+    "tagline": "Transformando vidas, construyendo futuros",
+    "description": "Una organización sin fines de lucro dedicada al cuidado, educación y desarrollo integral de niñas en situación de vulnerabilidad en Puerto Rico.",
+    "email": "info@hogardeninasdecupey.org",
+    "phone": "(787) 000-0000",
+    "address": "Cupey, San Juan, Puerto Rico",
+    "logo": "assets/images/logo.png",
+    "socialMedia": {
+      "facebook": "https://www.facebook.com/hogardeninasdecupey",
+      "instagram": "https://www.instagram.com/hogardeninasdecupey"
+    },
+    "donateUrl": "#como-ayudar"
+  },
+
+  "hero": {
+    "title": "Transformando Vidas,<br>Construyendo Futuros",
+    "subtitle": "Brindamos amor, cuidado y oportunidades a niñas que más lo necesitan en Puerto Rico.",
+    "backgroundImage": "assets/images/hero-bg.jpg",
+    "cta": {
+      "primary": { "text": "Conoce Nuestra Historia", "href": "#historia" },
+      "secondary": { "text": "Dona Hoy", "href": "#como-ayudar" }
+    }
+  },
+
+  "quienesSomos": {
+    "title": "¿Quiénes Somos?",
+    "mision": {
+      "titulo": "Nuestra Misión",
+      "texto": "El Hogar de Niñas Cupey es una organización sin fines de lucro dedicada a brindar un hogar seguro, educación de calidad y desarrollo integral a niñas en situación de vulnerabilidad, abandono o riesgo en Puerto Rico. Trabajamos para que cada niña tenga la oportunidad de alcanzar su máximo potencial."
+    },
+    "vision": {
+      "titulo": "Nuestra Visión",
+      "texto": "Ser el hogar de referencia en Puerto Rico para la protección y el desarrollo integral de la niñez, donde cada niña pueda crecer en un ambiente de amor, seguridad y fe, preparándose para ser una ciudadana productiva y plena."
+    },
+    "valores": [
+      { "icono": "❤️", "titulo": "Amor", "texto": "Cada niña merece amor incondicional y un hogar donde se sienta segura." },
+      { "icono": "🎓", "titulo": "Educación", "texto": "La educación es la base para transformar vidas y abrir puertas al futuro." },
+      { "icono": "🙏", "titulo": "Fe", "texto": "Nuestra fe es el fundamento que guía cada acción y decisión." },
+      { "icono": "🤝", "titulo": "Comunidad", "texto": "Trabajamos juntos con la comunidad para crear un impacto duradero." }
+    ],
+    "estadisticas": [
+      { "numero": "60+", "descripcion": "Años de servicio" },
+      { "numero": "500+", "descripcion": "Niñas beneficiadas" },
+      { "numero": "100%", "descripcion": "Dedicación y amor" },
+      { "numero": "1", "descripcion": "Gran familia" }
+    ]
+  },
+
+  "historia": {
+    "title": "Nuestra Historia",
+    "introduccion": "Desde nuestra fundación, el Hogar de Niñas Cupey ha sido un refugio de esperanza para cientos de niñas en Puerto Rico.",
+    "hitos": [
+      {
+        "anio": "1960",
+        "titulo": "Los Inicios",
+        "texto": "El Hogar de Niñas Cupey fue fundado con la misión de proveer un hogar seguro a niñas huérfanas y en situación de abandono en Puerto Rico. Un grupo de mujeres comprometidas con la fe y el servicio social unieron sus esfuerzos para hacer realidad este sueño.",
+        "imagen": "assets/images/historia-1960.jpg"
+      },
+      {
+        "anio": "1975",
+        "titulo": "Crecimiento y Expansión",
+        "texto": "Durante esta década, el hogar expandió su capacidad para atender a más niñas. Se construyeron nuevas instalaciones y se establecieron programas educativos formales en colaboración con el Departamento de Educación de Puerto Rico.",
+        "imagen": "assets/images/historia-1975.jpg"
+      },
+      {
+        "anio": "1990",
+        "titulo": "Nuevos Programas",
+        "texto": "Se implementaron programas de terapia, consejería y desarrollo de habilidades para la vida. El hogar comenzó a recibir reconocimiento a nivel nacional por su modelo integral de cuidado residencial.",
+        "imagen": "assets/images/historia-1990.jpg"
+      },
+      {
+        "anio": "2000",
+        "titulo": "Modernización",
+        "texto": "El nuevo milenio trajo consigo la modernización de las instalaciones y la incorporación de tecnología educativa. Se establecieron alianzas con universidades y empresas para ofrecer becas y oportunidades laborales a las jóvenes egresadas.",
+        "imagen": "assets/images/historia-2000.jpg"
+      },
+      {
+        "anio": "2017",
+        "titulo": "Resiliencia ante el Huracán María",
+        "texto": "Tras el devastador paso del Huracán María, el Hogar de Niñas Cupey demostró una extraordinaria resiliencia. Con el apoyo de la comunidad y donantes, las instalaciones fueron restauradas y el servicio continuó sin interrupciones para las niñas residentes.",
+        "imagen": "assets/images/historia-2017.jpg"
+      },
+      {
+        "anio": "Hoy",
+        "titulo": "Seguimos Adelante",
+        "texto": "Hoy, el Hogar de Niñas Cupey continúa su misión con renovado compromiso. Cada día trabajamos para brindar a nuestras niñas el amor, la educación y las herramientas que necesitan para construir un futuro brillante.",
+        "imagen": "assets/images/historia-hoy.jpg"
+      }
+    ]
+  },
+
+  "directores": {
+    "title": "Junta de Directores",
+    "subtitle": "Personas comprometidas que guían nuestra misión con dedicación y liderazgo.",
+    "miembros": [
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Presidenta",
+        "foto": "assets/images/director-1.jpg",
+        "descripcion": "Líder comprometida con la misión del hogar desde hace más de 20 años."
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Vicepresidenta",
+        "foto": "assets/images/director-2.jpg",
+        "descripcion": "Profesional con amplia experiencia en trabajo social y desarrollo comunitario."
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Secretaria",
+        "foto": "assets/images/director-3.jpg",
+        "descripcion": "Especialista en administración y gestión organizacional sin fines de lucro."
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Tesorera",
+        "foto": "assets/images/director-4.jpg",
+        "descripcion": "Contadora pública con experiencia en finanzas de organizaciones sin fines de lucro."
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Vocal",
+        "foto": "assets/images/director-5.jpg",
+        "descripcion": "Educadora dedicada al desarrollo integral de la niñez puertorriqueña."
+      },
+      {
+        "nombre": "Nombre Apellido",
+        "cargo": "Vocal",
+        "foto": "assets/images/director-6.jpg",
+        "descripcion": "Abogada especialista en derechos de la niñez y familia."
+      }
+    ]
+  },
+
+  "patrocinadores": {
+    "title": "Nuestros Patrocinadores",
+    "subtitle": "Gracias a estas organizaciones y empresas que hacen posible nuestra misión.",
+    "lista": [
+      {
+        "nombre": "Fundación ABC",
+        "logo": "assets/images/sponsor-1.png",
+        "url": "#",
+        "categoria": "Patrocinador Principal"
+      },
+      {
+        "nombre": "Empresa XYZ",
+        "logo": "assets/images/sponsor-2.png",
+        "url": "#",
+        "categoria": "Patrocinador Oro"
+      },
+      {
+        "nombre": "Organización 123",
+        "logo": "assets/images/sponsor-3.png",
+        "url": "#",
+        "categoria": "Patrocinador Plata"
+      },
+      {
+        "nombre": "Corporación DEF",
+        "logo": "assets/images/sponsor-4.png",
+        "url": "#",
+        "categoria": "Patrocinador Plata"
+      },
+      {
+        "nombre": "Grupo GHI",
+        "logo": "assets/images/sponsor-5.png",
+        "url": "#",
+        "categoria": "Colaborador"
+      },
+      {
+        "nombre": "Institución JKL",
+        "logo": "assets/images/sponsor-6.png",
+        "url": "#",
+        "categoria": "Colaborador"
+      }
+    ]
+  },
+
+  "servicios": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Programas integrales diseñados para el desarrollo pleno de cada niña.",
+    "lista": [
+      {
+        "titulo": "Hogar Residencial",
+        "descripcion": "Proveemos un hogar seguro y amoroso donde las niñas reciben alimentación nutritiva, ropa, atención médica y un ambiente familiar estable las 24 horas del día.",
+        "imagen": "assets/images/servicio-hogar.jpg",
+        "icono": "🏠"
+      },
+      {
+        "titulo": "Educación Formal",
+        "descripcion": "Apoyamos la educación formal de cada niña desde nivel elemental hasta universitario, incluyendo tutorías, útiles escolares y acceso a tecnología educativa.",
+        "imagen": "assets/images/servicio-educacion.jpg",
+        "icono": "📚"
+      },
+      {
+        "titulo": "Terapia y Consejería",
+        "descripcion": "Contamos con un equipo de psicólogos y trabajadores sociales que brindan terapia individual y grupal para el bienestar emocional de nuestras niñas.",
+        "imagen": "assets/images/servicio-terapia.jpg",
+        "icono": "💜"
+      },
+      {
+        "titulo": "Actividades Recreativas",
+        "descripcion": "Ofrecemos programas de arte, música, deportes y otras actividades que promueven el desarrollo de talentos y el bienestar integral.",
+        "imagen": "assets/images/servicio-recreacion.jpg",
+        "icono": "🎨"
+      },
+      {
+        "titulo": "Desarrollo Espiritual",
+        "descripcion": "Fomentamos el crecimiento espiritual y los valores morales como pilares fundamentales para una vida plena y significativa.",
+        "imagen": "assets/images/servicio-espiritual.jpg",
+        "icono": "🙏"
+      },
+      {
+        "titulo": "Preparación para la Vida",
+        "descripcion": "Enseñamos habilidades prácticas para la vida independiente: cocina, finanzas personales, búsqueda de empleo y habilidades sociales.",
+        "imagen": "assets/images/servicio-vida.jpg",
+        "icono": "⭐"
+      }
+    ]
+  },
+
+  "comoAyudar": {
+    "title": "¿Cómo Puedes Ayudar?",
+    "subtitle": "Hay muchas formas de ser parte de nuestra misión. Cada contribución marca la diferencia.",
+    "opciones": [
+      {
+        "titulo": "Dona Dinero",
+        "descripcion": "Tu donación monetaria nos ayuda a cubrir las necesidades básicas de nuestras niñas: alimentación, ropa, educación y atención médica.",
+        "icono": "💰",
+        "cta": "Dona Ahora",
+        "url": "https://www.paypal.com/donate",
+        "destacado": true
+      },
+      {
+        "titulo": "Dona Artículos",
+        "descripcion": "Aceptamos donaciones de ropa, útiles escolares, alimentos no perecederos, artículos de higiene personal y más.",
+        "icono": "📦",
+        "cta": "Ver Lista de Necesidades",
+        "url": "#contacto",
+        "destacado": false
+      },
+      {
+        "titulo": "Voluntariado",
+        "descripcion": "Dedica tu tiempo y talento. Necesitamos tutores, maestros de música, arte, deportes, y profesionales que quieran compartir sus conocimientos.",
+        "icono": "🙋",
+        "cta": "Ser Voluntario",
+        "url": "#contacto",
+        "destacado": false
+      },
+      {
+        "titulo": "Patrocina una Niña",
+        "descripcion": "Conviértete en patrocinador mensual y ayuda a cubrir las necesidades específicas de una de nuestras niñas durante su estadía en el hogar.",
+        "icono": "⭐",
+        "cta": "Patrocinar",
+        "url": "#contacto",
+        "destacado": false
+      }
+    ],
+    "nota": "El Hogar de Niñas Cupey es una organización 501(c)(3). Todas las donaciones son deducibles de impuestos."
+  },
+
+  "noticias": {
+    "title": "Noticias y Eventos",
+    "subtitle": "Mantente al día con las actividades y logros de nuestra comunidad.",
+    "eventos": [
+      {
+        "titulo": "Graduación Clase 2025",
+        "fecha": "2025-05-30",
+        "descripcion": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza.",
+        "imagen": "assets/images/noticia-graduacion.jpg",
+        "categoria": "Logros"
+      },
+      {
+        "titulo": "Cena Benéfica Anual",
+        "fecha": "2025-06-14",
+        "descripcion": "Únete a nosotros en nuestra Cena Benéfica Anual. Una noche especial de música, gastronomía y solidaridad para apoyar a nuestras niñas.",
+        "imagen": "assets/images/noticia-cena.jpg",
+        "categoria": "Evento"
+      },
+      {
+        "titulo": "Nuevo Programa de Arte",
+        "fecha": "2025-04-10",
+        "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
+        "imagen": "assets/images/noticia-arte.jpg",
+        "categoria": "Programas"
+      },
+      {
+        "titulo": "Visita de Voluntarios",
+        "fecha": "2025-03-22",
+        "descripcion": "Un grupo de voluntarios de empresas locales visitó el hogar para renovar espacios comunes. Gracias a todos por su generoso tiempo y esfuerzo.",
+        "imagen": "assets/images/noticia-voluntarios.jpg",
+        "categoria": "Comunidad"
+      },
+      {
+        "titulo": "Torneo Deportivo",
+        "fecha": "2025-07-05",
+        "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
+        "imagen": "assets/images/noticia-deporte.jpg",
+        "categoria": "Evento"
+      },
+      {
+        "titulo": "Bazar Navideño",
+        "fecha": "2025-12-06",
+        "descripcion": "Visita nuestro bazar navideño con artesanías hechas a mano por nuestras niñas. Una oportunidad de apoyar y llevarte un recuerdo especial.",
+        "imagen": "assets/images/noticia-bazar.jpg",
+        "categoria": "Evento"
+      }
+    ]
+  },
+
+  "contacto": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para responder tus preguntas y recibir tu apoyo.",
+    "info": {
+      "direccion": "Cupey, San Juan, Puerto Rico",
+      "telefono": "(787) 000-0000",
+      "email": "info@hogardeninasdecupey.org",
+      "horario": "Lunes a Viernes: 8:00 AM - 5:00 PM"
+    },
+    "emailjs": {
+      "serviceId": "TU_SERVICE_ID",
+      "templateId": "TU_TEMPLATE_ID",
+      "publicKey": "TU_PUBLIC_KEY"
+    },
+    "mapaEmbed": ""
+  },
+
+  "footer": {
+    "texto": "© 2025 Hogar de Niñas Cupey. Todos los derechos reservados.",
+    "textoOrganizacion": "Organización sin fines de lucro 501(c)(3) registrada en Puerto Rico.",
+    "links": [
+      { "texto": "Política de Privacidad", "href": "#" },
+      { "texto": "Términos de Uso", "href": "#" }
+    ]
+  }
+}
