@@ -376,24 +376,40 @@ function initNavbar() {
   const navbar = document.getElementById('navbar');
   const links = document.querySelectorAll('.navbar__link');
   const sections = document.querySelectorAll('section[id]');
+  const DROPDOWN_SECTIONS = ['quienes-somos', 'historia', 'directores', 'patrocinadores'];
+
+  // Dropdown toggle
+  const dropdown = document.querySelector('.navbar__dropdown');
+  const toggle   = dropdown && dropdown.querySelector('.navbar__dropdown-toggle');
+  if (dropdown && toggle) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+    document.addEventListener('click', () => {
+      dropdown.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+    dropdown.addEventListener('click', e => e.stopPropagation());
+  }
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 
-    // Highlight active link
     let current = '';
     sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) {
-        current = s.id;
-      }
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
     });
+
     links.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
+
+    // Highlight dropdown toggle when any of its sections is active
+    if (toggle) {
+      toggle.classList.toggle('active', DROPDOWN_SECTIONS.includes(current));
+    }
   }, { passive: true });
 
   // Smooth scroll for all anchor links
@@ -404,6 +420,8 @@ function initNavbar() {
         e.preventDefault();
         const offset = document.getElementById('navbar').offsetHeight;
         window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+        // Close dropdown after clicking a dropdown item
+        if (dropdown) { dropdown.classList.remove('open'); toggle && toggle.setAttribute('aria-expanded', 'false'); }
       }
     });
   });
@@ -414,17 +432,24 @@ function initNavbar() {
 // ——————————————————————————————————————
 
 function initMobileMenu() {
-  const hamburger = document.getElementById('hamburger');
+  const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileClose = document.getElementById('mobile-close');
-  const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+  const mobileLinks = document.querySelectorAll('.mobile-menu__link, .mobile-menu__sublink');
 
   const open  = () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; };
   const close = () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; };
 
-  if (hamburger) hamburger.addEventListener('click', open);
+  if (hamburger)  hamburger.addEventListener('click', open);
   if (mobileClose) mobileClose.addEventListener('click', close);
   mobileLinks.forEach(l => l.addEventListener('click', close));
+
+  // Accordion for "Quiénes Somos" group
+  const groupToggle = document.querySelector('.mobile-menu__group-toggle');
+  const group       = document.querySelector('.mobile-menu__group');
+  if (groupToggle && group) {
+    groupToggle.addEventListener('click', () => group.classList.toggle('open'));
+  }
 }
 
 // ——————————————————————————————————————

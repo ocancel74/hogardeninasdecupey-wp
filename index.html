@@ -33,14 +33,24 @@
 
       <nav class="navbar__nav" id="navbar-nav">
         <a href="#inicio" class="navbar__link">Inicio</a>
-        <a href="#quienes-somos" class="navbar__link">Quiénes Somos</a>
-        <a href="#historia" class="navbar__link">Historia</a>
-        <a href="#directores" class="navbar__link">Junta de Directores</a>
-        <a href="#patrocinadores" class="navbar__link">Patrocinadores</a>
-        <a href="#servicios" class="navbar__link">Servicios</a>
+
+        <!-- Dropdown: Quiénes Somos -->
+        <div class="navbar__dropdown">
+          <button class="navbar__link navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Quiénes Somos <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="navbar__dropdown-menu" role="menu">
+            <li><a href="#quienes-somos" class="dropdown-item" role="menuitem">Quiénes Somos</a></li>
+            <li><a href="#historia"       class="dropdown-item" role="menuitem">Historia</a></li>
+            <li><a href="#directores"     class="dropdown-item" role="menuitem">Junta de Directores</a></li>
+            <li><a href="#patrocinadores" class="dropdown-item" role="menuitem">Patrocinadores</a></li>
+          </ul>
+        </div>
+
+        <a href="#servicios"   class="navbar__link">Servicios</a>
         <a href="#como-ayudar" class="navbar__link">Cómo Ayudar</a>
-        <a href="#noticias" class="navbar__link">Noticias</a>
-        <a href="#contacto" class="navbar__link">Contacto</a>
+        <a href="#noticias"    class="navbar__link">Noticias</a>
+        <a href="#contacto"    class="navbar__link">Contacto</a>
       </nav>
 
       <div class="navbar__actions">
@@ -59,14 +69,22 @@
     <button class="mobile-menu__close" id="mobile-close" aria-label="Cerrar menú">✕</button>
     <nav class="mobile-menu__nav">
       <a href="#inicio" class="mobile-menu__link">Inicio</a>
-      <a href="#quienes-somos" class="mobile-menu__link">Quiénes Somos</a>
-      <a href="#historia" class="mobile-menu__link">Historia</a>
-      <a href="#directores" class="mobile-menu__link">Junta de Directores</a>
-      <a href="#patrocinadores" class="mobile-menu__link">Patrocinadores</a>
-      <a href="#servicios" class="mobile-menu__link">Servicios</a>
+      <!-- Acordeón móvil: Quiénes Somos -->
+      <div class="mobile-menu__group">
+        <button class="mobile-menu__link mobile-menu__group-toggle">
+          Quiénes Somos <span class="mobile-arrow">▾</span>
+        </button>
+        <div class="mobile-menu__sub">
+          <a href="#quienes-somos" class="mobile-menu__sublink">— Quiénes Somos</a>
+          <a href="#historia"       class="mobile-menu__sublink">— Historia</a>
+          <a href="#directores"     class="mobile-menu__sublink">— Junta de Directores</a>
+          <a href="#patrocinadores" class="mobile-menu__sublink">— Patrocinadores</a>
+        </div>
+      </div>
+      <a href="#servicios"   class="mobile-menu__link">Servicios</a>
       <a href="#como-ayudar" class="mobile-menu__link">Cómo Ayudar</a>
-      <a href="#noticias" class="mobile-menu__link">Noticias</a>
-      <a href="#contacto" class="mobile-menu__link">Contacto</a>
+      <a href="#noticias"    class="mobile-menu__link">Noticias</a>
+      <a href="#contacto"    class="mobile-menu__link">Contacto</a>
     </nav>
   </div>
 
