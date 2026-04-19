@@ -201,8 +201,9 @@ function renderHistoria(historia) {
       html += `<p>${s.texto}</p>`;
       // Logo va después del primer párrafo, antes del segundo
       if (i === 0) {
-        html += `<img src="${logoSrc}" alt="Hogar de Niñas Cupey" class="historia-logo"
-          onerror="this.style.display='none'" />`;
+        html += `<div class="historia-logo-wrap">
+          <img src="${logoSrc}" alt="Hogar de Niñas Cupey" class="historia-logo" />
+        </div>`;
       }
     });
   }
