@@ -435,50 +435,107 @@
   },
 
   "noticias": {
-    "title": "Noticias y Eventos",
+    "title": "Noticias recientes",
     "subtitle": "Mantente al día con las actividades y logros de nuestra comunidad.",
+
+    "INSTRUCCIONES": [
+      "Para AGREGAR una noticia: copia un bloque completo { } y pégalo al INICIO de 'eventos'.",
+      "slug: identificador único sin espacios ni acentos, ejemplo: 'gala-2025'",
+      "imagen: sube la foto principal a assets/images/noticias/ y escribe la ruta aquí.",
+      "cuerpo: contenido de la página completa. Tipos de bloque disponibles:",
+      "  { 'tipo': 'parrafo',   'texto': 'Texto del párrafo.' }",
+      "  { 'tipo': 'subtitulo', 'texto': '¿Dónde?' }",
+      "  { 'tipo': 'lista',     'items': ['item 1', 'item 2'] }",
+      "  { 'tipo': 'fotos',     'imagenes': ['assets/images/noticias/foto1.jpg', 'assets/images/noticias/foto2.jpg'] }",
+      "Si no escribes 'cuerpo', la página mostrará solo la descripción corta."
+    ],
+
     "eventos": [
       {
         "titulo": "Graduación Clase 2025",
+        "slug": "graduacion-2025",
         "fecha": "2025-05-30",
         "descripcion": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza.",
         "imagen": "assets/images/noticia-graduacion.jpg",
-        "categoria": "Logros"
+        "categoria": "Logros",
+        "cuerpo": [
+          { "tipo": "parrafo", "texto": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza." },
+          { "tipo": "subtitulo", "texto": "Un día especial" },
+          { "tipo": "parrafo", "texto": "Este año marcamos un hito importante en la historia del Hogar. Nuestras graduadas han demostrado que con dedicación, amor y apoyo, es posible alcanzar las metas más altas." },
+          { "tipo": "parrafo", "texto": "¡Felicitamos a todas nuestras graduadas y a sus familias!" }
+        ]
       },
       {
         "titulo": "Cena Benéfica Anual",
+        "slug": "cena-benefica-2025",
         "fecha": "2025-06-14",
         "descripcion": "Únete a nosotros en nuestra Cena Benéfica Anual. Una noche especial de música, gastronomía y solidaridad para apoyar a nuestras niñas.",
         "imagen": "assets/images/noticia-cena.jpg",
-        "categoria": "Evento"
+        "categoria": "Evento",
+        "cuerpo": [
+          { "tipo": "parrafo", "texto": "Únete a nosotros en nuestra Cena Benéfica Anual. Una noche especial de música, gastronomía y solidaridad para apoyar a nuestras niñas." },
+          { "tipo": "subtitulo", "texto": "¿Dónde?" },
+          { "tipo": "parrafo", "texto": "Plazoleta de Banco Popular en Popular Center, Hato Rey" },
+          { "tipo": "subtitulo", "texto": "¿Cuándo?" },
+          { "tipo": "parrafo", "texto": "14 de junio de 2025\nDe 6:00 pm a 11:30 pm" },
+          { "tipo": "subtitulo", "texto": "Programa" },
+          { "tipo": "parrafo", "texto": "Habrá cena, bebidas y espectáculo musical." },
+          { "tipo": "parrafo", "texto": "Taquillas a $125 por persona\nLlama al 787-761-2805 o escribe a info@hogardeninasdecupey.org" },
+          { "tipo": "parrafo", "texto": "¡Contamos contigo, tus familiares y amigos!" }
+        ]
       },
       {
         "titulo": "Nuevo Programa de Arte",
+        "slug": "programa-arte-2025",
         "fecha": "2025-04-10",
         "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
         "imagen": "assets/images/noticia-arte.jpg",
-        "categoria": "Programas"
+        "categoria": "Programas",
+        "cuerpo": [
+          { "tipo": "parrafo", "texto": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales de Puerto Rico." },
+          { "tipo": "parrafo", "texto": "Las niñas están explorando su creatividad a través de pintura, escultura y arte digital, desarrollando habilidades que les servirán toda la vida." }
+        ]
       },
       {
         "titulo": "Visita de Voluntarios",
+        "slug": "visita-voluntarios-2025",
         "fecha": "2025-03-22",
         "descripcion": "Un grupo de voluntarios de empresas locales visitó el hogar para renovar espacios comunes. Gracias a todos por su generoso tiempo y esfuerzo.",
         "imagen": "assets/images/noticia-voluntarios.jpg",
-        "categoria": "Comunidad"
+        "categoria": "Comunidad",
+        "cuerpo": [
+          { "tipo": "parrafo", "texto": "Un grupo de voluntarios de empresas locales visitó el Hogar de Niñas de Cupey para renovar espacios comunes." },
+          { "tipo": "parrafo", "texto": "Gracias a su dedicación y generosidad, nuestras niñas ahora cuentan con espacios más bonitos y funcionales." },
+          { "tipo": "parrafo", "texto": "¡Gracias a todos los voluntarios por su tiempo y esfuerzo!" }
+        ]
       },
       {
         "titulo": "Torneo Deportivo",
+        "slug": "torneo-deportivo-2025",
         "fecha": "2025-07-05",
         "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
         "imagen": "assets/images/noticia-deporte.jpg",
-        "categoria": "Evento"
+        "categoria": "Evento",
+        "cuerpo": [
+          { "tipo": "parrafo", "texto": "Participa en nuestro torneo deportivo anual, abierto a toda la comunidad." },
+          { "tipo": "subtitulo", "texto": "Deportes" },
+          { "tipo": "lista", "items": ["Voleibol", "Baloncesto", "Atletismo"] },
+          { "tipo": "parrafo", "texto": "Los fondos recaudados apoyan directamente los programas del Hogar de Niñas de Cupey." },
+          { "tipo": "parrafo", "texto": "Para información e inscripciones: 787-761-2805" }
+        ]
       },
       {
         "titulo": "Bazar Navideño",
+        "slug": "bazar-navideno-2025",
         "fecha": "2025-12-06",
         "descripcion": "Visita nuestro bazar navideño con artesanías hechas a mano por nuestras niñas. Una oportunidad de apoyar y llevarte un recuerdo especial.",
         "imagen": "assets/images/noticia-bazar.jpg",
-        "categoria": "Evento"
+        "categoria": "Evento",
+        "cuerpo": [
+          { "tipo": "parrafo", "texto": "Visita nuestro bazar navideño con artesanías únicas hechas a mano por nuestras niñas." },
+          { "tipo": "parrafo", "texto": "Una oportunidad perfecta para apoyar nuestra misión y llevarte un recuerdo especial para esta época del año." },
+          { "tipo": "parrafo", "texto": "¡Te esperamos!" }
+        ]
       }
     ]
   },

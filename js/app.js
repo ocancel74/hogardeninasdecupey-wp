@@ -57,6 +57,7 @@ async function init() {
   initScrollReveal();
   initBackToTop();
   initContactForm(data.contacto);
+  initNoticiaRouting(data.noticias.eventos || []);
 
   // Page title
   document.title = data.site.name || 'Hogar de Niñas Cupey';
@@ -356,14 +357,17 @@ function renderNoticias(news) {
   const gridEl = document.getElementById('news-grid');
   if (!gridEl || !news.eventos) return;
 
-  const sorted = [...news.eventos].sort((a, b) => new Date(a.fecha) - new Date(b.fecha));
+  const sorted = [...news.eventos].sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
   gridEl.innerHTML = sorted.map(e => {
     const imgHtml = e.imagen
       ? `<img src="${e.imagen}" alt="${e.titulo}" class="news-img" onerror="this.parentElement.innerHTML='<div class=news-img-placeholder>📰</div>'" />`
       : `<div class="news-img-placeholder">📰</div>`;
+    const leerMas = e.slug
+      ? `<button class="news-leer-mas" data-slug="${e.slug}">Leer más</button>`
+      : '';
     return `
-      <div class="news-card reveal">
+      <div class="news-card reveal" ${e.slug ? `data-slug="${e.slug}"` : ''}>
         ${imgHtml}
         <div class="news-body">
           <div class="news-meta">
@@ -372,10 +376,122 @@ function renderNoticias(news) {
           </div>
           <h3>${e.titulo}</h3>
           <p>${e.descripcion}</p>
+          ${leerMas}
         </div>
       </div>
     `;
   }).join('');
+}
+
+// ——————————————————————————————————————
+// NOTICIA — PÁGINA INDIVIDUAL
+// ——————————————————————————————————————
+
+function renderNoticiaPagina(noticia) {
+  const el = document.getElementById('noticia-content');
+  if (!el) return;
+
+  let html = `
+    <div class="noticia-meta-bar">
+      <span>© HOGARDENIÑAS</span>
+      <span>📅 ${formatDate(noticia.fecha)}</span>
+      ${noticia.categoria ? `<span>📁 ${noticia.categoria.toUpperCase()}</span>` : ''}
+    </div>
+  `;
+
+  if (noticia.imagen) {
+    html += `<img src="${noticia.imagen}" alt="${noticia.titulo}" class="noticia-hero-img"
+      onerror="this.style.display='none'" />`;
+  }
+
+  html += `<h1 class="noticia-titulo">${noticia.titulo}</h1>`;
+
+  if (noticia.cuerpo && noticia.cuerpo.length) {
+    noticia.cuerpo.forEach(bloque => {
+      switch (bloque.tipo) {
+        case 'parrafo':
+          html += `<p>${bloque.texto.replace(/\n/g, '<br>')}</p>`;
+          break;
+        case 'subtitulo':
+          html += `<h4 class="noticia-subtitulo">${bloque.texto}</h4>`;
+          break;
+        case 'lista':
+          html += `<ul class="noticia-lista">${bloque.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+          break;
+        case 'fotos':
+          html += `<div class="noticia-fotos-grid">${bloque.imagenes.map(src =>
+            `<img src="${src}" alt="" onerror="this.style.display='none'" />`
+          ).join('')}</div>`;
+          break;
+      }
+    });
+  } else {
+    html += `<p>${noticia.descripcion}</p>`;
+  }
+
+  el.innerHTML = html;
+}
+
+function showNoticia(slug, eventos) {
+  const noticia = eventos.find(n => n.slug === slug);
+  if (!noticia) return;
+
+  renderNoticiaPagina(noticia);
+
+  const overlay = document.getElementById('noticia-overlay');
+  overlay.style.display = 'block';
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  overlay.scrollTop = 0;
+}
+
+function hideNoticia() {
+  const overlay = document.getElementById('noticia-overlay');
+  overlay.style.display = 'none';
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+function initNoticiaRouting(eventos) {
+  // Back button
+  const backBtn = document.getElementById('noticia-back');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      hideNoticia();
+      history.replaceState(null, '', window.location.pathname + '#noticias');
+      const section = document.getElementById('noticias');
+      if (section) {
+        const offset = document.getElementById('navbar').offsetHeight;
+        window.scrollTo({ top: section.offsetTop - offset, behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Clicks on news cards / "Leer más" buttons
+  document.getElementById('news-grid').addEventListener('click', e => {
+    const btn = e.target.closest('[data-slug]');
+    if (!btn) return;
+    e.preventDefault();
+    const slug = btn.dataset.slug;
+    history.pushState({ slug }, '', `#noticia/${slug}`);
+    showNoticia(slug, eventos);
+  });
+
+  // Browser back/forward
+  window.addEventListener('popstate', () => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#noticia/')) {
+      showNoticia(hash.replace('#noticia/', ''), eventos);
+    } else {
+      hideNoticia();
+    }
+  });
+
+  // Handle direct URL with hash on page load
+  const hash = window.location.hash;
+  if (hash.startsWith('#noticia/')) {
+    showNoticia(hash.replace('#noticia/', ''), eventos);
+  }
 }
 
 function renderContacto(contacto, site) {
