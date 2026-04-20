@@ -1170,9 +1170,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   margin-bottom: 1.5rem;
 }
 .noticia-hero-img {
+  display: block;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  max-width: 100%;
   border-radius: var(--radius);
   margin-bottom: 1.75rem;
 }
