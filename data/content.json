@@ -489,7 +489,7 @@
         "slug": "programa-arte-2025",
         "fecha": "2025-04-10",
         "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
-        "imagen": "assets/images/noticia-arte.jpg",
+        "imagen": "assets/images/noticias/noticia-arte.jpg",
         "categoria": "Programas",
         "cuerpo": [
           { "tipo": "parrafo", "texto": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales de Puerto Rico." },
@@ -501,7 +501,7 @@
         "slug": "visita-voluntarios-2025",
         "fecha": "2025-03-22",
         "descripcion": "Un grupo de voluntarios de empresas locales visitó el hogar para renovar espacios comunes. Gracias a todos por su generoso tiempo y esfuerzo.",
-        "imagen": "assets/images/noticia-voluntarios.jpg",
+        "imagen": "assets/images/noticias/noticia-voluntarios.jpg",
         "categoria": "Comunidad",
         "cuerpo": [
           { "tipo": "parrafo", "texto": "Un grupo de voluntarios de empresas locales visitó el Hogar de Niñas de Cupey para renovar espacios comunes." },
@@ -514,7 +514,7 @@
         "slug": "torneo-deportivo-2025",
         "fecha": "2025-07-05",
         "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
-        "imagen": "assets/images/noticia-deporte.jpg",
+        "imagen": "assets/images/noticias/noticia-deporte.jpg",
         "categoria": "Evento",
         "cuerpo": [
           { "tipo": "parrafo", "texto": "Participa en nuestro torneo deportivo anual, abierto a toda la comunidad." },
@@ -525,16 +525,19 @@
         ]
       },
       {
-        "titulo": "Bazar Navideño",
-        "slug": "bazar-navideno-2025",
-        "fecha": "2025-12-06",
-        "descripcion": "Visita nuestro bazar navideño con artesanías hechas a mano por nuestras niñas. Una oportunidad de apoyar y llevarte un recuerdo especial.",
-        "imagen": "assets/images/noticia-bazar.jpg",
+        "titulo": "¡Nos vamos de tour!",
+        "slug": "vamosdetour-2022!",
+        "fecha": "2022-12-06",
+        "descripcion": "¡Nos vamos de tour!",
+        "imagen": "assets/images/noticias/Actividad-degustacion-de-Vino-2022.jpg",
         "categoria": "Evento",
         "cuerpo": [
-          { "tipo": "parrafo", "texto": "Visita nuestro bazar navideño con artesanías únicas hechas a mano por nuestras niñas." },
-          { "tipo": "parrafo", "texto": "Una oportunidad perfecta para apoyar nuestra misión y llevarte un recuerdo especial para esta época del año." },
-          { "tipo": "parrafo", "texto": "¡Te esperamos!" }
+          { "tipo": "parrafo", "texto": "El Hogar de Niñas de Cupey te invita a compartir una noche de degustación de uvas de diversas partes del mundo. Abre tu paladar con uvas de España, Italia, California, Argentina y Chile. Paga tu boleto por ATH Móvil Donate HogardeNinosdeCupey" },
+          { "tipo": "parrafo", "texto": "Guarda la evidencia para reclamar las taquillas en la entrada." },
+          { "tipo": "parrafo", "texto": "Boleto $125 por persona / $225 pareja" },
+          { "tipo": "parrafo", "texto": "Información: www.hogardeninasdecupey.org" },
+          { "tipo": "parrafo", "texto": "¡Por un Hogar de lleno de amor y paz!" },
+        }
         ]
       }
     ]
