@@ -538,7 +538,9 @@
           { "tipo": "parrafo", "texto": "Información: www.hogardeninasdecupey.org" },
           { "tipo": "parrafo", "texto": "¡Por un Hogar de lleno de amor y paz!" },        
         ]
-      },
+      }
+    ]
+  },
 
   "contacto": {
     "tituloInfo": "Información de oficina",
