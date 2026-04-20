@@ -361,7 +361,7 @@ function renderNoticias(news) {
 
   gridEl.innerHTML = sorted.map(e => {
     const imgHtml = e.imagen
-      ? `<img src="${e.imagen}" alt="${e.titulo}" class="news-img" onerror="this.parentElement.innerHTML='<div class=news-img-placeholder>📰</div>'" />`
+      ? `<div class="news-img-wrap"><img src="${e.imagen}" alt="${e.titulo}" class="news-img" onerror="this.parentElement.innerHTML='<div class=news-img-placeholder>📰</div>'" /></div>`
       : `<div class="news-img-placeholder">📰</div>`;
     const leerMas = e.slug
       ? `<button class="news-leer-mas" data-slug="${e.slug}">Leer más</button>`
