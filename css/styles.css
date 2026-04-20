@@ -28,7 +28,7 @@
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
 
   --transition: all 0.3s ease;
-  --navbar-h:  72px;
+  --navbar-h:  90px;
 }
 
 /* ---------- RESET ---------- */
@@ -155,7 +155,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: var(--transition);
 }
 .navbar.scrolled {
-  height: 60px;
+  height: 72px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.12);
 }
 .navbar__inner {
@@ -172,7 +172,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 0.75rem;
 }
 .navbar__logo img {
-  height: 44px;
+  height: 68px;
   width: auto;
 }
 .navbar__logo-text {
@@ -190,9 +190,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .navbar__link {
   padding: 0.4rem 0.7rem;
   border-radius: 6px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   transition: var(--transition);
   white-space: nowrap;
 }
