@@ -1203,15 +1203,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .form-group select,
 .form-group-inner input,
 .form-group-inner select {
-  padding: 0.6rem 0.9rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
   font-size: 0.93rem;
   font-family: var(--font-body);
   color: var(--color-text);
-  background: var(--color-white);
+  background: #fdf8fc;
   transition: var(--transition);
   outline: none;
+  width: 100%;
 }
 .form-group textarea { resize: vertical; }
 .form-group input:focus,
@@ -1220,14 +1221,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .form-group-inner input:focus,
 .form-group-inner select:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(233,30,140,0.12);
+  background: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(233,30,140,0.10);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.form-group-inner input::placeholder {
+  color: #b8a0b4;
+  font-size: 0.88rem;
 }
 .form-group input.error,
 .form-group textarea.error { border-color: #e53935; }
 
 .btn--enviar {
-  border-radius: 4px;
-  padding: 0.7rem 2.2rem;
+  border-radius: 8px;
+  padding: 0.8rem 2.5rem;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1534,11 +1542,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 768px) {
+  :root { --navbar-h: 70px; }
+
   .navbar__nav    { display: none; }
   .navbar__social { display: none; }
   .navbar__hamburger { display: flex; }
+  .navbar.scrolled { height: 60px; }
+  .navbar__logo img { height: 50px; }
 
-  .section { padding: 3.5rem 0; }
+  .section { padding: 3rem 0; }
   .hero__title { font-size: 2rem; }
 
   .directors-grid  { grid-template-columns: 1fr 1fr; }
@@ -1550,15 +1562,70 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .valores-grid    { grid-template-columns: 1fr 1fr; }
   .stats-bar       { grid-template-columns: repeat(2, 1fr); }
 
+  /* Services grids */
+  .srv-categorias        { grid-template-columns: repeat(2, 1fr); }
+  .srv-grupos            { grid-template-columns: 1fr 1fr; }
+  .srv-gallery-thumbs    { grid-template-columns: repeat(4, 1fr); }
+
+  /* Help section */
+  .help-donar-grid       { grid-template-columns: 1fr; gap: 2rem; }
+
+  /* Noticia page */
+  .noticia-meta-bar      { flex-direction: column; gap: 0.35rem; }
+  .noticia-content       { padding: 1.5rem 0 3rem; }
+
+  /* Historia */
+  .compromisos-grid      { grid-template-columns: 1fr; }
+  .historia-fotos        { grid-template-columns: 1fr 1fr; }
+
   .donate-fab { bottom: 1.2rem; right: 1.2rem; padding: 0.75rem 1.2rem; font-size: 0.88rem; }
   .back-to-top { bottom: 1.2rem; left: 1.2rem; }
 }
 
 @media (max-width: 480px) {
-  .valores-grid { grid-template-columns: 1fr; }
-  .sponsors-grid { grid-template-columns: 1fr; }
-  .hero__cta { flex-direction: column; align-items: center; }
-  .contact-form--wide { gap: 0.9rem; }
+  :root { --navbar-h: 64px; }
+
+  .navbar__logo img { height: 42px; }
+  .navbar.scrolled { height: 56px; }
+
+  .section { padding: 2.5rem 0; }
+  .container { padding: 0 1rem; }
+
+  .valores-grid          { grid-template-columns: 1fr; }
+  .sponsors-grid         { grid-template-columns: 1fr; }
+  .directors-grid        { grid-template-columns: 1fr 1fr; }
+  .admin-grid            { grid-template-columns: 1fr; }
+
+  /* Services */
+  .srv-categorias        { grid-template-columns: 1fr; }
+  .srv-grupos            { grid-template-columns: 1fr; }
+  .srv-gallery-thumbs    { grid-template-columns: repeat(3, 1fr); }
+
+  /* Help */
+  .help-donar-grid       { grid-template-columns: 1fr; gap: 1.5rem; }
+
+  /* Form */
+  .hero__cta             { flex-direction: column; align-items: center; }
+  .contact-form--wide    { gap: 0.85rem; }
+  .form-row-2            { grid-template-columns: 1fr; }
+
+  /* Director cards — bump up small fonts */
+  .director-info h3      { font-size: 0.78rem; }
+  .director-info .cargo  { font-size: 0.74rem; }
+  .director-info .desc   { font-size: 0.74rem; }
+
+  /* Historia */
+  .historia-fotos        { grid-template-columns: 1fr; }
+
+  /* News */
+  .news-grid             { grid-template-columns: 1fr; }
+
+  /* Donate FAB — compact on small phones */
+  .donate-fab            { padding: 0.65rem 1rem; font-size: 0.82rem; bottom: 1rem; right: 1rem; }
+  .back-to-top           { bottom: 1rem; left: 1rem; width: 40px; height: 40px; }
+
+  /* Noticia */
+  .noticia-fotos-grid    { grid-template-columns: 1fr; }
 }
 
 /* ---------- INTRO SECTION ---------- */
