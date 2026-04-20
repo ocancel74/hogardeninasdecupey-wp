@@ -912,9 +912,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .news-img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 220px;
+  object-fit: contain;
+  background: #f9f0f5;
   display: block;
+}
+.news-card:first-child .news-img {
+  height: 280px;
 }
 .news-img-placeholder {
   width: 100%;
