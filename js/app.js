@@ -331,21 +331,49 @@ function renderServicios(srv) {
 function renderComoAyudar(help) {
   if (!help) return;
 
-  setText('help-title', help.title);
-  setText('help-subtitle', help.subtitle);
-  setText('help-nota', help.nota);
+  const el = document.getElementById('help-content');
+  if (!el) return;
 
-  const gridEl = document.getElementById('help-grid');
-  if (!gridEl || !help.opciones) return;
+  let html = '';
 
-  gridEl.innerHTML = help.opciones.map(o => `
-    <div class="help-card ${o.destacado ? 'help-card--destacado' : ''} reveal">
-      <div class="help-card__icon">${o.icono}</div>
-      <h3>${o.titulo}</h3>
-      <p>${o.descripcion}</p>
-      <a href="${o.url}" class="btn ${o.destacado ? 'btn--primary' : 'btn--outline'}" ${o.url.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${o.cta}</a>
-    </div>
-  `).join('');
+  // Conviértete en amigo
+  if (help.amigo) {
+    html += `<div class="help-block">
+      <h2 class="help-heading">${help.amigo.titulo}</h2>
+      ${(help.amigo.parrafos || []).map(p => `<p class="help-parrafo">${p}</p>`).join('')}
+    </div>`;
+  }
+
+  // Conviértete en voluntario
+  if (help.voluntario) {
+    html += `<div class="help-block">
+      <h2 class="help-heading">${help.voluntario.titulo}</h2>
+      ${help.voluntario.intro ? `<p class="help-parrafo">${help.voluntario.intro}</p>` : ''}
+      ${help.voluntario.lista ? `<ul class="help-lista">${help.voluntario.lista.map(i => `<li>${i}</li>`).join('')}</ul>` : ''}
+    </div>`;
+  }
+
+  // Cómo donar
+  if (help.donar) {
+    const pp = help.donar.paypal;
+    const ath = help.donar.athMovil;
+    html += `<div class="help-block">
+      <h2 class="help-heading">${help.donar.titulo}</h2>
+      <div class="help-donar-grid">
+        ${pp ? `<div class="help-donar-col">
+          <p class="help-donar-metodo">${pp.titulo}</p>
+          <a href="${pp.url}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">${pp.boton}</a>
+        </div>` : ''}
+        ${ath ? `<div class="help-donar-col">
+          ${ath.qr ? `<img src="${ath.qr}" alt="QR ATH Móvil" class="help-ath-qr" onerror="this.style.display='none'" />` : ''}
+          ${ath.usuario ? `<p class="help-ath-usuario">${ath.usuario}</p>` : ''}
+          ${ath.logo ? `<img src="${ath.logo}" alt="ATH Móvil" class="help-ath-logo" onerror="this.style.display='none'" />` : ''}
+        </div>` : ''}
+      </div>
+    </div>`;
+  }
+
+  el.innerHTML = html;
 }
 
 function renderNoticias(news) {

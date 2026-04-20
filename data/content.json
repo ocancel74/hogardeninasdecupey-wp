@@ -395,43 +395,43 @@
   },
 
   "comoAyudar": {
-    "title": "¿Cómo Puedes Ayudar?",
-    "subtitle": "Hay muchas formas de ser parte de nuestra misión. Cada contribución marca la diferencia.",
-    "opciones": [
-      {
-        "titulo": "Dona Dinero",
-        "descripcion": "Tu donación monetaria nos ayuda a cubrir las necesidades básicas de nuestras niñas: alimentación, ropa, educación y atención médica.",
-        "icono": "💰",
-        "cta": "Dona Ahora",
-        "url": "https://www.paypal.com/donate",
-        "destacado": true
+    "amigo": {
+      "titulo": "Conviértete en amigo",
+      "parrafos": [
+        "Los Amigos del Hogar de Niñas de Cupey son aquellas personas o entidades que endosen los fines de la institución y contribuyan a su sostenimiento económico, mediante donativos mensuales o anuales, desde tan sólo $10 mensuales o $120 anuales.",
+        "El 100% de los donativos al Hogar de Niñas de Cupey son deducibles de su planilla de contribución sobre ingresos de Puerto Rico. El Hogar también cuenta con la exención que brinda la sección 501(c)(3) del código de rentas internas federal."
+      ]
+    },
+    "voluntario": {
+      "titulo": "Conviértete en voluntario",
+      "intro": "Los voluntarios son personas que por determinación propia, ofrecen su tiempo, contactos o experiencia para ayudar a los niños o a la administración en diversas áreas, incluyendo, pero no limitado a:",
+      "lista": [
+        "Actividades y celebraciones",
+        "Tutorías",
+        "Mantenimiento de áreas verdes y recreativas",
+        "Reparaciones de la planta física",
+        "Plomería, electricidad y albañilería",
+        "Artículos para los salones",
+        "Donaciones de alimentos o productos para cubrir necesidades de El Hogar",
+        "Pases de cortesía",
+        "Efectos escolares"
+      ]
+    },
+    "donar": {
+      "titulo": "Cómo donar",
+      "paypal": {
+        "titulo": "Pay Pal",
+        "url": "https://www.paypal.com/fundraiser/charity/1596853",
+        "boton": "Dona Hoy"
       },
-      {
-        "titulo": "Dona Artículos",
-        "descripcion": "Aceptamos donaciones de ropa, útiles escolares, alimentos no perecederos, artículos de higiene personal y más.",
-        "icono": "📦",
-        "cta": "Ver Lista de Necesidades",
-        "url": "#contacto",
-        "destacado": false
-      },
-      {
-        "titulo": "Voluntariado",
-        "descripcion": "Dedica tu tiempo y talento. Necesitamos tutores, maestros de música, arte, deportes, y profesionales que quieran compartir sus conocimientos.",
-        "icono": "🙋",
-        "cta": "Ser Voluntario",
-        "url": "#contacto",
-        "destacado": false
-      },
-      {
-        "titulo": "Patrocina una Niña",
-        "descripcion": "Conviértete en patrocinador mensual y ayuda a cubrir las necesidades específicas de una de nuestras niñas durante su estadía en el hogar.",
-        "icono": "⭐",
-        "cta": "Patrocinar",
-        "url": "#contacto",
-        "destacado": false
+      "athMovil": {
+        "titulo": "ATH Móvil",
+        "qr": "assets/images/como-ayudar/ath-movil-qr.png",
+        "usuario": "/HogardeNinosdeCupey",
+        "logo": "assets/images/como-ayudar/ath-movil-logo.png",
+        "INSTRUCCIONES": "Sube el QR de ATH Móvil como 'ath-movil-qr.png' y el logo como 'ath-movil-logo.png' en assets/images/como-ayudar/"
       }
-    ],
-    "nota": "El Hogar de Niñas Cupey es una organización 501(c)(3). Todas las donaciones son deducibles de impuestos."
+    }
   },
 
   "noticias": {
