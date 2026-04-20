@@ -626,8 +626,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .admin-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 .admin-subtitle {
   font-family: var(--font-heading);
@@ -703,10 +703,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--color-text-muted);
   line-height: 1.4;
 }
-/* Admin cards — bigger text to match larger size */
-.admin-grid .director-info h3 { font-size: 1rem; text-transform: none; }
-.admin-grid .director-info .cargo { font-size: 0.88rem; }
-.admin-grid .director-info .desc { font-size: 0.88rem; }
 
 /* Grupo card (fotos grupales en Administración) */
 .director-card--grupo .director-photo-wrap {
