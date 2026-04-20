@@ -381,23 +381,34 @@ function renderNoticias(news) {
 function renderContacto(contacto, site) {
   if (!contacto) return;
 
-  setText('contact-title', contacto.title);
-  setText('contact-subtitle', contacto.subtitle);
+  const officeEl = document.getElementById('contact-office-info');
+  if (officeEl && contacto.info) {
+    const { email, telefono, horario, direccion } = contacto.info;
+    officeEl.innerHTML = `
+      <h2 class="contact-office-title">${contacto.tituloInfo || 'Información de oficina'}</h2>
+      <ul class="contact-office-list">
+        ${email    ? `<li><span class="contact-office-icon">✉</span><a href="mailto:${email}">${email}</a></li>` : ''}
+        ${telefono ? `<li><span class="contact-office-icon">☎</span>${telefono}</li>` : ''}
+        ${horario  ? `<li><span class="contact-office-icon">🕐</span>${horario}</li>` : ''}
+        ${direccion? `<li><span class="contact-office-icon">📬</span>${direccion}</li>` : ''}
+      </ul>
+    `;
+  }
 
-  const infoEl = document.getElementById('contact-info');
-  if (infoEl && contacto.info) {
-    const { direccion, telefono, email, horario } = contacto.info;
-    const socialHtml = site && site.socialMedia
-      ? `<div class="contact-social-links">${Object.entries(site.socialMedia).map(([p, u]) => buildSocialIcon(p, u)).join('')}</div>`
-      : '';
+  setText('contact-form-heading', contacto.tituloForm || 'Contáctenos');
 
-    infoEl.innerHTML = `
-      <h3>Información de Contacto</h3>
-      ${direccion ? `<div class="contact-info-item"><div class="contact-info-icon">📍</div><div class="contact-info-text"><strong>Dirección</strong><span>${direccion}</span></div></div>` : ''}
-      ${telefono ? `<div class="contact-info-item"><div class="contact-info-icon">📞</div><div class="contact-info-text"><strong>Teléfono</strong><span>${telefono}</span></div></div>` : ''}
-      ${email ? `<div class="contact-info-item"><div class="contact-info-icon">✉️</div><div class="contact-info-text"><strong>Correo</strong><span><a href="mailto:${email}" style="color:inherit">${email}</a></span></div></div>` : ''}
-      ${horario ? `<div class="contact-info-item"><div class="contact-info-icon">🕐</div><div class="contact-info-text"><strong>Horario</strong><span>${horario}</span></div></div>` : ''}
-      ${socialHtml}
+  const mapEl = document.getElementById('contact-map-section');
+  if (mapEl && contacto.mapaEmbed) {
+    mapEl.innerHTML = `
+      <h2 class="contact-map-title">${contacto.tituloMapa || 'Cómo llegar'}</h2>
+      <div class="contact-map-wrap">
+        <iframe
+          src="${contacto.mapaEmbed}"
+          width="100%" height="420" style="border:0;" allowfullscreen=""
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa Hogar de Niñas de Cupey">
+        </iframe>
+      </div>
     `;
   }
 }
@@ -548,7 +559,6 @@ function initContactForm(contacto) {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  // Initialize EmailJS with public key from content.json
   if (contacto && contacto.emailjs && contacto.emailjs.publicKey &&
       contacto.emailjs.publicKey !== 'TU_PUBLIC_KEY') {
     if (typeof emailjs !== 'undefined') {
@@ -559,25 +569,18 @@ function initContactForm(contacto) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name    = document.getElementById('contact-name');
     const email   = document.getElementById('contact-email');
     const message = document.getElementById('contact-message');
-    const feedback = document.getElementById('form-feedback');
-    const btnText    = document.getElementById('btn-text');
+    const feedback  = document.getElementById('form-feedback');
+    const btnText   = document.getElementById('btn-text');
     const btnLoading = document.getElementById('btn-loading');
 
-    // Clear errors
-    clearError('err-name');
     clearError('err-email');
     clearError('err-message');
     feedback.className = 'form-feedback';
     feedback.textContent = '';
 
-    // Validate
     let valid = true;
-    if (!name.value.trim()) { showError('err-name', 'Por favor ingresa tu nombre.'); name.classList.add('error'); valid = false; }
-    else name.classList.remove('error');
-
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       showError('err-email', 'Por favor ingresa un correo válido.'); email.classList.add('error'); valid = false;
     } else email.classList.remove('error');
@@ -587,7 +590,6 @@ function initContactForm(contacto) {
 
     if (!valid) return;
 
-    // Check EmailJS config
     const ejsConf = contacto && contacto.emailjs;
     const isConfigured = ejsConf &&
       ejsConf.serviceId  !== 'TU_SERVICE_ID'  &&
@@ -595,20 +597,22 @@ function initContactForm(contacto) {
       ejsConf.publicKey  !== 'TU_PUBLIC_KEY';
 
     if (!isConfigured) {
-      feedback.textContent = '⚙️ Para activar el formulario, configura EmailJS en data/content.json (ver instrucciones abajo).';
+      feedback.textContent = '⚙️ Para activar el formulario, configura EmailJS en data/content.json.';
       feedback.className = 'form-feedback error';
       return;
     }
 
-    // Send via EmailJS
     btnText.style.display = 'none';
     btnLoading.style.display = 'inline';
     document.getElementById('contact-submit').disabled = true;
 
+    const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
     const templateParams = {
-      from_name:    name.value.trim(),
+      from_name:    `${g('contact-nombre')} ${g('contact-apellidos')}`.trim(),
       from_email:   email.value.trim(),
-      subject:      (document.getElementById('contact-subject').value || 'Mensaje desde el sitio web').trim(),
+      telefono:     g('contact-telefono'),
+      direccion:    [g('contact-linea1'), g('contact-linea2'), g('contact-ciudad'), g('contact-estado'), g('contact-postal'), g('contact-pais')].filter(Boolean).join(', '),
+      subject:      g('contact-tema') || 'Mensaje desde el sitio web',
       message:      message.value.trim(),
       to_email:     'info@hogardeninasdecupey.org',
     };

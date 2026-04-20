@@ -180,41 +180,107 @@
     </section>
 
     <!-- ========== CONTACTO ========== -->
-    <section id="contacto" class="section section--dark">
+    <section id="contacto" class="section section--white">
       <div class="container">
-        <h2 class="section__title section__title--light" id="contact-title">Contáctanos</h2>
-        <p class="section__subtitle section__subtitle--light" id="contact-subtitle"></p>
-        <div class="contact-layout">
-          <div class="contact-info" id="contact-info"><!-- JS --></div>
-          <div class="contact-form-wrapper">
-            <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-group">
-                <label for="contact-name">Nombre completo *</label>
-                <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required />
-                <span class="form-error" id="err-name"></span>
-              </div>
-              <div class="form-group">
-                <label for="contact-email">Correo electrónico *</label>
-                <input type="email" id="contact-email" name="email" placeholder="tu@correo.com" required />
-                <span class="form-error" id="err-email"></span>
-              </div>
-              <div class="form-group">
-                <label for="contact-subject">Asunto</label>
-                <input type="text" id="contact-subject" name="subject" placeholder="¿En qué podemos ayudarte?" />
-              </div>
-              <div class="form-group">
-                <label for="contact-message">Mensaje *</label>
-                <textarea id="contact-message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                <span class="form-error" id="err-message"></span>
-              </div>
-              <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
-                <span id="btn-text">Enviar Mensaje</span>
-                <span id="btn-loading" style="display:none;">Enviando...</span>
-              </button>
-              <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
-            </form>
+
+        <!-- Información de oficina — rendered by JS -->
+        <div id="contact-office-info"><!-- JS --></div>
+
+        <!-- Formulario -->
+        <h2 class="contact-form-heading" id="contact-form-heading">Contáctenos</h2>
+        <form class="contact-form contact-form--wide" id="contact-form" novalidate>
+
+          <!-- Row: Nombre + Apellidos -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="contact-nombre">Nombre</label>
+              <input type="text" id="contact-nombre" name="nombre" placeholder="Escriba su nombre" />
+            </div>
+            <div class="form-group">
+              <label for="contact-apellidos">Apellidos</label>
+              <input type="text" id="contact-apellidos" name="apellidos" placeholder="Escriba sus apellidos" />
+            </div>
           </div>
-        </div>
+
+          <!-- Correo electrónico -->
+          <div class="form-group">
+            <label for="contact-email">Correo electrónico <span class="required-mark">*</span></label>
+            <input type="email" id="contact-email" name="email" placeholder="Escriba su correo electrónico" required />
+            <span class="form-error" id="err-email"></span>
+          </div>
+
+          <!-- Número Telefónico -->
+          <div class="form-group">
+            <label for="contact-telefono">Número Telefónico</label>
+            <input type="tel" id="contact-telefono" name="telefono" placeholder="000-000-0000" />
+          </div>
+
+          <!-- Dirección -->
+          <div class="form-group">
+            <label>Dirección</label>
+            <div class="form-row-2">
+              <div class="form-group-inner">
+                <label for="contact-linea1" class="label-sub">Línea 1</label>
+                <input type="text" id="contact-linea1" name="linea1" placeholder="Línea 1" />
+              </div>
+              <div class="form-group-inner">
+                <label for="contact-linea2" class="label-sub">Línea 2</label>
+                <input type="text" id="contact-linea2" name="linea2" placeholder="Línea 2" />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group-inner">
+                <label for="contact-ciudad" class="label-sub">Ciudad</label>
+                <input type="text" id="contact-ciudad" name="ciudad" placeholder="Ciudad" />
+              </div>
+              <div class="form-group-inner">
+                <label for="contact-estado" class="label-sub">Estado</label>
+                <input type="text" id="contact-estado" name="estado" placeholder="Estado" />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group-inner">
+                <label for="contact-postal" class="label-sub">Código Postal</label>
+                <input type="text" id="contact-postal" name="postal" placeholder="00000" />
+              </div>
+              <div class="form-group-inner">
+                <label for="contact-pais" class="label-sub">País</label>
+                <select id="contact-pais" name="pais">
+                  <option value="">Seleccione País</option>
+                  <option value="Puerto Rico">Puerto Rico</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tema -->
+          <div class="form-group">
+            <label for="contact-tema">Tema:</label>
+            <input type="text" id="contact-tema" name="tema" placeholder="Tema:" />
+          </div>
+
+          <!-- Mensaje -->
+          <div class="form-group">
+            <label for="contact-message">Su mensaje <span class="required-mark">*</span></label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Escriba un corto mensaje" required></textarea>
+            <span class="form-error" id="err-message"></span>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button type="submit" class="btn btn--primary btn--enviar" id="contact-submit">
+              <span id="btn-text">ENVIAR</span>
+              <span id="btn-loading" style="display:none;">Enviando...</span>
+            </button>
+          </div>
+          <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+        </form>
+
+        <!-- Mapa -->
+        <div id="contact-map-section"><!-- JS --></div>
+
       </div>
     </section>
   </main>
