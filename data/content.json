@@ -356,19 +356,21 @@
     "descripcion": "Radicados de la naturaleza, en un enclave de paz dentro del área metropolitana, ofrecemos los siguientes servicios bajo el cuidado amoroso de las Hermanas de AMICO y nuestro personal altamente capacitado.",
 
     "INSTRUCCIONES_FOTOS": [
-      "Foto principal: sube 'Fotos-Servicios-1.png' a assets/images/servicios/",
-      "Fotos de galería: sube 'Fotos-Servicios-2.png', 'Fotos-Servicios-3.png', 'Fotos-Servicios-4.png'... etc.",
-      "Los números van desde 1 en adelante, sin límite."
+      "Sube las fotos a assets/images/servicios/ con estos nombres exactos:",
+      "Fotos-Servicios-1.png → foto grande principal",
+      "Fotos-Servicios-2.png hasta Fotos-Servicios-8.png → 7 fotos pequeñas",
+      "Al hacer clic en cualquier foto pequeña se abre en grande."
     ],
 
-    "fotoHero": "assets/images/servicios/Fotos-Servicios-1.png",
-
-    "fotos": [
+    "galeria": [
+      "assets/images/servicios/Fotos-Servicios-1.png",
       "assets/images/servicios/Fotos-Servicios-2.png",
       "assets/images/servicios/Fotos-Servicios-3.png",
       "assets/images/servicios/Fotos-Servicios-4.png",
       "assets/images/servicios/Fotos-Servicios-5.png",
-      "assets/images/servicios/Fotos-Servicios-6.png"
+      "assets/images/servicios/Fotos-Servicios-6.png",
+      "assets/images/servicios/Fotos-Servicios-7.png",
+      "assets/images/servicios/Fotos-Servicios-8.png"
     ],
 
     "categorias": [

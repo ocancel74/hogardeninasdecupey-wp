@@ -311,19 +311,27 @@ function renderServicios(srv) {
 
   let html = '';
 
-  // Hero photo
-  if (srv.fotoHero) {
-    html += `<div class="srv-hero-wrap">
-      <img src="${srv.fotoHero}" alt="Nuestros servicios" class="srv-hero-img"
-        onerror="this.parentElement.style.display='none'" />
+  // Galería: foto grande + 7 miniaturas con lightbox
+  if (srv.galeria && srv.galeria.length) {
+    const [hero, ...thumbs] = srv.galeria;
+    html += `<div class="srv-gallery">
+      <div class="srv-gallery-main">
+        <img src="${hero}" alt="Foto principal" class="srv-gallery-featured"
+          data-lightbox="${hero}" onerror="this.parentElement.style.display='none'" />
+      </div>
+      <div class="srv-gallery-thumbs">
+        ${thumbs.map((src, i) => `
+          <img src="${src}" alt="Foto ${i + 2}" class="srv-gallery-thumb"
+            data-lightbox="${src}" onerror="this.style.display='none'" />`).join('')}
+      </div>
     </div>`;
   }
 
-  // Title + description
+  // Título + descripción
   html += `<h2 class="srv-title">${srv.title || ''}</h2>`;
   if (srv.descripcion) html += `<p class="srv-descripcion">${srv.descripcion}</p>`;
 
-  // Categorías (row with border)
+  // Categorías
   if (srv.categorias && srv.categorias.length) {
     html += `<div class="srv-categorias">
       ${srv.categorias.map(c => `
@@ -346,15 +354,6 @@ function renderServicios(srv) {
     </div>`;
   }
 
-  // Galería de fotos
-  if (srv.fotos && srv.fotos.length) {
-    html += `<div class="srv-galeria">
-      ${srv.fotos.map((src, i) => `
-        <img src="${src}" alt="Servicios ${i + 2}" class="srv-galeria-img"
-          onerror="this.style.display='none'" />`).join('')}
-    </div>`;
-  }
-
   // Residencial
   if (srv.residencial) {
     const r = srv.residencial;
@@ -366,6 +365,32 @@ function renderServicios(srv) {
   }
 
   el.innerHTML = html;
+  initLightbox();
+}
+
+function initLightbox() {
+  const lb    = document.getElementById('srv-lightbox');
+  const lbImg = document.getElementById('srv-lightbox-img');
+  const lbClose = document.getElementById('srv-lightbox-close');
+  if (!lb || !lbImg) return;
+
+  document.getElementById('services-content').addEventListener('click', e => {
+    const target = e.target.closest('[data-lightbox]');
+    if (!target) return;
+    lbImg.src = target.dataset.lightbox;
+    lb.style.display = 'flex';
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+
+  const close = () => {
+    lb.style.display = 'none';
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+  if (lbClose) lbClose.addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }
 
 function renderComoAyudar(help) {
