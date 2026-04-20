@@ -352,46 +352,58 @@
   },
 
   "servicios": {
-    "title": "Nuestros Servicios",
-    "subtitle": "Programas integrales diseñados para el desarrollo pleno de cada niña.",
-    "lista": [
+    "title": "Nuestros servicios",
+    "descripcion": "Radicados de la naturaleza, en un enclave de paz dentro del área metropolitana, ofrecemos los siguientes servicios bajo el cuidado amoroso de las Hermanas de AMICO y nuestro personal altamente capacitado.",
+
+    "INSTRUCCIONES_FOTOS": [
+      "Foto principal: sube 'Fotos-Servicios-1.png' a assets/images/servicios/",
+      "Fotos de galería: sube 'Fotos-Servicios-2.png', 'Fotos-Servicios-3.png', 'Fotos-Servicios-4.png'... etc.",
+      "Los números van desde 1 en adelante, sin límite."
+    ],
+
+    "fotoHero": "assets/images/servicios/Fotos-Servicios-1.png",
+
+    "fotos": [
+      "assets/images/servicios/Fotos-Servicios-2.png",
+      "assets/images/servicios/Fotos-Servicios-3.png",
+      "assets/images/servicios/Fotos-Servicios-4.png",
+      "assets/images/servicios/Fotos-Servicios-5.png",
+      "assets/images/servicios/Fotos-Servicios-6.png"
+    ],
+
+    "categorias": [
+      { "titulo": "Orientación", "icono": "🙌" },
+      { "titulo": "Apoyo psico-emocional y espiritual y servicios sicológicos", "icono": "💜" },
+      { "titulo": "Acompañamiento espiritual", "icono": "🙏" }
+    ],
+
+    "grupos": [
       {
-        "titulo": "Hogar Residencial",
-        "descripcion": "Proveemos un hogar seguro y amoroso donde las niñas reciben alimentación nutritiva, ropa, atención médica y un ambiente familiar estable las 24 horas del día.",
-        "imagen": "assets/images/servicio-hogar.jpg",
-        "icono": "🏠"
+        "titulo": "Servicios Educativos",
+        "icono": "📚",
+        "lista": ["Tutorías", "Lecto-escritura", "Estudio supervisado", "Apoyo de preparación de proyectos y tareas"]
       },
       {
-        "titulo": "Educación Formal",
-        "descripcion": "Apoyamos la educación formal de cada niña desde nivel elemental hasta universitario, incluyendo tutorías, útiles escolares y acceso a tecnología educativa.",
-        "imagen": "assets/images/servicio-educacion.jpg",
-        "icono": "📚"
+        "titulo": "Servicios a la Familia",
+        "icono": "👨‍👩‍👧",
+        "lista": ["Orientación familiar", "Equipos de recreación y casa convivencia"]
       },
       {
-        "titulo": "Terapia y Consejería",
-        "descripcion": "Contamos con un equipo de psicólogos y trabajadores sociales que brindan terapia individual y grupal para el bienestar emocional de nuestras niñas.",
-        "imagen": "assets/images/servicio-terapia.jpg",
-        "icono": "💜"
-      },
-      {
-        "titulo": "Actividades Recreativas",
-        "descripcion": "Ofrecemos programas de arte, música, deportes y otras actividades que promueven el desarrollo de talentos y el bienestar integral.",
-        "imagen": "assets/images/servicio-recreacion.jpg",
-        "icono": "🎨"
-      },
-      {
-        "titulo": "Desarrollo Espiritual",
-        "descripcion": "Fomentamos el crecimiento espiritual y los valores morales como pilares fundamentales para una vida plena y significativa.",
-        "imagen": "assets/images/servicio-espiritual.jpg",
-        "icono": "🙏"
-      },
-      {
-        "titulo": "Preparación para la Vida",
-        "descripcion": "Enseñamos habilidades prácticas para la vida independiente: cocina, finanzas personales, búsqueda de empleo y habilidades sociales.",
-        "imagen": "assets/images/servicio-vida.jpg",
-        "icono": "⭐"
+        "titulo": "Servicios a la Comunidad",
+        "icono": "🏘️",
+        "lista": ["Talleres y adiestramiento", "Actividades de impacto comunitario"]
       }
-    ]
+    ],
+
+    "residencial": {
+      "titulo": "Servicio Residencial Cualificado",
+      "icono": "🏠",
+      "items": [
+        "Somos un centro de servicios integrales y residenciales de calidad a niños, orientado hacia el mayor bienestar de la familia y la sociedad puertorriqueña.",
+        "Proveemos servicios integrales y residenciales a menores, según sus necesidades físicas y emocionales, sirviendo como facilitadores para la integración de la familia.",
+        "Propósito del servicio — brindar servicios integrales a niños y jóvenes referidos por el Departamento de la Familia, con miras a lograr estabilidad emocional y la reunificación familiar según la naturaleza del caso, considerando el mejor interés y bienestar de la menor."
+      ]
+    }
   },
 
   "comoAyudar": {

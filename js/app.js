@@ -306,26 +306,66 @@ function renderPatrocinadores(pat) {
 function renderServicios(srv) {
   if (!srv) return;
 
-  setText('srv-title', srv.title);
-  setText('srv-subtitle', srv.subtitle);
+  const el = document.getElementById('services-content');
+  if (!el) return;
 
-  const gridEl = document.getElementById('services-grid');
-  if (!gridEl || !srv.lista) return;
+  let html = '';
 
-  gridEl.innerHTML = srv.lista.map(s => {
-    const imgHtml = s.imagen
-      ? `<img src="${s.imagen}" alt="${s.titulo}" class="service-img" onerror="this.parentElement.innerHTML='<div class=service-img-placeholder>${s.icono || '⭐'}</div>'" />`
-      : `<div class="service-img-placeholder">${s.icono || '⭐'}</div>`;
-    return `
-      <div class="service-card reveal">
-        ${imgHtml}
-        <div class="service-body">
-          <h3>${s.titulo}</h3>
-          <p>${s.descripcion}</p>
-        </div>
-      </div>
-    `;
-  }).join('');
+  // Hero photo
+  if (srv.fotoHero) {
+    html += `<div class="srv-hero-wrap">
+      <img src="${srv.fotoHero}" alt="Nuestros servicios" class="srv-hero-img"
+        onerror="this.parentElement.style.display='none'" />
+    </div>`;
+  }
+
+  // Title + description
+  html += `<h2 class="srv-title">${srv.title || ''}</h2>`;
+  if (srv.descripcion) html += `<p class="srv-descripcion">${srv.descripcion}</p>`;
+
+  // Categorías (row with border)
+  if (srv.categorias && srv.categorias.length) {
+    html += `<div class="srv-categorias">
+      ${srv.categorias.map(c => `
+        <div class="srv-categoria">
+          <span class="srv-categoria-icono">${c.icono || ''}</span>
+          <span>${c.titulo}</span>
+        </div>`).join('')}
+    </div>`;
+  }
+
+  // Grupos de servicios
+  if (srv.grupos && srv.grupos.length) {
+    html += `<div class="srv-grupos">
+      ${srv.grupos.map(g => `
+        <div class="srv-grupo">
+          <div class="srv-grupo-icono">${g.icono || ''}</div>
+          <h3>${g.titulo}</h3>
+          <ul>${(g.lista || []).map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>`).join('')}
+    </div>`;
+  }
+
+  // Galería de fotos
+  if (srv.fotos && srv.fotos.length) {
+    html += `<div class="srv-galeria">
+      ${srv.fotos.map((src, i) => `
+        <img src="${src}" alt="Servicios ${i + 2}" class="srv-galeria-img"
+          onerror="this.style.display='none'" />`).join('')}
+    </div>`;
+  }
+
+  // Residencial
+  if (srv.residencial) {
+    const r = srv.residencial;
+    html += `<div class="srv-residencial">
+      <div class="srv-residencial-icono">${r.icono || '🏠'}</div>
+      <h3>${r.titulo}</h3>
+      <ul>${(r.items || []).map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>`;
+  }
+
+  el.innerHTML = html;
 }
 
 function renderComoAyudar(help) {
