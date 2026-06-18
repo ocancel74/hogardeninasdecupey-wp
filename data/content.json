@@ -599,7 +599,7 @@
         },
         {
           "titulo": "Nuevo Programa de Arte",
-          "slug": "programa-arte-2025",
+          "slug": "nuevo-programa-de-arte",
           "fecha": "2025-04-10",
           "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
           "imagen": "assets/images/noticias/noticia-arte.jpg",
@@ -1307,20 +1307,20 @@
           ]
         },
         {
-          "titulo": "New Art Program",
-          "slug": "programa-arte-2025",
+          "titulo": "Nuevo Programa de Arte",
+          "slug": "nuevo-programa-de-arte",
           "fecha": "2025-04-10",
-          "descripcion": "We launched a new visual arts program in collaboration with local artists. The girls are exploring their creativity in incredible ways.",
+          "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
           "imagen": "assets/images/noticias/noticia-arte.jpg",
-          "categoria": "Programs",
+          "categoria": "Programas",
           "cuerpo": [
             {
               "tipo": "parrafo",
-              "texto": "We launched a new visual arts program in collaboration with local artists from Puerto Rico."
+              "texto": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales de Puerto Rico."
             },
             {
               "tipo": "parrafo",
-              "texto": "The girls are exploring their creativity through painting, sculpture and digital art, developing skills that will serve them for life."
+              "texto": "Las niñas están explorando su creatividad a través de pintura, escultura y arte digital, desarrollando habilidades que les servirán toda la vida."
             }
           ]
         },
