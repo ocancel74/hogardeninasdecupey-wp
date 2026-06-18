@@ -33,7 +33,7 @@ function buildSocialIcon(platform, url, size = '') {
 // ——— Main init: fetch JSON and render everything ———
 async function init() {
   try {
-    const res = await fetch('data/content.json');
+    const res = await fetch('data/content.json?v=' + Date.now());
     if (!res.ok) throw new Error('Could not load content.json');
     allData = await res.json();
   } catch (err) {
