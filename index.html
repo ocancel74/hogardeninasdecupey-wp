@@ -27,26 +27,33 @@
   <header id="navbar" class="navbar">
     <div class="container navbar__inner">
       <a href="#inicio" class="navbar__logo" id="navbar-logo">
-        <img src="assets/images/logo.png" alt="Hogar de Niñas Cupey" id="logo-img" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'" />
+        <img src="assets/images/Logo.png" alt="Hogar de Niñas Cupey" id="logo-img" />
         <span id="logo-text" class="navbar__logo-text" style="display:none;">Hogar de Niñas Cupey</span>
       </a>
 
       <nav class="navbar__nav" id="navbar-nav">
         <a href="#inicio" class="navbar__link">Inicio</a>
-        <a href="#quienes-somos" class="navbar__link">Quiénes Somos</a>
-        <a href="#historia" class="navbar__link">Historia</a>
-        <a href="#directores" class="navbar__link">Junta de Directores</a>
-        <a href="#patrocinadores" class="navbar__link">Patrocinadores</a>
-        <a href="#servicios" class="navbar__link">Servicios</a>
+
+        <!-- Dropdown: Quiénes Somos -->
+        <div class="navbar__dropdown">
+          <button class="navbar__link navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Quiénes Somos <span class="dropdown-arrow">▾</span>
+          </button>
+          <ul class="navbar__dropdown-menu" role="menu">
+            <li><a href="#historia"       class="dropdown-item" role="menuitem">Historia</a></li>
+            <li><a href="#directores"     class="dropdown-item" role="menuitem">Junta de Directores</a></li>
+            <li><a href="#patrocinadores" class="dropdown-item" role="menuitem">Patrocinadores</a></li>
+          </ul>
+        </div>
+
+        <a href="#servicios"   class="navbar__link">Servicios</a>
         <a href="#como-ayudar" class="navbar__link">Cómo Ayudar</a>
-        <a href="#noticias" class="navbar__link">Noticias</a>
-        <a href="#contacto" class="navbar__link">Contacto</a>
+        <a href="#noticias"    class="navbar__link">Noticias</a>
+        <a href="#contacto"    class="navbar__link">Contacto</a>
       </nav>
 
       <div class="navbar__actions">
-        <div class="navbar__social" id="navbar-social">
-          <!-- Rendered by JS -->
-        </div>
+        <div class="navbar__social" id="navbar-social"></div>
         <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
@@ -59,14 +66,21 @@
     <button class="mobile-menu__close" id="mobile-close" aria-label="Cerrar menú">✕</button>
     <nav class="mobile-menu__nav">
       <a href="#inicio" class="mobile-menu__link">Inicio</a>
-      <a href="#quienes-somos" class="mobile-menu__link">Quiénes Somos</a>
-      <a href="#historia" class="mobile-menu__link">Historia</a>
-      <a href="#directores" class="mobile-menu__link">Junta de Directores</a>
-      <a href="#patrocinadores" class="mobile-menu__link">Patrocinadores</a>
-      <a href="#servicios" class="mobile-menu__link">Servicios</a>
+      <!-- Acordeón móvil: Quiénes Somos -->
+      <div class="mobile-menu__group">
+        <button class="mobile-menu__link mobile-menu__group-toggle">
+          Quiénes Somos <span class="mobile-arrow">▾</span>
+        </button>
+        <div class="mobile-menu__sub">
+          <a href="#historia"       class="mobile-menu__sublink">— Historia</a>
+          <a href="#directores"     class="mobile-menu__sublink">— Junta de Directores</a>
+          <a href="#patrocinadores" class="mobile-menu__sublink">— Patrocinadores</a>
+        </div>
+      </div>
+      <a href="#servicios"   class="mobile-menu__link">Servicios</a>
       <a href="#como-ayudar" class="mobile-menu__link">Cómo Ayudar</a>
-      <a href="#noticias" class="mobile-menu__link">Noticias</a>
-      <a href="#contacto" class="mobile-menu__link">Contacto</a>
+      <a href="#noticias"    class="mobile-menu__link">Noticias</a>
+      <a href="#contacto"    class="mobile-menu__link">Contacto</a>
     </nav>
   </div>
 
@@ -86,25 +100,20 @@
       </div>
     </section>
 
-    <!-- ========== QUIÉNES SOMOS ========== -->
-    <section id="quienes-somos" class="section section--light">
-      <div class="container">
-        <h2 class="section__title" id="qs-title">¿Quiénes Somos?</h2>
-        <div class="qs-grid">
-          <div class="qs-card qs-card--mision" id="qs-mision"><!-- JS --></div>
-          <div class="qs-card qs-card--vision" id="qs-vision"><!-- JS --></div>
-        </div>
-        <div class="valores-grid" id="valores-grid"><!-- JS --></div>
-        <div class="stats-bar" id="stats-bar"><!-- JS --></div>
+    <!-- ========== INTRO (debajo del hero) ========== -->
+    <section id="intro-section" class="section section--white">
+      <div class="container container--narrow">
+        <h2 class="intro__title" id="intro-title"></h2>
+        <div class="intro__body" id="intro-body"><!-- JS --></div>
+        <div class="intro__cta" id="intro-cta"><!-- JS --></div>
       </div>
     </section>
 
     <!-- ========== HISTORIA ========== -->
-    <section id="historia" class="section section--dark">
+    <section id="historia" class="section section--white">
       <div class="container">
-        <h2 class="section__title section__title--light" id="historia-title">Nuestra Historia</h2>
-        <p class="section__subtitle section__subtitle--light" id="historia-intro"></p>
-        <div class="timeline" id="timeline"><!-- JS --></div>
+        <div class="historia-fotos" id="historia-fotos"><!-- JS --></div>
+        <div class="historia-body" id="historia-body"><!-- JS --></div>
       </div>
     </section>
 
@@ -113,35 +122,33 @@
       <div class="container">
         <h2 class="section__title" id="dir-title">Junta de Directores</h2>
         <p class="section__subtitle" id="dir-subtitle"></p>
-        <div class="directors-grid" id="directors-grid"><!-- JS --></div>
+        <div class="directors-section-wrap">
+          <div class="directors-grid" id="directors-grid"><!-- JS --></div>
+          <div id="admin-section"><!-- JS --></div>
+        </div>
       </div>
     </section>
 
     <!-- ========== PATROCINADORES ========== -->
-    <section id="patrocinadores" class="section section--accent">
+    <section id="patrocinadores" class="section section--white">
       <div class="container">
-        <h2 class="section__title" id="pat-title">Nuestros Patrocinadores</h2>
+        <h2 class="section__title" id="pat-title">Patrocinadores</h2>
         <p class="section__subtitle" id="pat-subtitle"></p>
         <div class="sponsors-grid" id="sponsors-grid"><!-- JS --></div>
       </div>
     </section>
 
     <!-- ========== SERVICIOS ========== -->
-    <section id="servicios" class="section section--light">
+    <section id="servicios" class="section section--white">
       <div class="container">
-        <h2 class="section__title" id="srv-title">Nuestros Servicios</h2>
-        <p class="section__subtitle" id="srv-subtitle"></p>
-        <div class="services-grid" id="services-grid"><!-- JS --></div>
+        <div id="services-content"><!-- JS --></div>
       </div>
     </section>
 
     <!-- ========== CÓMO AYUDAR ========== -->
-    <section id="como-ayudar" class="section section--primary">
-      <div class="container">
-        <h2 class="section__title section__title--light" id="help-title">¿Cómo Puedes Ayudar?</h2>
-        <p class="section__subtitle section__subtitle--light" id="help-subtitle"></p>
-        <div class="help-grid" id="help-grid"><!-- JS --></div>
-        <p class="help-nota" id="help-nota"></p>
+    <section id="como-ayudar" class="section section--white">
+      <div class="container container--narrow">
+        <div id="help-content"><!-- JS --></div>
       </div>
     </section>
 
@@ -155,41 +162,107 @@
     </section>
 
     <!-- ========== CONTACTO ========== -->
-    <section id="contacto" class="section section--dark">
+    <section id="contacto" class="section section--white">
       <div class="container">
-        <h2 class="section__title section__title--light" id="contact-title">Contáctanos</h2>
-        <p class="section__subtitle section__subtitle--light" id="contact-subtitle"></p>
-        <div class="contact-layout">
-          <div class="contact-info" id="contact-info"><!-- JS --></div>
-          <div class="contact-form-wrapper">
-            <form class="contact-form" id="contact-form" novalidate>
-              <div class="form-group">
-                <label for="contact-name">Nombre completo *</label>
-                <input type="text" id="contact-name" name="name" placeholder="Tu nombre" required />
-                <span class="form-error" id="err-name"></span>
-              </div>
-              <div class="form-group">
-                <label for="contact-email">Correo electrónico *</label>
-                <input type="email" id="contact-email" name="email" placeholder="tu@correo.com" required />
-                <span class="form-error" id="err-email"></span>
-              </div>
-              <div class="form-group">
-                <label for="contact-subject">Asunto</label>
-                <input type="text" id="contact-subject" name="subject" placeholder="¿En qué podemos ayudarte?" />
-              </div>
-              <div class="form-group">
-                <label for="contact-message">Mensaje *</label>
-                <textarea id="contact-message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                <span class="form-error" id="err-message"></span>
-              </div>
-              <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
-                <span id="btn-text">Enviar Mensaje</span>
-                <span id="btn-loading" style="display:none;">Enviando...</span>
-              </button>
-              <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
-            </form>
+
+        <!-- Información de oficina — rendered by JS -->
+        <div id="contact-office-info"><!-- JS --></div>
+
+        <!-- Formulario -->
+        <h2 class="contact-form-heading" id="contact-form-heading">Contáctenos</h2>
+        <form class="contact-form contact-form--wide" id="contact-form" novalidate>
+
+          <!-- Row: Nombre + Apellidos -->
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="contact-nombre">Nombre</label>
+              <input type="text" id="contact-nombre" name="nombre" placeholder="Escriba su nombre" />
+            </div>
+            <div class="form-group">
+              <label for="contact-apellidos">Apellidos</label>
+              <input type="text" id="contact-apellidos" name="apellidos" placeholder="Escriba sus apellidos" />
+            </div>
           </div>
-        </div>
+
+          <!-- Correo electrónico -->
+          <div class="form-group">
+            <label for="contact-email">Correo electrónico <span class="required-mark">*</span></label>
+            <input type="email" id="contact-email" name="email" placeholder="Escriba su correo electrónico" required />
+            <span class="form-error" id="err-email"></span>
+          </div>
+
+          <!-- Número Telefónico -->
+          <div class="form-group">
+            <label for="contact-telefono">Número Telefónico</label>
+            <input type="tel" id="contact-telefono" name="telefono" placeholder="000-000-0000" />
+          </div>
+
+          <!-- Dirección -->
+          <div class="form-group">
+            <label>Dirección</label>
+            <div class="form-row-2">
+              <div class="form-group-inner">
+                <label for="contact-linea1" class="label-sub">Línea 1</label>
+                <input type="text" id="contact-linea1" name="linea1" placeholder="Línea 1" />
+              </div>
+              <div class="form-group-inner">
+                <label for="contact-linea2" class="label-sub">Línea 2</label>
+                <input type="text" id="contact-linea2" name="linea2" placeholder="Línea 2" />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group-inner">
+                <label for="contact-ciudad" class="label-sub">Ciudad</label>
+                <input type="text" id="contact-ciudad" name="ciudad" placeholder="Ciudad" />
+              </div>
+              <div class="form-group-inner">
+                <label for="contact-estado" class="label-sub">Estado</label>
+                <input type="text" id="contact-estado" name="estado" placeholder="Estado" />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group-inner">
+                <label for="contact-postal" class="label-sub">Código Postal</label>
+                <input type="text" id="contact-postal" name="postal" placeholder="00000" />
+              </div>
+              <div class="form-group-inner">
+                <label for="contact-pais" class="label-sub">País</label>
+                <select id="contact-pais" name="pais">
+                  <option value="">Seleccione País</option>
+                  <option value="Puerto Rico">Puerto Rico</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tema -->
+          <div class="form-group">
+            <label for="contact-tema">Tema:</label>
+            <input type="text" id="contact-tema" name="tema" placeholder="Tema:" />
+          </div>
+
+          <!-- Mensaje -->
+          <div class="form-group">
+            <label for="contact-message">Su mensaje <span class="required-mark">*</span></label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Escriba un corto mensaje" required></textarea>
+            <span class="form-error" id="err-message"></span>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button type="submit" class="btn btn--primary btn--enviar" id="contact-submit">
+              <span id="btn-text">ENVIAR</span>
+              <span id="btn-loading" style="display:none;">Enviando...</span>
+            </button>
+          </div>
+          <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+        </form>
+
+        <!-- Mapa -->
+        <div id="contact-map-section"><!-- JS --></div>
+
       </div>
     </section>
   </main>
@@ -208,6 +281,26 @@
       <p class="footer__copy" id="footer-copy"></p>
     </div>
   </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div id="srv-lightbox" class="srv-lightbox" aria-hidden="true">
+    <button class="srv-lightbox-close" id="srv-lightbox-close" aria-label="Cerrar">✕</button>
+    <img id="srv-lightbox-img" class="srv-lightbox-img" alt="Foto ampliada" />
+  </div>
+
+  <!-- ========== NOTICIA — PÁGINA COMPLETA ========== -->
+  <div id="noticia-overlay" class="noticia-overlay" aria-hidden="true">
+    <div class="noticia-page">
+      <div class="noticia-topbar">
+        <div class="container">
+          <button id="noticia-back" class="noticia-back">&#8592; Volver a Noticias</button>
+        </div>
+      </div>
+      <div class="container">
+        <div id="noticia-content" class="noticia-content"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== FLOATING DONATE BUTTON ========== -->
   <a href="#como-ayudar" class="donate-fab" id="donate-fab" aria-label="Dona Hoy">
