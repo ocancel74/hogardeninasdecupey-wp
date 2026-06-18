@@ -244,12 +244,15 @@
     <p class="sub">Ingresa tu token de GitHub para gestionar las noticias.</p>
 
     <div class="hint-box">
-      <strong>¿Cómo obtengo el token?</strong><br>
-      1. Ve a <a href="https://github.com/settings/tokens" target="_blank">github.com → Settings → Developer settings → Personal access tokens</a><br>
-      2. Haz clic en <strong>Generate new token (classic)</strong><br>
-      3. En "Select scopes" marca la casilla <strong>repo</strong><br>
-      4. Haz clic en <strong>Generate token</strong> y copia el código<br>
-      5. Pégalo aquí abajo — solo necesitas hacerlo una vez
+      <strong>¿Cómo obtengo el token?</strong><br><br>
+      1. Ve a <a href="https://github.com/settings/tokens?type=beta" target="_blank">github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens</a><br>
+      2. Haz clic en <strong>Generate new token</strong><br>
+      3. Ponle un nombre (ej: <em>Admin Cupey</em>)<br>
+      4. En <strong>Resource owner</strong> selecciona <strong>ocancel74</strong><br>
+      5. En <strong>Repository access</strong> elige <strong>Only select repositories</strong> y selecciona <strong>hogardeninasdecupey-wp</strong><br>
+      6. En <strong>Permissions</strong> busca <strong>Contents</strong> y cámbialo a <strong>Read and write</strong><br>
+      7. Haz clic en <strong>Generate token</strong>, copia el código y pégalo aquí<br><br>
+      Solo necesitas hacer esto una vez. El token se guarda automáticamente.
     </div>
 
     <div id="login-alert"></div>
