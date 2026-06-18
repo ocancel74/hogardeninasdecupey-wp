@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Admin — Hogar de Niñas Cupey</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary:    #c8195a;
+      --primary-dk: #a01248;
+      --blue:       #1565C0;
+      --text:       #2a1a28;
+      --muted:      #6b5b6e;
+      --light:      #f8f4f8;
+      --border:     #ddd;
+      --white:      #fff;
+      --success:    #2e7d32;
+      --error:      #c62828;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .admin-header {
+      background: var(--primary);
+      color: white;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .admin-header h1 { font-size: 1.05rem; font-weight: 700; }
+    .admin-header small { opacity: 0.8; font-size: 0.78rem; display: block; }
+    .btn-logout {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .btn-logout:hover { background: rgba(255,255,255,0.28); }
+
+    /* ── Main wrap ── */
+    .admin-main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.6rem 1.2rem; border-radius: 8px; border: none;
+      cursor: pointer; font-size: 0.88rem; font-weight: 600;
+      transition: background 0.15s, transform 0.1s; text-decoration: none;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn--primary { background: var(--primary); color: white; }
+    .btn--primary:hover { background: var(--primary-dk); }
+    .btn--outline { background: white; color: var(--primary); border: 2px solid var(--primary); }
+    .btn--outline:hover { background: #fdf0f5; }
+    .btn--danger { background: #ffebee; color: var(--error); border: 1px solid #ffcdd2; }
+    .btn--danger:hover { background: #ffcdd2; }
+    .btn--ghost { background: transparent; color: var(--muted); border: 1px solid var(--border); }
+    .btn--ghost:hover { background: #f0f0f0; }
+    .btn--full { width: 100%; justify-content: center; }
+    .btn--sm { padding: 0.32rem 0.7rem; font-size: 0.78rem; }
+
+    /* ── Alerts ── */
+    .alert {
+      padding: 0.75rem 1rem; border-radius: 8px;
+      font-size: 0.88rem; margin-bottom: 1rem;
+    }
+    .alert--success { background: #e8f5e9; color: var(--success); border: 1px solid #c8e6c9; }
+    .alert--error   { background: #ffebee; color: var(--error);   border: 1px solid #ffcdd2; }
+    .alert--info    { background: #e3f2fd; color: var(--blue);    border: 1px solid #bbdefb; }
+    .alert--warn    { background: #fff8e1; color: #5a4500;         border: 1px solid #ffe082; }
+
+    /* ── Login card ── */
+    .login-card {
+      background: white; border-radius: 14px;
+      padding: 2.5rem; max-width: 460px;
+      margin: 3.5rem auto;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+    }
+    .login-card .brand {
+      text-align: center; margin-bottom: 1.5rem;
+    }
+    .login-card .brand img { height: 58px; }
+    .login-card h2 { font-size: 1.35rem; text-align: center; margin-bottom: 0.4rem; }
+    .login-card .sub { color: var(--muted); font-size: 0.88rem; text-align: center; margin-bottom: 1.5rem; }
+    .hint-box {
+      background: #fff8e1; border: 1px solid #ffe082;
+      border-radius: 8px; padding: 0.85rem 1rem;
+      font-size: 0.8rem; color: #5a4500; margin-bottom: 1.25rem; line-height: 1.6;
+    }
+    .hint-box a { color: #5a4500; font-weight: 700; }
+
+    /* ── Form elements ── */
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label {
+      display: block; font-weight: 600;
+      font-size: 0.82rem; margin-bottom: 0.4rem; color: var(--text);
+    }
+    .form-group .hint { font-size: 0.76rem; color: var(--muted); margin-top: 0.25rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 0.65rem 0.9rem;
+      border: 2px solid var(--border); border-radius: 8px;
+      font-size: 0.93rem; font-family: inherit;
+      transition: border-color 0.15s; background: white;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { outline: none; border-color: var(--primary); }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    @media (max-width: 580px) { .form-row-2 { grid-template-columns: 1fr; } }
+
+    /* ── List screen ── */
+    .list-header {
+      display: flex; align-items: center;
+      justify-content: space-between; margin-bottom: 1.5rem;
+    }
+    .list-header h2 { font-size: 1.35rem; }
+    .noticia-card {
+      background: white; border-radius: 10px;
+      padding: 1rem 1.25rem; margin-bottom: 0.65rem;
+      display: flex; align-items: center; gap: 1rem;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+      transition: box-shadow 0.15s;
+    }
+    .noticia-card:hover { box-shadow: 0 3px 14px rgba(0,0,0,0.1); }
+    .noticia-card__img {
+      width: 72px; height: 56px; object-fit: cover;
+      border-radius: 6px; flex-shrink: 0;
+    }
+    .noticia-card__placeholder {
+      width: 72px; height: 56px; background: #f0e8f0;
+      border-radius: 6px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.6rem; flex-shrink: 0;
+    }
+    .noticia-card__body { flex: 1; min-width: 0; }
+    .noticia-card__title { font-weight: 700; font-size: 0.93rem; margin-bottom: 0.2rem; }
+    .noticia-card__meta { font-size: 0.78rem; color: var(--muted); }
+    .noticia-card__badge {
+      display: inline-block; background: #f3e5f5; color: #7b1fa2;
+      font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.45rem;
+      border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .noticia-card__actions { display: flex; gap: 0.4rem; flex-shrink: 0; }
+    .empty-state { text-align: center; padding: 3rem; color: var(--muted); }
+    .empty-state .icon { font-size: 3rem; margin-bottom: 1rem; }
+
+    /* ── Form card ── */
+    .form-card {
+      background: white; border-radius: 12px;
+      padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .form-card h2 {
+      font-size: 1.25rem; margin-bottom: 1.5rem;
+      padding-bottom: 1rem; border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Blocks editor ── */
+    .blocks-label { font-weight: 600; font-size: 0.82rem; margin-bottom: 0.75rem; display: block; }
+    .block-item {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.9rem; margin-bottom: 0.65rem;
+    }
+    .block-item__header {
+      display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.65rem;
+    }
+    .block-tag {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.05em; color: var(--primary);
+      background: #fdf0f5; padding: 0.18rem 0.5rem; border-radius: 4px;
+    }
+    .btn-icon {
+      background: none; border: none; cursor: pointer;
+      color: var(--muted); font-size: 0.9rem; padding: 0.2rem 0.35rem;
+      border-radius: 4px; line-height: 1;
+    }
+    .btn-icon:hover { background: #eee; }
+    .btn-remove { margin-left: auto; }
+    .btn-remove:hover { background: #ffebee; color: var(--error); }
+    .block-item input,
+    .block-item textarea {
+      width: 100%; padding: 0.5rem 0.7rem;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 0.9rem; font-family: inherit; background: white;
+    }
+    .block-item input:focus,
+    .block-item textarea:focus { outline: none; border-color: var(--primary); }
+    .list-item-row {
+      display: flex; gap: 0.4rem; margin-bottom: 0.4rem; align-items: center;
+    }
+    .list-item-row input { flex: 1; }
+    .add-block-btns { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+
+    /* ── Form actions ── */
+    .form-actions {
+      display: flex; gap: 1rem; justify-content: flex-end;
+      margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+    }
+
+    /* ── Spinner ── */
+    .spinner {
+      display: inline-block; width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.4); border-top-color: white;
+      border-radius: 50%; animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Screen management ── */
+    .screen { display: none; }
+    .screen.active { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="admin-header" id="admin-header" style="display:none">
+  <div>
+    <h1>Panel de Administración</h1>
+    <small>Hogar de Niñas Cupey — Noticias</small>
+  </div>
+  <button class="btn-logout" id="btn-logout">Cerrar sesión</button>
+</header>
+
+<!-- ══════════════════ PANTALLA: LOGIN ══════════════════ -->
+<div id="screen-login" class="screen active">
+  <div class="login-card">
+    <div class="brand">
+      <img src="../assets/images/Logo.png" alt="Logo" onerror="this.style.display='none'">
+    </div>
+    <h2>Panel de Administración</h2>
+    <p class="sub">Ingresa tu token de GitHub para gestionar las noticias.</p>
+
+    <div class="hint-box">
+      <strong>¿Cómo obtengo el token?</strong><br>
+      1. Ve a <a href="https://github.com/settings/tokens" target="_blank">github.com → Settings → Developer settings → Personal access tokens</a><br>
+      2. Haz clic en <strong>Generate new token (classic)</strong><br>
+      3. En "Select scopes" marca la casilla <strong>repo</strong><br>
+      4. Haz clic en <strong>Generate token</strong> y copia el código<br>
+      5. Pégalo aquí abajo — solo necesitas hacerlo una vez
+    </div>
+
+    <div id="login-alert"></div>
+
+    <div class="form-group">
+      <label for="token-input">Token de GitHub</label>
+      <input type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" />
+    </div>
+
+    <button class="btn btn--primary btn--full" id="btn-login">Iniciar sesión</button>
+  </div>
+</div>
+
+<!-- ══════════════════ PANTALLA: LISTA ══════════════════ -->
+<div id="screen-list" class="screen">
+  <div class="admin-main">
+    <div id="list-alert"></div>
+    <div class="list-header">
+      <h2>Noticias y Eventos</h2>
+      <button class="btn btn--primary" id="btn-nueva">＋ Nueva Noticia</button>
+    </div>
+    <div id="noticias-list"></div>
+  </div>
+</div>
+
+<!-- ══════════════════ PANTALLA: FORMULARIO ══════════════════ -->
+<div id="screen-form" class="screen">
+  <div class="admin-main">
+    <div class="form-card">
+      <h2 id="form-title">Nueva Noticia</h2>
+      <div id="form-alert"></div>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="f-titulo">Título *</label>
+          <input type="text" id="f-titulo" placeholder="Ej: Graduación Clase 2025" />
+        </div>
+        <div class="form-group">
+          <label for="f-categoria">Categoría</label>
+          <select id="f-categoria">
+            <option value="Evento">Evento</option>
+            <option value="Logros">Logros</option>
+            <option value="Programas">Programas</option>
+            <option value="Comunidad">Comunidad</option>
+            <option value="Noticias">Noticias</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="f-fecha">Fecha del evento / noticia</label>
+          <input type="date" id="f-fecha" />
+        </div>
+        <div class="form-group">
+          <label for="f-imagen">Foto principal</label>
+          <input type="text" id="f-imagen" placeholder="assets/images/noticias/foto.jpg" />
+          <p class="hint">Sube la foto a la carpeta <code>assets/images/noticias/</code> en GitHub y escribe el nombre aquí.</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="f-descripcion">Descripción corta *</label>
+        <textarea id="f-descripcion" rows="3"
+          placeholder="Resumen que aparece en la tarjeta de noticias (1-2 oraciones máximo)..."></textarea>
+      </div>
+
+      <!-- BLOQUES DE CONTENIDO -->
+      <div style="margin-bottom:1.25rem">
+        <span class="blocks-label">Contenido del artículo completo</span>
+        <p style="font-size:0.8rem;color:var(--muted);margin-bottom:0.75rem">
+          Este contenido aparece cuando el lector hace clic en "Leer más".
+          Puedes agregar párrafos, subtítulos y listas.
+        </p>
+        <div id="blocks-container"></div>
+        <div class="add-block-btns">
+          <button class="btn btn--ghost btn--sm" onclick="addBlock('parrafo')">＋ Párrafo</button>
+          <button class="btn btn--ghost btn--sm" onclick="addBlock('subtitulo')">＋ Subtítulo</button>
+          <button class="btn btn--ghost btn--sm" onclick="addBlock('lista')">＋ Lista</button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn--ghost" id="btn-cancelar">Cancelar</button>
+        <button class="btn btn--primary" id="btn-guardar">
+          <span id="btn-guardar-text">Guardar noticia</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ SCRIPT ══════════════════ -->
+<script>
+'use strict';
+
+const REPO = 'ocancel74/hogardeninasdecupey-wp';
+const FILE = 'data/content.json';
+const API  = 'https://api.github.com';
+
+let token       = localStorage.getItem('gh_admin_token') || '';
+let contentData = null;
+let fileSha     = null;
+let editingIdx  = null;
+let blocks      = [];
+
+// ─── Base64 unicode-safe ───
+const toB64   = s => btoa(unescape(encodeURIComponent(s)));
+const fromB64 = s => decodeURIComponent(escape(atob(s.replace(/\n/g, ''))));
+
+// ─── GitHub API helper ───
+async function ghFetch(path, opts = {}) {
+  const r = await fetch(API + path, {
+    ...opts,
+    headers: {
+      'Authorization': `token ${token}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json',
+      ...(opts.headers || {})
+    }
+  });
+  const json = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(json.message || `Error HTTP ${r.status}`);
+  return json;
+}
+
+async function loadContent() {
+  const d    = await ghFetch(`/repos/${REPO}/contents/${FILE}`);
+  fileSha     = d.sha;
+  contentData = JSON.parse(fromB64(d.content));
+}
+
+async function saveContent(msg) {
+  await ghFetch(`/repos/${REPO}/contents/${FILE}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      message: msg,
+      content: toB64(JSON.stringify(contentData, null, 2)),
+      sha: fileSha
+    })
+  });
+  await loadContent(); // refresh SHA
+}
+
+// ─── Screen helpers ───
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('admin-header').style.display =
+    id === 'screen-login' ? 'none' : 'flex';
+  window.scrollTo(0, 0);
+}
+
+function showAlert(containerId, msg, type = 'error') {
+  const el = document.getElementById(containerId);
+  el.innerHTML = `<div class="alert alert--${type}">${msg}</div>`;
+  if (type === 'success') setTimeout(() => { el.innerHTML = ''; }, 7000);
+}
+function clearAlert(id) { document.getElementById(id).innerHTML = ''; }
+
+// ─── Login ───
+document.getElementById('btn-login').addEventListener('click', async () => {
+  const val = document.getElementById('token-input').value.trim();
+  if (!val) { showAlert('login-alert', 'Por favor ingresa el token de GitHub.'); return; }
+  token = val;
+  const btn = document.getElementById('btn-login');
+  btn.innerHTML = '<span class="spinner"></span> Verificando...';
+  btn.disabled = true;
+  try {
+    await loadContent();
+    localStorage.setItem('gh_admin_token', token);
+    showScreen('screen-list');
+    renderList();
+  } catch (e) {
+    showAlert('login-alert', `No se pudo iniciar sesión: ${e.message}. Verifica que el token sea correcto y tenga permisos de <strong>repo</strong>.`);
+  } finally {
+    btn.innerHTML = 'Iniciar sesión';
+    btn.disabled = false;
+  }
+});
+
+document.getElementById('token-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btn-login').click();
+});
+
+document.getElementById('btn-logout').addEventListener('click', () => {
+  localStorage.removeItem('gh_admin_token');
+  token = '';
+  contentData = null;
+  document.getElementById('token-input').value = '';
+  showScreen('screen-login');
+});
+
+// ─── Noticias list ───
+function getNoticias() {
+  return (contentData?.es?.noticias?.eventos) || [];
+}
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00');
+  return d.toLocaleDateString('es-PR', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function renderList() {
+  const eventos = getNoticias();
+  const container = document.getElementById('noticias-list');
+  if (!eventos.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="icon">📰</div>
+        <p>No hay noticias todavía.<br>Haz clic en <strong>+ Nueva Noticia</strong> para agregar la primera.</p>
+      </div>`;
+    return;
+  }
+  container.innerHTML = eventos.map((e, i) => `
+    <div class="noticia-card">
+      ${e.imagen
+        ? `<img class="noticia-card__img" src="../${e.imagen}" alt=""
+             onerror="this.outerHTML='<div class=\\'noticia-card__placeholder\\'>📸</div>'">`
+        : `<div class="noticia-card__placeholder">📸</div>`}
+      <div class="noticia-card__body">
+        <div class="noticia-card__title">${e.titulo || '(Sin título)'}</div>
+        <div class="noticia-card__meta">
+          ${formatDate(e.fecha)}
+          ${e.categoria ? `&nbsp;·&nbsp;<span class="noticia-card__badge">${e.categoria}</span>` : ''}
+        </div>
+      </div>
+      <div class="noticia-card__actions">
+        <button class="btn btn--outline btn--sm" onclick="openForm(${i})">✏️ Editar</button>
+        <button class="btn btn--danger btn--sm"  onclick="confirmDelete(${i})">🗑 Eliminar</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('btn-nueva').addEventListener('click', () => openForm(null));
+
+// ─── Delete ───
+window.confirmDelete = async function(idx) {
+  const e = getNoticias()[idx];
+  if (!confirm(`¿Eliminar la noticia "${e.titulo}"?\n\nEsta acción no se puede deshacer.`)) return;
+  try {
+    contentData.es.noticias.eventos.splice(idx, 1);
+    if (contentData.en?.noticias?.eventos) contentData.en.noticias.eventos.splice(idx, 1);
+    await saveContent(`Eliminar noticia: ${e.titulo}`);
+    renderList();
+    showAlert('list-alert', `✅ Noticia "${e.titulo}" eliminada. El sitio se actualizará en 1-2 minutos.`, 'success');
+  } catch(e2) {
+    await loadContent();
+    showAlert('list-alert', `❌ Error al eliminar: ${e2.message}`);
+  }
+};
+
+// ─── Form ───
+window.openForm = function(idx) {
+  editingIdx = idx;
+  clearAlert('form-alert');
+
+  if (idx === null) {
+    document.getElementById('form-title').textContent = 'Nueva Noticia';
+    document.getElementById('f-titulo').value      = '';
+    document.getElementById('f-fecha').value       = new Date().toISOString().split('T')[0];
+    document.getElementById('f-descripcion').value = '';
+    document.getElementById('f-imagen').value      = '';
+    document.getElementById('f-categoria').value   = 'Evento';
+    blocks = [];
+  } else {
+    const e = getNoticias()[idx];
+    document.getElementById('form-title').textContent = 'Editar Noticia';
+    document.getElementById('f-titulo').value      = e.titulo      || '';
+    document.getElementById('f-fecha').value       = e.fecha       || '';
+    document.getElementById('f-descripcion').value = e.descripcion || '';
+    document.getElementById('f-imagen').value      = e.imagen      || '';
+    document.getElementById('f-categoria').value   = e.categoria   || 'Evento';
+    blocks = JSON.parse(JSON.stringify(e.cuerpo || []));
+  }
+
+  renderBlocks();
+  showScreen('screen-form');
+};
+
+document.getElementById('btn-cancelar').addEventListener('click', () => showScreen('screen-list'));
+
+// ─── Blocks editor ───
+function slugify(str) {
+  return str.toLowerCase()
+    .replace(/[áàäâ]/g,'a').replace(/[éèëê]/g,'e')
+    .replace(/[íìïî]/g,'i').replace(/[óòöô]/g,'o')
+    .replace(/[úùüû]/g,'u').replace(/ñ/g,'n')
+    .replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-');
+}
+
+function renderBlocks() {
+  const c = document.getElementById('blocks-container');
+  if (!blocks.length) {
+    c.innerHTML = '';
+    return;
+  }
+  c.innerHTML = blocks.map((b, i) => buildBlockHTML(b, i)).join('');
+}
+
+function buildBlockHTML(block, i) {
+  const labels = { parrafo: 'Párrafo', subtitulo: 'Subtítulo', lista: 'Lista' };
+  let inner = '';
+
+  if (block.tipo === 'parrafo') {
+    const txt = (block.texto || '').replace(/"/g, '&quot;');
+    inner = `<textarea rows="3" placeholder="Escribe el párrafo aquí..."
+      onchange="blocks[${i}].texto=this.value">${block.texto || ''}</textarea>`;
+  } else if (block.tipo === 'subtitulo') {
+    const txt = (block.texto || '').replace(/"/g, '&quot;');
+    inner = `<input type="text" placeholder="Título de la sección"
+      value="${txt}" onchange="blocks[${i}].texto=this.value" />`;
+  } else if (block.tipo === 'lista') {
+    const items = block.items || [];
+    inner = `
+      <div id="lista-${i}">
+        ${items.map((it, j) => `
+          <div class="list-item-row">
+            <input type="text" value="${it.replace(/"/g,'&quot;')}"
+              placeholder="Elemento de lista"
+              onchange="blocks[${i}].items[${j}]=this.value" />
+            <button class="btn-icon btn-remove" onclick="removeListItem(${i},${j})">✕</button>
+          </div>`).join('')}
+      </div>
+      <button class="btn btn--ghost btn--sm" style="margin-top:0.4rem"
+        onclick="addListItem(${i})">＋ Agregar elemento</button>`;
+  }
+
+  return `
+    <div class="block-item">
+      <div class="block-item__header">
+        <span class="block-tag">${labels[block.tipo] || block.tipo}</span>
+        <button class="btn-icon" onclick="moveBlock(${i},-1)" title="Subir">↑</button>
+        <button class="btn-icon" onclick="moveBlock(${i}, 1)" title="Bajar">↓</button>
+        <button class="btn-icon btn-remove" onclick="removeBlock(${i})">✕ Eliminar bloque</button>
+      </div>
+      ${inner}
+    </div>`;
+}
+
+window.addBlock = function(tipo) {
+  blocks.push(tipo === 'lista' ? { tipo, items: [''] } : { tipo, texto: '' });
+  renderBlocks();
+};
+window.removeBlock = function(i) { blocks.splice(i,1); renderBlocks(); };
+window.moveBlock   = function(i, dir) {
+  const j = i + dir;
+  if (j < 0 || j >= blocks.length) return;
+  [blocks[i], blocks[j]] = [blocks[j], blocks[i]];
+  renderBlocks();
+};
+window.addListItem    = function(i) { blocks[i].items.push(''); renderBlocks(); };
+window.removeListItem = function(i, j) { blocks[i].items.splice(j,1); renderBlocks(); };
+
+// Read latest textarea/input values from DOM before saving
+function readBlocksFromDOM() {
+  document.querySelectorAll('#blocks-container .block-item').forEach((el, i) => {
+    if (!blocks[i]) return;
+    if (blocks[i].tipo === 'parrafo' || blocks[i].tipo === 'subtitulo') {
+      const inp = el.querySelector('textarea, input[type="text"]');
+      if (inp) blocks[i].texto = inp.value;
+    } else if (blocks[i].tipo === 'lista') {
+      const inputs = el.querySelectorAll('input[type="text"]');
+      blocks[i].items = Array.from(inputs).map(inp => inp.value).filter(v => v.trim());
+    }
+  });
+}
+
+// ─── Save ───
+document.getElementById('btn-guardar').addEventListener('click', async () => {
+  const titulo      = document.getElementById('f-titulo').value.trim();
+  const descripcion = document.getElementById('f-descripcion').value.trim();
+
+  if (!titulo)      { showAlert('form-alert', '⚠️ El título es obligatorio.'); return; }
+  if (!descripcion) { showAlert('form-alert', '⚠️ La descripción corta es obligatoria.'); return; }
+
+  readBlocksFromDOM();
+
+  const noticia = {
+    titulo,
+    slug:        slugify(titulo),
+    fecha:       document.getElementById('f-fecha').value,
+    descripcion,
+    imagen:      document.getElementById('f-imagen').value.trim(),
+    categoria:   document.getElementById('f-categoria').value,
+    cuerpo:      blocks.filter(b =>
+      b.tipo === 'lista' ? (b.items && b.items.some(i => i.trim())) : b.texto?.trim()
+    )
+  };
+
+  const btn  = document.getElementById('btn-guardar');
+  const text = document.getElementById('btn-guardar-text');
+  btn.disabled = true;
+  text.innerHTML = '<span class="spinner"></span> Guardando...';
+
+  try {
+    const esEvts = contentData.es.noticias.eventos;
+    if (!contentData.en.noticias) contentData.en.noticias = { eventos: [] };
+    const enEvts = contentData.en.noticias.eventos;
+
+    if (editingIdx === null) {
+      esEvts.unshift(noticia);
+      enEvts.unshift({ ...noticia });
+    } else {
+      esEvts[editingIdx] = noticia;
+      if (enEvts[editingIdx] !== undefined) enEvts[editingIdx] = { ...noticia };
+    }
+
+    const action = editingIdx === null ? 'Agregar' : 'Editar';
+    await saveContent(`${action} noticia: ${titulo}`);
+    showScreen('screen-list');
+    renderList();
+    showAlert('list-alert', `✅ Noticia "${titulo}" guardada. El sitio se actualizará en 1-2 minutos.`, 'success');
+  } catch (e) {
+    showAlert('form-alert', `❌ Error al guardar: ${e.message}`);
+  } finally {
+    btn.disabled = false;
+    text.textContent = 'Guardar noticia';
+  }
+});
+
+// ─── Auto-login if token saved ───
+(async () => {
+  if (!token) return;
+  try {
+    await loadContent();
+    showScreen('screen-list');
+    renderList();
+  } catch {
+    localStorage.removeItem('gh_admin_token');
+    token = '';
+  }
+})();
+</script>
+</body>
+</html>
