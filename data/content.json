@@ -639,7 +639,7 @@
         },
         {
           "titulo": "Torneo Deportivo",
-          "slug": "torneo-deportivo-2025",
+          "slug": "torneo-deportivo",
           "fecha": "2025-07-05",
           "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
           "imagen": "assets/images/noticias/noticia-deporte.jpg",
@@ -1347,36 +1347,36 @@
           ]
         },
         {
-          "titulo": "Sports Tournament",
-          "slug": "torneo-deportivo-2025",
+          "titulo": "Torneo Deportivo",
+          "slug": "torneo-deportivo",
           "fecha": "2025-07-05",
-          "descripcion": "Join our annual sports tournament. Volleyball, basketball and track and field competitions open to the community with funds going to the home.",
+          "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
           "imagen": "assets/images/noticias/noticia-deporte.jpg",
-          "categoria": "Event",
+          "categoria": "Evento",
           "cuerpo": [
             {
               "tipo": "parrafo",
-              "texto": "Join our annual sports tournament, open to the entire community."
+              "texto": "Participa en nuestro torneo deportivo anual, abierto a toda la comunidad."
             },
             {
               "tipo": "subtitulo",
-              "texto": "Sports"
+              "texto": "Deportes"
             },
             {
               "tipo": "lista",
               "items": [
-                "Volleyball",
-                "Basketball",
-                "Track and Field"
+                "Voleibol",
+                "Baloncesto",
+                "Atletismo"
               ]
             },
             {
               "tipo": "parrafo",
-              "texto": "Funds raised directly support Hogar de Niñas de Cupey's programs."
+              "texto": "Los fondos recaudados apoyan directamente los programas del Hogar de Niñas de Cupey."
             },
             {
               "tipo": "parrafo",
-              "texto": "For information and registration: 787-761-2805"
+              "texto": "Para información e inscripciones: 787-761-2805"
             }
           ]
         },
