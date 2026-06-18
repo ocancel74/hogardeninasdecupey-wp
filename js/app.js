@@ -10,11 +10,17 @@ const SOCIAL_ICONS = {
   instagram: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>`,
 };
 
-// ——— Format date to Spanish ———
+// ——— Global state ———
+let allData = null;
+let currentLang = localStorage.getItem('lang') || 'es';
+let currentEvents = [];
+
+// ——— Format date based on current language ———
 function formatDate(dateStr) {
   if (!dateStr) return '';
   const d = new Date(dateStr + 'T00:00:00');
-  return d.toLocaleDateString('es-PR', { year: 'numeric', month: 'long', day: 'numeric' });
+  const locale = currentLang === 'en' ? 'en-US' : 'es-PR';
+  return d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 // ——— Build social icon HTML ———
@@ -26,19 +32,33 @@ function buildSocialIcon(platform, url, size = '') {
 
 // ——— Main init: fetch JSON and render everything ———
 async function init() {
-  let data;
   try {
     const res = await fetch('data/content.json');
-    if (!res.ok) throw new Error('No se pudo cargar content.json');
-    data = await res.json();
+    if (!res.ok) throw new Error('Could not load content.json');
+    allData = await res.json();
   } catch (err) {
-    console.error('[Cupey] Error cargando content.json:', err);
+    console.error('[Cupey] Error loading content.json:', err);
     document.body.innerHTML = `<div style="display:grid;place-items:center;height:100vh;font-family:sans-serif;padding:2rem;text-align:center"><h1>Error al cargar el sitio</h1><p>Verifica que el archivo <code>data/content.json</code> exista y sea válido.</p><pre style="color:red;font-size:0.85rem;margin-top:1rem">${err.message}</pre></div>`;
     return;
   }
 
+  renderAll(allData[currentLang]);
+
+  initNavbar();
+  initMobileMenu();
+  initScrollReveal();
+  initBackToTop();
+  initContactForm();
+  initNoticiaRouting();
+  initLangToggle();
+}
+
+// ——— Render all sections from the given language data ———
+function renderAll(data) {
+  if (!data) return;
   renderNavbarLogo(data.site);
   renderNavbarSocial(data.site);
+  renderUI(data.ui);
   renderHero(data.hero);
   renderIntro(data.intro);
   renderQuienesSomos(data.quienesSomos);
@@ -51,16 +71,19 @@ async function init() {
   renderContacto(data.contacto, data.site);
   renderFooter(data.footer, data.site);
   renderDonateFab(data.site);
+  currentEvents = (data.noticias && data.noticias.eventos) || [];
+  document.title = (data.site && data.site.name) || 'Hogar de Niñas Cupey';
+  document.documentElement.lang = currentLang;
+}
 
-  initNavbar();
-  initMobileMenu();
+// ——— Switch language ———
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  renderAll(allData[lang]);
+  const label = document.getElementById('lang-label');
+  if (label) label.textContent = lang === 'es' ? 'EN' : 'ES';
   initScrollReveal();
-  initBackToTop();
-  initContactForm(data.contacto);
-  initNoticiaRouting(data.noticias.eventos || []);
-
-  // Page title
-  document.title = data.site.name || 'Hogar de Niñas Cupey';
 }
 
 // ——————————————————————————————————————
@@ -86,27 +109,58 @@ function renderNavbarSocial(site) {
     .join('');
 }
 
+// Update all data-i18n elements and form placeholders
+function renderUI(ui) {
+  if (!ui) return;
+
+  // Update text of elements with data-i18n attribute
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = key.split('.').reduce((obj, k) => (obj && obj[k] !== undefined ? obj[k] : undefined), ui);
+    if (val !== undefined) el.textContent = val;
+  });
+
+  // Update form placeholders
+  const f = ui.form || {};
+  const pl = (id, val) => { const e = document.getElementById(id); if (e && val) e.placeholder = val; };
+  pl('contact-nombre',    f.placeholderNombre);
+  pl('contact-apellidos', f.placeholderApellidos);
+  pl('contact-email',     f.placeholderEmail);
+  pl('contact-telefono',  f.placeholderTelefono);
+  pl('contact-linea1',    f.placeholderLinea1);
+  pl('contact-linea2',    f.placeholderLinea2);
+  pl('contact-ciudad',    f.placeholderCiudad);
+  pl('contact-estado',    f.placeholderEstado);
+  pl('contact-postal',    f.placeholderPostal);
+  pl('contact-tema',      f.placeholderTema);
+  pl('contact-message',   f.placeholderMensaje);
+
+  // Donate FAB text
+  const fabText = document.querySelector('.donate-fab__text');
+  if (fabText && ui.donateFab) fabText.textContent = ui.donateFab;
+}
+
 function renderHero(hero) {
   if (!hero) return;
 
-  const titleEl = document.getElementById('hero-title');
+  const titleEl    = document.getElementById('hero-title');
   const subtitleEl = document.getElementById('hero-subtitle');
-  const ctaEl = document.getElementById('hero-cta');
+  const ctaEl      = document.getElementById('hero-cta');
   const heroSection = document.getElementById('inicio');
 
-  if (titleEl) titleEl.innerHTML = hero.title || '';
+  if (titleEl)    titleEl.innerHTML  = hero.title || '';
   if (subtitleEl) subtitleEl.textContent = hero.subtitle || '';
 
   if (hero.backgroundImage && heroSection) {
-    heroSection.style.backgroundImage = `url('${hero.backgroundImage}')`;
-    heroSection.style.backgroundSize = 'cover';
+    heroSection.style.backgroundImage    = `url('${hero.backgroundImage}')`;
+    heroSection.style.backgroundSize     = 'cover';
     heroSection.style.backgroundPosition = 'center';
   }
 
   if (ctaEl && hero.cta) {
     const { primary, secondary } = hero.cta;
     ctaEl.innerHTML = `
-      ${primary ? `<a href="${primary.href}" class="btn btn--primary">${primary.text}</a>` : ''}
+      ${primary   ? `<a href="${primary.href}"   class="btn btn--primary">${primary.text}</a>`   : ''}
       ${secondary ? `<a href="${secondary.href}" class="btn btn--outline">${secondary.text}</a>` : ''}
     `;
   }
@@ -177,7 +231,6 @@ function renderQuienesSomos(qs) {
 function renderHistoria(historia) {
   if (!historia) return;
 
-  // ——— Galería de 5 fotos ———
   const fotosEl = document.getElementById('historia-fotos');
   if (fotosEl && historia.fotos) {
     fotosEl.innerHTML = historia.fotos.map((src, i) => `
@@ -188,19 +241,16 @@ function renderHistoria(historia) {
     `).join('');
   }
 
-  // ——— Cuerpo de texto ———
   const bodyEl = document.getElementById('historia-body');
   if (!bodyEl) return;
 
   let html = `<h2 class="section__title" style="margin-bottom:2rem">${historia.title || ''}</h2>`;
 
-  // Secciones de texto — el logo se inserta después del primer párrafo (índice 0)
-  const logoSrc = historia.logoMedio || 'assets/images/logo.png';
+  const logoSrc = historia.logoMedio || 'assets/images/Logo.png';
   if (historia.secciones) {
     historia.secciones.forEach((s, i) => {
       if (s.subtitulo) html += `<span class="historia-subtitulo">${s.subtitulo}</span>`;
       html += `<p>${s.texto}</p>`;
-      // Logo va después del primer párrafo, antes del segundo
       if (i === 0) {
         html += `<div class="historia-logo-wrap">
           <img src="${logoSrc}" alt="Hogar de Niñas Cupey" class="historia-logo" />
@@ -209,7 +259,6 @@ function renderHistoria(historia) {
     });
   }
 
-  // Para qué existimos
   const pq = historia.paraQueExistimos;
   if (pq) {
     html += `<div class="para-que">
@@ -241,7 +290,6 @@ function renderDirectores(dir) {
   const gridEl = document.getElementById('directors-grid');
   if (!gridEl) return;
 
-  // Build individual director cards
   const buildCard = (m, isGrupo = false) => {
     const photoInner = m.foto
       ? `<img src="${m.foto}" alt="${m.nombre}" onerror="this.parentElement.innerHTML='<div class=director-photo-placeholder>👤</div>'" />`
@@ -251,19 +299,17 @@ function renderDirectores(dir) {
         <div class="director-photo-wrap">${photoInner}</div>
         <div class="director-info">
           <h3>${m.nombre}</h3>
-          ${m.cargo ? `<span class="cargo">${m.cargo}</span>` : ''}
-          ${m.descripcion ? `<p class="desc">${m.descripcion}</p>` : ''}
+          ${m.cargo       ? `<span class="cargo">${m.cargo}</span>`   : ''}
+          ${m.descripcion ? `<p class="desc">${m.descripcion}</p>`    : ''}
         </div>
       </div>
     `;
   };
 
-  // Junta de directores
   if (dir.miembros) {
     gridEl.innerHTML = dir.miembros.map(m => buildCard(m)).join('');
   }
 
-  // Administración section
   const adminSection = document.getElementById('admin-section');
   if (adminSection && dir.administracion) {
     const adm = dir.administracion;
@@ -311,7 +357,6 @@ function renderServicios(srv) {
 
   let html = '';
 
-  // Galería: foto grande + 7 miniaturas con lightbox
   if (srv.galeria && srv.galeria.length) {
     const [hero, ...thumbs] = srv.galeria;
     html += `<div class="srv-gallery">
@@ -327,11 +372,9 @@ function renderServicios(srv) {
     </div>`;
   }
 
-  // Título + descripción
   html += `<h2 class="srv-title">${srv.title || ''}</h2>`;
   if (srv.descripcion) html += `<p class="srv-descripcion">${srv.descripcion}</p>`;
 
-  // Categorías
   if (srv.categorias && srv.categorias.length) {
     html += `<div class="srv-categorias">
       ${srv.categorias.map(c => `
@@ -342,7 +385,6 @@ function renderServicios(srv) {
     </div>`;
   }
 
-  // Grupos de servicios
   if (srv.grupos && srv.grupos.length) {
     html += `<div class="srv-grupos">
       ${srv.grupos.map(g => `
@@ -354,7 +396,6 @@ function renderServicios(srv) {
     </div>`;
   }
 
-  // Residencial
   if (srv.residencial) {
     const r = srv.residencial;
     html += `<div class="srv-residencial">
@@ -369,19 +410,22 @@ function renderServicios(srv) {
 }
 
 function initLightbox() {
-  const lb    = document.getElementById('srv-lightbox');
-  const lbImg = document.getElementById('srv-lightbox-img');
+  const lb     = document.getElementById('srv-lightbox');
+  const lbImg  = document.getElementById('srv-lightbox-img');
   const lbClose = document.getElementById('srv-lightbox-close');
   if (!lb || !lbImg) return;
 
-  document.getElementById('services-content').addEventListener('click', e => {
-    const target = e.target.closest('[data-lightbox]');
-    if (!target) return;
-    lbImg.src = target.dataset.lightbox;
-    lb.style.display = 'flex';
-    lb.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  });
+  const srvEl = document.getElementById('services-content');
+  if (srvEl) {
+    srvEl.addEventListener('click', e => {
+      const target = e.target.closest('[data-lightbox]');
+      if (!target) return;
+      lbImg.src = target.dataset.lightbox;
+      lb.style.display = 'flex';
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
   const close = () => {
     lb.style.display = 'none';
@@ -401,7 +445,6 @@ function renderComoAyudar(help) {
 
   let html = '';
 
-  // Conviértete en amigo
   if (help.amigo) {
     html += `<div class="help-block">
       <h2 class="help-heading">${help.amigo.titulo}</h2>
@@ -409,7 +452,6 @@ function renderComoAyudar(help) {
     </div>`;
   }
 
-  // Conviértete en voluntario
   if (help.voluntario) {
     html += `<div class="help-block">
       <h2 class="help-heading">${help.voluntario.titulo}</h2>
@@ -418,21 +460,20 @@ function renderComoAyudar(help) {
     </div>`;
   }
 
-  // Cómo donar
   if (help.donar) {
-    const pp = help.donar.paypal;
+    const pp  = help.donar.paypal;
     const ath = help.donar.athMovil;
     html += `<div class="help-block">
       <h2 class="help-heading">${help.donar.titulo}</h2>
       <div class="help-donar-grid">
-        ${pp ? `<div class="help-donar-col">
+        ${pp  ? `<div class="help-donar-col">
           <p class="help-donar-metodo">${pp.titulo}</p>
           <a href="${pp.url}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">${pp.boton}</a>
         </div>` : ''}
         ${ath ? `<div class="help-donar-col">
-          ${ath.qr ? `<img src="${ath.qr}" alt="QR ATH Móvil" class="help-ath-qr" onerror="this.style.display='none'" />` : ''}
+          ${ath.qr      ? `<img src="${ath.qr}"   alt="QR ATH Móvil" class="help-ath-qr"   onerror="this.style.display='none'" />` : ''}
           ${ath.usuario ? `<p class="help-ath-usuario">${ath.usuario}</p>` : ''}
-          ${ath.logo ? `<img src="${ath.logo}" alt="ATH Móvil" class="help-ath-logo" onerror="this.style.display='none'" />` : ''}
+          ${ath.logo    ? `<img src="${ath.logo}" alt="ATH Móvil"    class="help-ath-logo"  onerror="this.style.display='none'" />` : ''}
         </div>` : ''}
       </div>
     </div>`;
@@ -444,7 +485,7 @@ function renderComoAyudar(help) {
 function renderNoticias(news) {
   if (!news) return;
 
-  setText('news-title', news.title);
+  setText('news-title',    news.title);
   setText('news-subtitle', news.subtitle);
 
   const gridEl = document.getElementById('news-grid');
@@ -457,7 +498,7 @@ function renderNoticias(news) {
       ? `<div class="news-img-wrap"><img src="${e.imagen}" alt="${e.titulo}" class="news-img" onerror="this.parentElement.innerHTML='<div class=news-img-placeholder>📰</div>'" /></div>`
       : `<div class="news-img-placeholder">📰</div>`;
     const leerMas = e.slug
-      ? `<button class="news-leer-mas" data-slug="${e.slug}">Leer más</button>`
+      ? `<button class="news-leer-mas" data-slug="${e.slug}">${currentLang === 'en' ? 'Read more' : 'Leer más'}</button>`
       : '';
     return `
       <div class="news-card reveal" ${e.slug ? `data-slug="${e.slug}"` : ''}>
@@ -525,8 +566,8 @@ function renderNoticiaPagina(noticia) {
   el.innerHTML = html;
 }
 
-function showNoticia(slug, eventos) {
-  const noticia = eventos.find(n => n.slug === slug);
+function showNoticia(slug) {
+  const noticia = currentEvents.find(n => n.slug === slug);
   if (!noticia) return;
 
   renderNoticiaPagina(noticia);
@@ -545,8 +586,7 @@ function hideNoticia() {
   document.body.style.overflow = '';
 }
 
-function initNoticiaRouting(eventos) {
-  // Back button
+function initNoticiaRouting() {
   const backBtn = document.getElementById('noticia-back');
   if (backBtn) {
     backBtn.addEventListener('click', () => {
@@ -560,30 +600,30 @@ function initNoticiaRouting(eventos) {
     });
   }
 
-  // Clicks on news cards / "Leer más" buttons
-  document.getElementById('news-grid').addEventListener('click', e => {
-    const btn = e.target.closest('[data-slug]');
-    if (!btn) return;
-    e.preventDefault();
-    const slug = btn.dataset.slug;
-    history.pushState({ slug }, '', `#noticia/${slug}`);
-    showNoticia(slug, eventos);
-  });
+  const newsGrid = document.getElementById('news-grid');
+  if (newsGrid) {
+    newsGrid.addEventListener('click', e => {
+      const btn = e.target.closest('[data-slug]');
+      if (!btn) return;
+      e.preventDefault();
+      const slug = btn.dataset.slug;
+      history.pushState({ slug }, '', `#noticia/${slug}`);
+      showNoticia(slug);
+    });
+  }
 
-  // Browser back/forward
   window.addEventListener('popstate', () => {
     const hash = window.location.hash;
     if (hash.startsWith('#noticia/')) {
-      showNoticia(hash.replace('#noticia/', ''), eventos);
+      showNoticia(hash.replace('#noticia/', ''));
     } else {
       hideNoticia();
     }
   });
 
-  // Handle direct URL with hash on page load
   const hash = window.location.hash;
   if (hash.startsWith('#noticia/')) {
-    showNoticia(hash.replace('#noticia/', ''), eventos);
+    showNoticia(hash.replace('#noticia/', ''));
   }
 }
 
@@ -596,10 +636,10 @@ function renderContacto(contacto, site) {
     officeEl.innerHTML = `
       <h2 class="contact-office-title">${contacto.tituloInfo || 'Información de oficina'}</h2>
       <ul class="contact-office-list">
-        ${email    ? `<li><span class="contact-office-icon">✉</span><a href="mailto:${email}">${email}</a></li>` : ''}
-        ${telefono ? `<li><span class="contact-office-icon">☎</span>${telefono}</li>` : ''}
-        ${horario  ? `<li><span class="contact-office-icon">🕐</span>${horario}</li>` : ''}
-        ${direccion? `<li><span class="contact-office-icon">📬</span>${direccion}</li>` : ''}
+        ${email     ? `<li><span class="contact-office-icon">✉</span><a href="mailto:${email}">${email}</a></li>` : ''}
+        ${telefono  ? `<li><span class="contact-office-icon">☎</span>${telefono}</li>` : ''}
+        ${horario   ? `<li><span class="contact-office-icon">🕐</span>${horario}</li>` : ''}
+        ${direccion ? `<li><span class="contact-office-icon">📬</span>${direccion}</li>` : ''}
       </ul>
     `;
   }
@@ -626,7 +666,7 @@ function renderFooter(footer, site) {
   if (!footer) return;
 
   setText('footer-name', site ? site.name : '');
-  setText('footer-org', footer.textoOrganizacion || '');
+  setText('footer-org',  footer.textoOrganizacion || '');
   setText('footer-copy', footer.texto || '');
 
   const socialEl = document.getElementById('footer-social');
@@ -652,16 +692,29 @@ function renderDonateFab(site) {
 }
 
 // ——————————————————————————————————————
+// LANGUAGE TOGGLE
+// ——————————————————————————————————————
+
+function initLangToggle() {
+  const btn   = document.getElementById('lang-toggle');
+  const label = document.getElementById('lang-label');
+  if (!btn) return;
+  if (label) label.textContent = currentLang === 'es' ? 'EN' : 'ES';
+  btn.addEventListener('click', () => {
+    setLanguage(currentLang === 'es' ? 'en' : 'es');
+  });
+}
+
+// ——————————————————————————————————————
 // NAVBAR BEHAVIOR
 // ——————————————————————————————————————
 
 function initNavbar() {
-  const navbar = document.getElementById('navbar');
-  const links = document.querySelectorAll('.navbar__link');
+  const navbar   = document.getElementById('navbar');
+  const links    = document.querySelectorAll('.navbar__link');
   const sections = document.querySelectorAll('section[id]');
   const DROPDOWN_SECTIONS = ['quienes-somos', 'historia', 'directores', 'patrocinadores'];
 
-  // Dropdown toggle
   const dropdown = document.querySelector('.navbar__dropdown');
   const toggle   = dropdown && dropdown.querySelector('.navbar__dropdown-toggle');
   if (dropdown && toggle) {
@@ -689,13 +742,11 @@ function initNavbar() {
       link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 
-    // Highlight dropdown toggle when any of its sections is active
     if (toggle) {
       toggle.classList.toggle('active', DROPDOWN_SECTIONS.includes(current));
     }
   }, { passive: true });
 
-  // Smooth scroll for all anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
@@ -703,7 +754,6 @@ function initNavbar() {
         e.preventDefault();
         const offset = document.getElementById('navbar').offsetHeight;
         window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
-        // Close dropdown after clicking a dropdown item
         if (dropdown) { dropdown.classList.remove('open'); toggle && toggle.setAttribute('aria-expanded', 'false'); }
       }
     });
@@ -715,19 +765,18 @@ function initNavbar() {
 // ——————————————————————————————————————
 
 function initMobileMenu() {
-  const hamburger  = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburger   = document.getElementById('hamburger');
+  const mobileMenu  = document.getElementById('mobile-menu');
   const mobileClose = document.getElementById('mobile-close');
   const mobileLinks = document.querySelectorAll('.mobile-menu__link, .mobile-menu__sublink');
 
-  const open  = () => { mobileMenu.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const open  = () => { mobileMenu.classList.add('open');    document.body.style.overflow = 'hidden'; };
   const close = () => { mobileMenu.classList.remove('open'); document.body.style.overflow = ''; };
 
   if (hamburger)  hamburger.addEventListener('click', open);
   if (mobileClose) mobileClose.addEventListener('click', close);
   mobileLinks.forEach(l => l.addEventListener('click', close));
 
-  // Accordion for "Quiénes Somos" group
   const groupToggle = document.querySelector('.mobile-menu__group-toggle');
   const group       = document.querySelector('.mobile-menu__group');
   if (groupToggle && group) {
@@ -741,7 +790,9 @@ function initMobileMenu() {
 
 function initScrollReveal() {
   const observer = new IntersectionObserver(
-    entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    }),
     { threshold: 0.12 }
   );
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
@@ -764,38 +815,50 @@ function initBackToTop() {
 // CONTACT FORM — EmailJS
 // ——————————————————————————————————————
 
-function initContactForm(contacto) {
+function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  if (contacto && contacto.emailjs && contacto.emailjs.publicKey &&
-      contacto.emailjs.publicKey !== 'TU_PUBLIC_KEY') {
-    if (typeof emailjs !== 'undefined') {
-      emailjs.init(contacto.emailjs.publicKey);
+  // Initialize EmailJS once using current language's config
+  const initEjs = () => {
+    const contacto = allData && allData[currentLang] && allData[currentLang].contacto;
+    if (contacto && contacto.emailjs && contacto.emailjs.publicKey &&
+        contacto.emailjs.publicKey !== 'TU_PUBLIC_KEY') {
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init(contacto.emailjs.publicKey);
+      }
     }
-  }
+  };
+  initEjs();
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email   = document.getElementById('contact-email');
-    const message = document.getElementById('contact-message');
+    const langData  = allData && allData[currentLang];
+    const contacto  = langData && langData.contacto;
+    const msgs      = (langData && langData.ui && langData.ui.validacion) || {};
+
+    const email    = document.getElementById('contact-email');
+    const message  = document.getElementById('contact-message');
     const feedback  = document.getElementById('form-feedback');
     const btnText   = document.getElementById('btn-text');
     const btnLoading = document.getElementById('btn-loading');
 
     clearError('err-email');
     clearError('err-message');
-    feedback.className = 'form-feedback';
+    feedback.className   = 'form-feedback';
     feedback.textContent = '';
 
     let valid = true;
     if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      showError('err-email', 'Por favor ingresa un correo válido.'); email.classList.add('error'); valid = false;
+      showError('err-email', msgs.email || 'Por favor ingresa un correo válido.');
+      email.classList.add('error'); valid = false;
     } else email.classList.remove('error');
 
-    if (!message.value.trim()) { showError('err-message', 'Por favor escribe tu mensaje.'); message.classList.add('error'); valid = false; }
-    else message.classList.remove('error');
+    if (!message.value.trim()) {
+      showError('err-message', msgs.mensaje || 'Por favor escribe tu mensaje.');
+      message.classList.add('error'); valid = false;
+    } else message.classList.remove('error');
 
     if (!valid) return;
 
@@ -806,37 +869,37 @@ function initContactForm(contacto) {
       ejsConf.publicKey  !== 'TU_PUBLIC_KEY';
 
     if (!isConfigured) {
-      feedback.textContent = '⚙️ Para activar el formulario, configura EmailJS en data/content.json.';
+      feedback.textContent = msgs.sinConfig || '⚙️ Para activar el formulario, configura EmailJS en data/content.json.';
       feedback.className = 'form-feedback error';
       return;
     }
 
-    btnText.style.display = 'none';
+    btnText.style.display    = 'none';
     btnLoading.style.display = 'inline';
     document.getElementById('contact-submit').disabled = true;
 
     const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
     const templateParams = {
-      from_name:    `${g('contact-nombre')} ${g('contact-apellidos')}`.trim(),
-      from_email:   email.value.trim(),
-      telefono:     g('contact-telefono'),
-      direccion:    [g('contact-linea1'), g('contact-linea2'), g('contact-ciudad'), g('contact-estado'), g('contact-postal'), g('contact-pais')].filter(Boolean).join(', '),
-      subject:      g('contact-tema') || 'Mensaje desde el sitio web',
-      message:      message.value.trim(),
-      to_email:     'info@hogardeninasdecupey.org',
+      from_name:  `${g('contact-nombre')} ${g('contact-apellidos')}`.trim(),
+      from_email: email.value.trim(),
+      telefono:   g('contact-telefono'),
+      direccion:  [g('contact-linea1'), g('contact-linea2'), g('contact-ciudad'), g('contact-estado'), g('contact-postal'), g('contact-pais')].filter(Boolean).join(', '),
+      subject:    g('contact-tema') || 'Mensaje desde el sitio web',
+      message:    message.value.trim(),
+      to_email:   'info@hogardeninasdecupey.org',
     };
 
     try {
       await emailjs.send(ejsConf.serviceId, ejsConf.templateId, templateParams);
       form.reset();
-      feedback.textContent = '✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.';
+      feedback.textContent = msgs.exito || '✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.';
       feedback.className = 'form-feedback success';
     } catch (err) {
       console.error('[EmailJS] Error:', err);
-      feedback.textContent = '❌ Hubo un error al enviar. Por favor intenta de nuevo o contáctanos directamente.';
+      feedback.textContent = msgs.error || '❌ Hubo un error al enviar. Por favor intenta de nuevo.';
       feedback.className = 'form-feedback error';
     } finally {
-      btnText.style.display = 'inline';
+      btnText.style.display    = 'inline';
       btnLoading.style.display = 'none';
       document.getElementById('contact-submit').disabled = false;
     }

@@ -32,28 +32,31 @@
       </a>
 
       <nav class="navbar__nav" id="navbar-nav">
-        <a href="#inicio" class="navbar__link">Inicio</a>
+        <a href="#inicio" class="navbar__link" data-i18n="nav.inicio">Inicio</a>
 
         <!-- Dropdown: Quiénes Somos -->
         <div class="navbar__dropdown">
           <button class="navbar__link navbar__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
-            Quiénes Somos <span class="dropdown-arrow">▾</span>
+            <span data-i18n="nav.quienesSomos">Quiénes Somos</span> <span class="dropdown-arrow">▾</span>
           </button>
           <ul class="navbar__dropdown-menu" role="menu">
-            <li><a href="#historia"       class="dropdown-item" role="menuitem">Historia</a></li>
-            <li><a href="#directores"     class="dropdown-item" role="menuitem">Junta de Directores</a></li>
-            <li><a href="#patrocinadores" class="dropdown-item" role="menuitem">Patrocinadores</a></li>
+            <li><a href="#historia"       class="dropdown-item" data-i18n="nav.historia"       role="menuitem">Historia</a></li>
+            <li><a href="#directores"     class="dropdown-item" data-i18n="nav.directores"     role="menuitem">Junta de Directores</a></li>
+            <li><a href="#patrocinadores" class="dropdown-item" data-i18n="nav.patrocinadores" role="menuitem">Patrocinadores</a></li>
           </ul>
         </div>
 
-        <a href="#servicios"   class="navbar__link">Servicios</a>
-        <a href="#como-ayudar" class="navbar__link">Cómo Ayudar</a>
-        <a href="#noticias"    class="navbar__link">Noticias</a>
-        <a href="#contacto"    class="navbar__link">Contacto</a>
+        <a href="#servicios"   class="navbar__link" data-i18n="nav.servicios">Servicios</a>
+        <a href="#como-ayudar" class="navbar__link" data-i18n="nav.comoAyudar">Cómo Ayudar</a>
+        <a href="#noticias"    class="navbar__link" data-i18n="nav.noticias">Noticias</a>
+        <a href="#contacto"    class="navbar__link" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <div class="navbar__actions">
         <div class="navbar__social" id="navbar-social"></div>
+        <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+          <span id="lang-label">EN</span>
+        </button>
         <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
@@ -65,22 +68,22 @@
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-menu__close" id="mobile-close" aria-label="Cerrar menú">✕</button>
     <nav class="mobile-menu__nav">
-      <a href="#inicio" class="mobile-menu__link">Inicio</a>
+      <a href="#inicio" class="mobile-menu__link" data-i18n="nav.inicio">Inicio</a>
       <!-- Acordeón móvil: Quiénes Somos -->
       <div class="mobile-menu__group">
         <button class="mobile-menu__link mobile-menu__group-toggle">
-          Quiénes Somos <span class="mobile-arrow">▾</span>
+          <span data-i18n="nav.quienesSomos">Quiénes Somos</span> <span class="mobile-arrow">▾</span>
         </button>
         <div class="mobile-menu__sub">
-          <a href="#historia"       class="mobile-menu__sublink">— Historia</a>
-          <a href="#directores"     class="mobile-menu__sublink">— Junta de Directores</a>
-          <a href="#patrocinadores" class="mobile-menu__sublink">— Patrocinadores</a>
+          <a href="#historia"       class="mobile-menu__sublink" data-i18n="nav.historia">— Historia</a>
+          <a href="#directores"     class="mobile-menu__sublink" data-i18n="nav.directores">— Junta de Directores</a>
+          <a href="#patrocinadores" class="mobile-menu__sublink" data-i18n="nav.patrocinadores">— Patrocinadores</a>
         </div>
       </div>
-      <a href="#servicios"   class="mobile-menu__link">Servicios</a>
-      <a href="#como-ayudar" class="mobile-menu__link">Cómo Ayudar</a>
-      <a href="#noticias"    class="mobile-menu__link">Noticias</a>
-      <a href="#contacto"    class="mobile-menu__link">Contacto</a>
+      <a href="#servicios"   class="mobile-menu__link" data-i18n="nav.servicios">Servicios</a>
+      <a href="#como-ayudar" class="mobile-menu__link" data-i18n="nav.comoAyudar">Cómo Ayudar</a>
+      <a href="#noticias"    class="mobile-menu__link" data-i18n="nav.noticias">Noticias</a>
+      <a href="#contacto"    class="mobile-menu__link" data-i18n="nav.contacto">Contacto</a>
     </nav>
   </div>
 
@@ -175,63 +178,63 @@
           <!-- Row: Nombre + Apellidos -->
           <div class="form-row-2">
             <div class="form-group">
-              <label for="contact-nombre">Nombre</label>
+              <label for="contact-nombre" data-i18n="form.nombre">Nombre</label>
               <input type="text" id="contact-nombre" name="nombre" placeholder="Escriba su nombre" />
             </div>
             <div class="form-group">
-              <label for="contact-apellidos">Apellidos</label>
+              <label for="contact-apellidos" data-i18n="form.apellidos">Apellidos</label>
               <input type="text" id="contact-apellidos" name="apellidos" placeholder="Escriba sus apellidos" />
             </div>
           </div>
 
           <!-- Correo electrónico -->
           <div class="form-group">
-            <label for="contact-email">Correo electrónico <span class="required-mark">*</span></label>
+            <label for="contact-email"><span data-i18n="form.email">Correo electrónico</span> <span class="required-mark">*</span></label>
             <input type="email" id="contact-email" name="email" placeholder="Escriba su correo electrónico" required />
             <span class="form-error" id="err-email"></span>
           </div>
 
           <!-- Número Telefónico -->
           <div class="form-group">
-            <label for="contact-telefono">Número Telefónico</label>
+            <label for="contact-telefono" data-i18n="form.telefono">Número Telefónico</label>
             <input type="tel" id="contact-telefono" name="telefono" placeholder="000-000-0000" />
           </div>
 
           <!-- Dirección -->
           <div class="form-group">
-            <label>Dirección</label>
+            <label data-i18n="form.direccion">Dirección</label>
             <div class="form-row-2">
               <div class="form-group-inner">
-                <label for="contact-linea1" class="label-sub">Línea 1</label>
+                <label for="contact-linea1" class="label-sub" data-i18n="form.linea1">Línea 1</label>
                 <input type="text" id="contact-linea1" name="linea1" placeholder="Línea 1" />
               </div>
               <div class="form-group-inner">
-                <label for="contact-linea2" class="label-sub">Línea 2</label>
+                <label for="contact-linea2" class="label-sub" data-i18n="form.linea2">Línea 2</label>
                 <input type="text" id="contact-linea2" name="linea2" placeholder="Línea 2" />
               </div>
             </div>
             <div class="form-row-2">
               <div class="form-group-inner">
-                <label for="contact-ciudad" class="label-sub">Ciudad</label>
+                <label for="contact-ciudad" class="label-sub" data-i18n="form.ciudad">Ciudad</label>
                 <input type="text" id="contact-ciudad" name="ciudad" placeholder="Ciudad" />
               </div>
               <div class="form-group-inner">
-                <label for="contact-estado" class="label-sub">Estado</label>
+                <label for="contact-estado" class="label-sub" data-i18n="form.estado">Estado</label>
                 <input type="text" id="contact-estado" name="estado" placeholder="Estado" />
               </div>
             </div>
             <div class="form-row-2">
               <div class="form-group-inner">
-                <label for="contact-postal" class="label-sub">Código Postal</label>
+                <label for="contact-postal" class="label-sub" data-i18n="form.postal">Código Postal</label>
                 <input type="text" id="contact-postal" name="postal" placeholder="00000" />
               </div>
               <div class="form-group-inner">
-                <label for="contact-pais" class="label-sub">País</label>
+                <label for="contact-pais" class="label-sub" data-i18n="form.pais">País</label>
                 <select id="contact-pais" name="pais">
-                  <option value="">Seleccione País</option>
+                  <option value="" data-i18n="form.seleccionePais">Seleccione País</option>
                   <option value="Puerto Rico">Puerto Rico</option>
-                  <option value="Estados Unidos">Estados Unidos</option>
-                  <option value="Otro">Otro</option>
+                  <option value="Estados Unidos" data-i18n="form.estadosUnidos">Estados Unidos</option>
+                  <option value="Otro" data-i18n="form.otro">Otro</option>
                 </select>
               </div>
             </div>
@@ -239,13 +242,13 @@
 
           <!-- Tema -->
           <div class="form-group">
-            <label for="contact-tema">Tema:</label>
+            <label for="contact-tema" data-i18n="form.tema">Tema:</label>
             <input type="text" id="contact-tema" name="tema" placeholder="Tema:" />
           </div>
 
           <!-- Mensaje -->
           <div class="form-group">
-            <label for="contact-message">Su mensaje <span class="required-mark">*</span></label>
+            <label for="contact-message"><span data-i18n="form.mensaje">Su mensaje</span> <span class="required-mark">*</span></label>
             <textarea id="contact-message" name="message" rows="5" placeholder="Escriba un corto mensaje" required></textarea>
             <span class="form-error" id="err-message"></span>
           </div>
@@ -253,8 +256,8 @@
           <!-- Submit -->
           <div>
             <button type="submit" class="btn btn--primary btn--enviar" id="contact-submit">
-              <span id="btn-text">ENVIAR</span>
-              <span id="btn-loading" style="display:none;">Enviando...</span>
+              <span id="btn-text" data-i18n="form.enviar">ENVIAR</span>
+              <span id="btn-loading" style="display:none;" data-i18n="form.enviando">Enviando...</span>
             </button>
           </div>
           <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
@@ -293,7 +296,7 @@
     <div class="noticia-page">
       <div class="noticia-topbar">
         <div class="container">
-          <button id="noticia-back" class="noticia-back">&#8592; Volver a Noticias</button>
+          <button id="noticia-back" class="noticia-back" data-i18n="noticiaBack">&#8592; Volver a Noticias</button>
         </div>
       </div>
       <div class="container">

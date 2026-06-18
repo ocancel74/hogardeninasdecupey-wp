@@ -1,586 +1,940 @@
 {
-  "site": {
-    "name": "Hogar de Niñas Cupey",
-    "tagline": "Transformando vidas, construyendo futuros",
-    "description": "Una organización sin fines de lucro dedicada al cuidado, educación y desarrollo integral de niñas en situación de vulnerabilidad en Puerto Rico.",
-    "email": "info@hogardeninasdecupey.org",
-    "phone": "(787) 000-0000",
-    "address": "Cupey, San Juan, Puerto Rico",
-    "logo": "assets/images/Logo.png",
-    "socialMedia": {
-      "facebook": "https://www.facebook.com/hogardeninasdecupey",
-      "instagram": "https://www.instagram.com/hogardeninasdecupey"
-    },
-    "donateUrl": "#como-ayudar"
-  },
-
-  "hero": {
-    "title": "Con más de 70 años",
-    "subtitle": "al servicio de los niños y niñas en desventaja social y económica, a través de servicios integrales en apoyo a la familia y a la comunidad. Servimos como facilidad residencial para niñas y un programa educativo complementario, buscando siempre el mayor interés y bienestar de cada niño y niña participante.",
-    "backgroundImage": "assets/images/hero-bg.jpg",
-    "cta": {
-      "primary": { "text": "Dona hoy", "href": "#como-ayudar" }
-    }
-  },
-
-  "intro": {
-    "titulo": "70 años de historia y ahora ofreciendo nuevos servicios",
-    "parrafos": [
-      "Por más de 70 años hemos ayudado a miles de niños y niñas en desventaja social y económica. Comenzamos como un Hogar de niños brindándoles un albergue seguro, alimentación y vestimenta. Luego servimos exclusivamente de Hogar a niñas víctimas de maltrato u abandono por parte de sus familiares y encargados ofreciendo servicios especializados y de apoyo en las áreas de salud física, mental y espiritual.",
-      "Desde agosto de 2021 abrimos un nuevo centro educativo para niños y niñas y que ofrece servicios a la familia y la comunidad. También servimos como Facilidad Residencial para niñas."
-    ],
-    "subSecciones": [
-      {
-        "subtitulo": "¿Por qué los nuevos servicios?",
-        "texto": "Numerosos eventos han impactado la vida de las familias puertorriqueñas a lo largo de los últimos cinco años. Huracanes, terremotos y la pandemia del COVID 19, han dejado un saldo de precariedad en los sectores más necesitados y han colocado a nuestros niños en posiciones de mayor vulnerabilidad. La experiencia de la educación a distancia a causa del confinamiento pandémico ha colocado a miles de niños en situaciones de rezago académico y en distintas situaciones de riesgo que van a dificultar su desempeño y su desarrollo en el futuro."
+  "es": {
+    "ui": {
+      "nav": {
+        "inicio": "Inicio",
+        "quienesSomos": "Quiénes Somos",
+        "historia": "Historia",
+        "directores": "Junta de Directores",
+        "patrocinadores": "Patrocinadores",
+        "servicios": "Servicios",
+        "comoAyudar": "Cómo Ayudar",
+        "noticias": "Noticias",
+        "contacto": "Contacto"
       },
-      {
-        "subtitulo": "",
-        "texto": "Nuestra <strong>Misión</strong> es proveer servicios integrales de excelencia a niños y jóvenes en desventaja social y económica, buscando el mejor interés y bienestar de los menores fundamentados en valores cristianos."
+      "form": {
+        "nombre": "Nombre",
+        "apellidos": "Apellidos",
+        "email": "Correo electrónico",
+        "telefono": "Número Telefónico",
+        "direccion": "Dirección",
+        "linea1": "Línea 1",
+        "linea2": "Línea 2",
+        "ciudad": "Ciudad",
+        "estado": "Estado",
+        "postal": "Código Postal",
+        "pais": "País",
+        "tema": "Tema:",
+        "mensaje": "Su mensaje",
+        "enviar": "ENVIAR",
+        "enviando": "Enviando...",
+        "placeholderNombre": "Escriba su nombre",
+        "placeholderApellidos": "Escriba sus apellidos",
+        "placeholderEmail": "Escriba su correo electrónico",
+        "placeholderTelefono": "000-000-0000",
+        "placeholderLinea1": "Línea 1",
+        "placeholderLinea2": "Línea 2",
+        "placeholderCiudad": "Ciudad",
+        "placeholderEstado": "Estado",
+        "placeholderPostal": "00000",
+        "placeholderTema": "Tema:",
+        "placeholderMensaje": "Escriba un corto mensaje",
+        "seleccionePais": "Seleccione País",
+        "estadosUnidos": "Estados Unidos",
+        "otro": "Otro"
       },
-      {
-        "subtitulo": "",
-        "texto": "Nuestra <strong>Visión</strong> es contribuir a la formación de niños capaces de transformar sus vidas e impactar su entorno familiar."
-      },
-      {
-        "subtitulo": "¿Cómo puedes ayudar?",
-        "texto": "Con una módica cantidad mensual o anual puedes convertirte en amigo de nuestra organización. También, puedes ser voluntario ayudando en distintas tareas y labores grandes y pequeñas. En cualquier momento puedes donar y patrocinar las actividades de recaudación de fondos que hacemos regularmente. Toda ayuda es buena y nos permite continuar nuestra misión de amor."
+      "donateFab": "Dona Hoy",
+      "noticiaBack": "← Volver a Noticias",
+      "validacion": {
+        "email": "Por favor ingresa un correo válido.",
+        "mensaje": "Por favor escribe tu mensaje.",
+        "exito": "✅ ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+        "error": "❌ Hubo un error al enviar. Por favor intenta de nuevo o contáctanos directamente.",
+        "sinConfig": "⚙️ Para activar el formulario, configura EmailJS en data/content.json."
       }
-    ],
-    "cta": { "text": "¿Cómo puedo ayudar?", "href": "#como-ayudar" }
-  },
-
-  "quienesSomos": {
-    "title": "¿Quiénes Somos?",
-    "mision": {
-      "titulo": "Nuestra Misión",
-      "texto": "El Hogar de Niñas Cupey es una organización sin fines de lucro dedicada a brindar un hogar seguro, educación de calidad y desarrollo integral a niñas en situación de vulnerabilidad, abandono o riesgo en Puerto Rico. Trabajamos para que cada niña tenga la oportunidad de alcanzar su máximo potencial."
     },
-    "vision": {
-      "titulo": "Nuestra Visión",
-      "texto": "Ser el hogar de referencia en Puerto Rico para la protección y el desarrollo integral de la niñez, donde cada niña pueda crecer en un ambiente de amor, seguridad y fe, preparándose para ser una ciudadana productiva y plena."
+
+    "site": {
+      "name": "Hogar de Niñas Cupey",
+      "tagline": "Transformando vidas, construyendo futuros",
+      "description": "Una organización sin fines de lucro dedicada al cuidado, educación y desarrollo integral de niñas en situación de vulnerabilidad en Puerto Rico.",
+      "email": "info@hogardeninasdecupey.org",
+      "phone": "(787) 761-2805",
+      "address": "Cupey, San Juan, Puerto Rico",
+      "logo": "assets/images/Logo.png",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/hogardeninasdecupey",
+        "instagram": "https://www.instagram.com/hogardeninasdecupey"
+      },
+      "donateUrl": "#como-ayudar"
     },
-    "valores": [
-      { "icono": "❤️", "titulo": "Amor", "texto": "Cada niña merece amor incondicional y un hogar donde se sienta segura." },
-      { "icono": "🎓", "titulo": "Educación", "texto": "La educación es la base para transformar vidas y abrir puertas al futuro." },
-      { "icono": "🙏", "titulo": "Fe", "texto": "Nuestra fe es el fundamento que guía cada acción y decisión." },
-      { "icono": "🤝", "titulo": "Comunidad", "texto": "Trabajamos juntos con la comunidad para crear un impacto duradero." }
-    ],
-    "estadisticas": [
-      { "numero": "60+", "descripcion": "Años de servicio" },
-      { "numero": "500+", "descripcion": "Niñas beneficiadas" },
-      { "numero": "100%", "descripcion": "Dedicación y amor" },
-      { "numero": "1", "descripcion": "Gran familia" }
-    ]
-  },
 
-  "historia": {
-    "title": "70 años trabajando por los nuestros",
-
-    "INSTRUCCIONES_FOTOS": "Sube 5 fotos a assets/images/historia/ con los nombres: foto-1.jpg, foto-2.jpg, foto-3.jpg, foto-4.jpg, foto-5.jpg",
-
-    "logoMedio": "assets/images/historia/logo-historia.jpg",
-
-    "fotos": [
-      "assets/images/historia/foto-1.jpg",
-      "assets/images/historia/foto-2.jpg",
-      "assets/images/historia/foto-3.jpg",
-      "assets/images/historia/foto-4.jpg",
-      "assets/images/historia/foto-5.jpg"
-    ],
-
-    "secciones": [
-      {
-        "subtitulo": "Historia",
-        "texto": "Por los pasados setenta años, hemos ayudado a miles de niños y niñas en desventaja social y económica. Fundado en el año 1950 como el Hogar del Niño, a lo largo de treinta y dos años impactamos a miles de chicos que deambulaban en la ciudad de San Juan, brindándoles un albergue seguro, alimento y vestimenta. Nuestra labor ha estado desde siempre orientada a buscar siempre el mayor bienestar de los menores. Nuestra primera sede fue en la calle Arranga en Río Piedras y en el 1958 recibimos en donación un amplio solar en Cupey Alto donde está ubicada nuestra actual sede."
-      },
-      {
-        "subtitulo": "",
-        "texto": "A partir de 1982, el Hogar pasó a ser manejado por la Congregación de las Hermanas de Amistad Misioneras en Cristo Obrero (AMICO), atendiendo niñas, por lo que posteriormente se cambió el nombre a Hogar de Niñas de Cupey. Brindamos servicios de hogar a niñas víctimas de maltrato o abandono por parte de sus familiares y encargados, ofreciendo servicios especializados y de apoyo en las áreas de salud física, mental y espiritual, para contribuir así a la sanación y el bienestar de las chicas."
-      },
-      {
-        "subtitulo": "",
-        "texto": "En el verano de 2021 y en respuesta a los cambios que se requerían de las instituciones que albergan menores para cumplir con la Ley Federal 'Family First' de 2018, identificamos un nuevo norte y ampliamos nuestros servicios con un programa educativo dirigido a niñas en desventaja de la comunidad e integrando a la familia."
-      },
-      {
-        "subtitulo": "¿Por qué los nuevos servicios?",
-        "texto": "Numerosos eventos han impactado la vida de las familias puertorriqueñas a lo largo de los últimos cinco años. Huracanes, terremotos y la pandemia del COVID 19, han dejado un saldo de precariedad en los sectores más necesitados y han colocado a nuestros niños en posiciones de mayor vulnerabilidad. La experiencia de la educación a distancia a causa del confinamiento pandémico ha colocado a miles de niños en situaciones de rezago académico y en distintas situaciones de riesgo que van a dificultar su desempeño y su desarrollo en el futuro."
-      },
-      {
-        "subtitulo": "",
-        "texto": "Ante los nuevos retos que ha sufrido nuestro país y cómo ha afectado negativamente a la niñez, hemos querido responder dando una nota positiva estableciendo un programa de servicios complementarios para la niñez y apoyo a las familias, con el fin de prevenir el fracaso escolar y los riesgos que este puede traer a la vida futura de los niños. En agosto de 2021, abrimos nuestras puertas a niños y niñas ofreciendo los nuevos servicios."
-      },
-      {
-        "subtitulo": "",
-        "texto": "Las niñas residentes en el Hogar se benefician igualmente de nuestros servicios educativos."
+    "hero": {
+      "title": "Con más de 70 años",
+      "subtitle": "al servicio de los niños y niñas en desventaja social y económica, a través de servicios integrales en apoyo a la familia y a la comunidad. Servimos como facilidad residencial para niñas y un programa educativo complementario, buscando siempre el mayor interés y bienestar de cada niño y niña participante.",
+      "backgroundImage": "assets/images/hero-bg.jpg",
+      "cta": {
+        "primary": { "text": "Dona hoy", "href": "#como-ayudar" }
       }
-    ],
+    },
 
-    "paraQueExistimos": {
-      "subtitulo": "¿Para qué existimos?",
+    "intro": {
+      "titulo": "70 años de historia y ahora ofreciendo nuevos servicios",
+      "parrafos": [
+        "Por más de 70 años hemos ayudado a miles de niños y niñas en desventaja social y económica. Comenzamos como un Hogar de niños brindándoles un albergue seguro, alimentación y vestimenta. Luego servimos exclusivamente de Hogar a niñas víctimas de maltrato u abandono por parte de sus familiares y encargados ofreciendo servicios especializados y de apoyo en las áreas de salud física, mental y espiritual.",
+        "Desde agosto de 2021 abrimos un nuevo centro educativo para niños y niñas y que ofrece servicios a la familia y la comunidad. También servimos como Facilidad Residencial para niñas."
+      ],
+      "subSecciones": [
+        {
+          "subtitulo": "¿Por qué los nuevos servicios?",
+          "texto": "Numerosos eventos han impactado la vida de las familias puertorriqueñas a lo largo de los últimos cinco años. Huracanes, terremotos y la pandemia del COVID 19, han dejado un saldo de precariedad en los sectores más necesitados y han colocado a nuestros niños en posiciones de mayor vulnerabilidad. La experiencia de la educación a distancia a causa del confinamiento pandémico ha colocado a miles de niños en situaciones de rezago académico y en distintas situaciones de riesgo que van a dificultar su desempeño y su desarrollo en el futuro."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Nuestra <strong>Misión</strong> es proveer servicios integrales de excelencia a niños y jóvenes en desventaja social y económica, buscando el mejor interés y bienestar de los menores fundamentados en valores cristianos."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Nuestra <strong>Visión</strong> es contribuir a la formación de niños capaces de transformar sus vidas e impactar su entorno familiar."
+        },
+        {
+          "subtitulo": "¿Cómo puedes ayudar?",
+          "texto": "Con una módica cantidad mensual o anual puedes convertirte en amigo de nuestra organización. También, puedes ser voluntario ayudando en distintas tareas y labores grandes y pequeñas. En cualquier momento puedes donar y patrocinar las actividades de recaudación de fondos que hacemos regularmente. Toda ayuda es buena y nos permite continuar nuestra misión de amor."
+        }
+      ],
+      "cta": { "text": "¿Cómo puedo ayudar?", "href": "#como-ayudar" }
+    },
+
+    "quienesSomos": {
+      "title": "¿Quiénes Somos?",
       "mision": {
-        "titulo": "Misión",
-        "texto": "Proveer servicios integrales de excelencia a niños y jóvenes en desventaja social y económica, buscando el mejor interés y bienestar de los menores fundamentados en valores cristianos."
+        "titulo": "Nuestra Misión",
+        "texto": "El Hogar de Niñas Cupey es una organización sin fines de lucro dedicada a brindar un hogar seguro, educación de calidad y desarrollo integral a niñas en situación de vulnerabilidad, abandono o riesgo en Puerto Rico. Trabajamos para que cada niña tenga la oportunidad de alcanzar su máximo potencial."
       },
       "vision": {
-        "titulo": "Visión",
-        "texto": "Contribuir a la formación de niños capaces de transformar sus vidas e impactar positivamente su entorno familiar."
+        "titulo": "Nuestra Visión",
+        "texto": "Ser el hogar de referencia en Puerto Rico para la protección y el desarrollo integral de la niñez, donde cada niña pueda crecer en un ambiente de amor, seguridad y fe, preparándose para ser una ciudadana productiva y plena."
       },
-      "compromisos": {
-        "titulo": "Nuestros compromisos",
-        "lista": [
-          "Promoción de la responsabilidad",
-          "Comunidad de las familias",
-          "Prevención del maltrato",
-          "Educación centrada en valores",
-          "Los niños como agentes de transformación de sus familias",
-          "Que cada niño tenga un lugar y sea parte de la sociedad, desde el reconocimiento y valoración de la diferencia",
-          "Ser un oasis en la vida de las niñas para que tengan otros referentes para su vida adulta",
-          "Comprometidos con la gratitud, la honestidad, la prudencia, la humildad"
-        ]
-      },
-      "fortalezas": {
-        "titulo": "Nuestras fortalezas",
-        "lista": [
-          "Apertura del carisma congregacional a los signos de los tiempos",
-          "Infraestructura del Hogar",
-          "Planta física del Hogar",
-          "Compromiso de la Junta de Directores y la congregación con la continuidad organizacional",
-          "Comprometidos con poblaciones en necesidad, particularmente la niñez",
-          "Experiencia educativa",
-          "Participar en el diseño programático",
-          "Recursos Humanos",
-          "Alianzas para servicios terapéuticos"
+      "valores": [
+        { "icono": "❤️", "titulo": "Amor",      "texto": "Cada niña merece amor incondicional y un hogar donde se sienta segura." },
+        { "icono": "🎓", "titulo": "Educación", "texto": "La educación es la base para transformar vidas y abrir puertas al futuro." },
+        { "icono": "🙏", "titulo": "Fe",         "texto": "Nuestra fe es el fundamento que guía cada acción y decisión." },
+        { "icono": "🤝", "titulo": "Comunidad",  "texto": "Trabajamos juntos con la comunidad para crear un impacto duradero." }
+      ],
+      "estadisticas": [
+        { "numero": "60+",  "descripcion": "Años de servicio" },
+        { "numero": "500+", "descripcion": "Niñas beneficiadas" },
+        { "numero": "100%", "descripcion": "Dedicación y amor" },
+        { "numero": "1",    "descripcion": "Gran familia" }
+      ]
+    },
+
+    "historia": {
+      "title": "70 años trabajando por los nuestros",
+
+      "INSTRUCCIONES_FOTOS": "Sube 5 fotos a assets/images/historia/ con los nombres: foto-1.jpg, foto-2.jpg, foto-3.jpg, foto-4.jpg, foto-5.jpg",
+
+      "logoMedio": "assets/images/historia/logo-historia.jpg",
+
+      "fotos": [
+        "assets/images/historia/foto-1.jpg",
+        "assets/images/historia/foto-2.jpg",
+        "assets/images/historia/foto-3.jpg",
+        "assets/images/historia/foto-4.jpg",
+        "assets/images/historia/foto-5.jpg"
+      ],
+
+      "secciones": [
+        {
+          "subtitulo": "Historia",
+          "texto": "Por los pasados setenta años, hemos ayudado a miles de niños y niñas en desventaja social y económica. Fundado en el año 1950 como el Hogar del Niño, a lo largo de treinta y dos años impactamos a miles de chicos que deambulaban en la ciudad de San Juan, brindándoles un albergue seguro, alimento y vestimenta. Nuestra labor ha estado desde siempre orientada a buscar siempre el mayor bienestar de los menores. Nuestra primera sede fue en la calle Arranga en Río Piedras y en el 1958 recibimos en donación un amplio solar en Cupey Alto donde está ubicada nuestra actual sede."
+        },
+        {
+          "subtitulo": "",
+          "texto": "A partir de 1982, el Hogar pasó a ser manejado por la Congregación de las Hermanas de Amistad Misioneras en Cristo Obrero (AMICO), atendiendo niñas, por lo que posteriormente se cambió el nombre a Hogar de Niñas de Cupey. Brindamos servicios de hogar a niñas víctimas de maltrato o abandono por parte de sus familiares y encargados, ofreciendo servicios especializados y de apoyo en las áreas de salud física, mental y espiritual, para contribuir así a la sanación y el bienestar de las chicas."
+        },
+        {
+          "subtitulo": "",
+          "texto": "En el verano de 2021 y en respuesta a los cambios que se requerían de las instituciones que albergan menores para cumplir con la Ley Federal 'Family First' de 2018, identificamos un nuevo norte y ampliamos nuestros servicios con un programa educativo dirigido a niñas en desventaja de la comunidad e integrando a la familia."
+        },
+        {
+          "subtitulo": "¿Por qué los nuevos servicios?",
+          "texto": "Numerosos eventos han impactado la vida de las familias puertorriqueñas a lo largo de los últimos cinco años. Huracanes, terremotos y la pandemia del COVID 19, han dejado un saldo de precariedad en los sectores más necesitados y han colocado a nuestros niños en posiciones de mayor vulnerabilidad. La experiencia de la educación a distancia a causa del confinamiento pandémico ha colocado a miles de niños en situaciones de rezago académico y en distintas situaciones de riesgo que van a dificultar su desempeño y su desarrollo en el futuro."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Ante los nuevos retos que ha sufrido nuestro país y cómo ha afectado negativamente a la niñez, hemos querido responder dando una nota positiva estableciendo un programa de servicios complementarios para la niñez y apoyo a las familias, con el fin de prevenir el fracaso escolar y los riesgos que este puede traer a la vida futura de los niños. En agosto de 2021, abrimos nuestras puertas a niños y niñas ofreciendo los nuevos servicios."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Las niñas residentes en el Hogar se benefician igualmente de nuestros servicios educativos."
+        }
+      ],
+
+      "paraQueExistimos": {
+        "subtitulo": "¿Para qué existimos?",
+        "mision": {
+          "titulo": "Misión",
+          "texto": "Proveer servicios integrales de excelencia a niños y jóvenes en desventaja social y económica, buscando el mejor interés y bienestar de los menores fundamentados en valores cristianos."
+        },
+        "vision": {
+          "titulo": "Visión",
+          "texto": "Contribuir a la formación de niños capaces de transformar sus vidas e impactar positivamente su entorno familiar."
+        },
+        "compromisos": {
+          "titulo": "Nuestros compromisos",
+          "lista": [
+            "Promoción de la responsabilidad",
+            "Comunidad de las familias",
+            "Prevención del maltrato",
+            "Educación centrada en valores",
+            "Los niños como agentes de transformación de sus familias",
+            "Que cada niño tenga un lugar y sea parte de la sociedad, desde el reconocimiento y valoración de la diferencia",
+            "Ser un oasis en la vida de las niñas para que tengan otros referentes para su vida adulta",
+            "Comprometidos con la gratitud, la honestidad, la prudencia, la humildad"
+          ]
+        },
+        "fortalezas": {
+          "titulo": "Nuestras fortalezas",
+          "lista": [
+            "Apertura del carisma congregacional a los signos de los tiempos",
+            "Infraestructura del Hogar",
+            "Planta física del Hogar",
+            "Compromiso de la Junta de Directores y la congregación con la continuidad organizacional",
+            "Comprometidos con poblaciones en necesidad, particularmente la niñez",
+            "Experiencia educativa",
+            "Participar en el diseño programático",
+            "Recursos Humanos",
+            "Alianzas para servicios terapéuticos"
+          ]
+        }
+      }
+    },
+
+    "directores": {
+      "title": "Junta de Directores",
+      "subtitle": "Personas comprometidas que guían nuestra misión con dedicación y liderazgo.",
+
+      "INSTRUCCIONES": [
+        "Para cambiar nombre/cargo: edita los campos 'nombre', 'cargo' y 'descripcion'.",
+        "Para agregar foto: sube el archivo a assets/images/directores/ con el nombre exacto del campo 'foto'.",
+        "Si no hay foto, se mostrará un ícono automáticamente.",
+        "Para agregar director: copia un bloque {} y pégalo dentro de 'miembros', separado por coma.",
+        "Para eliminar: borra el bloque {} completo incluyendo la coma anterior.",
+        "Para la sección Administración: edita los bloques dentro de 'administracion'."
+      ],
+
+      "miembros": [
+        { "nombre": "Teresita Loubriel Rosado, CPA",    "cargo": "Presidenta",      "descripcion": "Secretaria Retirada",                                  "foto": "assets/images/directores/presidenta.jpg" },
+        { "nombre": "José M. Izquierdo Encarnación, Ing.", "cargo": "Vice-Presidente", "descripcion": "Presidente Rotarios CPY",                             "foto": "assets/images/directores/vicepresidente.jpg" },
+        { "nombre": "Edna Jiménez, CPA",                "cargo": "Tesorera",        "descripcion": "",                                                     "foto": "assets/images/directores/tesorera.jpg" },
+        { "nombre": "Lucy García Quevedo",              "cargo": "Secretaria",      "descripcion": "Psicóloga",                                            "foto": "assets/images/directores/secretaria.jpg" },
+        { "nombre": "Carlos A. Lázaro León, Ing.",       "cargo": "Vocal",           "descripcion": "Presidente Carlos A. Lázaro León & Assoc., LTD",       "foto": "assets/images/directores/vocal-lazaro.jpg" },
+        { "nombre": "Gia L. Morales Talavera",           "cargo": "Vocal",           "descripcion": "Procuradora/Abogada",                                  "foto": "assets/images/directores/vocal-morales.jpg" },
+        { "nombre": "Maribel Torres - Baerga",           "cargo": "Vocal",           "descripcion": "Trabajadora Social Clínica",                           "foto": "assets/images/directores/vocal-torres.jpg" },
+        { "nombre": "Rebecca Molina",                    "cargo": "Vocal",           "descripcion": "Administradora de Panel Clínico y Bienestar Salud",    "foto": "assets/images/directores/vocal-molina.jpg" },
+        { "nombre": "Lcdo. Roberto Montalvo",            "cargo": "Vocal",           "descripcion": "",                                                     "foto": "assets/images/directores/vocal-montalvo.jpg" }
+      ],
+
+      "administracion": {
+        "titulo": "Administración",
+        "miembros": [
+          { "nombre": "Sor Mirna Vélez",                      "cargo": "Directora Ejecutiva", "descripcion": "",                                                                             "foto": "assets/images/directores/directora-ejecutiva.jpg", "tipo": "individual" },
+          { "nombre": "Empleados Administrativos y Directora", "cargo": "",                    "descripcion": "",                                                                             "foto": "assets/images/directores/admin-empleados.jpg",     "tipo": "grupo" },
+          { "nombre": "Tutoras y Coordinadoras Educativas",    "cargo": "",                    "descripcion": "",                                                                             "foto": "assets/images/directores/admin-tutoras.jpg",       "tipo": "grupo" },
+          { "nombre": "Hermanas de Amigo",                     "cargo": "",                    "descripcion": "Hna. Jessica Alvarán, Hna. Rebecca Otorino, Hna. Josefina Calero, Hna. Sabrina Ulloa", "foto": "assets/images/directores/admin-hermanas.jpg", "tipo": "grupo" }
         ]
       }
     },
 
-    "hitos": [
-      {
-        "anio": "2000",
-        "titulo": "Modernización",
-        "texto": "El nuevo milenio trajo consigo la modernización de las instalaciones y la incorporación de tecnología educativa. Se establecieron alianzas con universidades y empresas para ofrecer becas y oportunidades laborales a las jóvenes egresadas.",
-        "imagen": "assets/images/historia-2000.jpg"
-      },
-      {
-        "anio": "2017",
-        "titulo": "Resiliencia ante el Huracán María",
-        "texto": "Tras el devastador paso del Huracán María, el Hogar de Niñas Cupey demostró una extraordinaria resiliencia. Con el apoyo de la comunidad y donantes, las instalaciones fueron restauradas y el servicio continuó sin interrupciones para las niñas residentes.",
-        "imagen": "assets/images/historia-2017.jpg"
-      },
-      {
-        "anio": "Hoy",
-        "titulo": "Seguimos Adelante",
-        "texto": "Hoy, el Hogar de Niñas Cupey continúa su misión con renovado compromiso. Cada día trabajamos para brindar a nuestras niñas el amor, la educación y las herramientas que necesitan para construir un futuro brillante.",
-        "imagen": "assets/images/historia-hoy.jpg"
+    "patrocinadores": {
+      "title": "Patrocinadores",
+      "subtitle": "A lo largo de nuestra historia los siguientes auspiciadores han creído en nuestra misión:",
+
+      "INSTRUCCIONES": [
+        "Para cambiar un logo: sube la imagen a assets/images/patrocinadores/ con el nombre del campo 'logo'.",
+        "Para cambiar el link: edita el campo 'url' con la dirección web del patrocinador.",
+        "Para agregar un patrocinador: copia un bloque {} y pégalo dentro de 'lista', separado por coma.",
+        "Para eliminar: borra el bloque {} completo incluyendo la coma anterior."
+      ],
+
+      "lista": [
+        { "nombre": "Fundación Banco Popular",         "logo": "assets/images/patrocinadores/banco-popular.png",       "url": "https://www.fundacionbancopopular.org/",         "linkText": "Clic para conocer más" },
+        { "nombre": "Fundación MAPFRE",                "logo": "assets/images/patrocinadores/mapfre.png",              "url": "https://www.fundacionmapfre.org/en/",            "linkText": "Clic para conocer más" },
+        { "nombre": "Fondos Unidos de Puerto Rico",    "logo": "assets/images/patrocinadores/fondos-unidos.png",       "url": "https://unitedwaypr.org/en/",                    "linkText": "Clic para conocer más" },
+        { "nombre": "Fundación Comunitaria de Puerto Rico", "logo": "assets/images/patrocinadores/fundacion-comunitaria.png", "url": "https://www.fcpr.org",                   "linkText": "Clic para conocer más" },
+        { "nombre": "HiTech Auto Care",                "logo": "assets/images/patrocinadores/hitech.png",              "url": "https://hitechautocarepr.com/en/",               "linkText": "Clic para conocer más" },
+        { "nombre": "Hermanas Carvajal Fuentes",       "logo": "assets/images/patrocinadores/carvajal-fuentes.png",    "url": "http://www.premioshermanascarvajal.org/",         "linkText": "Clic para conocer más" },
+        { "nombre": "CECFL",                           "logo": "assets/images/patrocinadores/cecfl.png",               "url": "https://cecflpr.org/home",                       "linkText": "Clic para conocer más" },
+        { "nombre": "Departamento de Justicia",        "logo": "assets/images/patrocinadores/depto-justicia.png",      "url": "https://www.justicia.pr.gov/",                   "linkText": "Clic para conocer más" },
+        { "nombre": "Fundación Ángel Ramos",           "logo": "assets/images/patrocinadores/angel-ramos.png",         "url": "https://www.fundacionangelramos.org/",           "linkText": "Clic para conocer más" }
+      ]
+    },
+
+    "servicios": {
+      "title": "Nuestros servicios",
+      "descripcion": "Radicados de la naturaleza, en un enclave de paz dentro del área metropolitana, ofrecemos los siguientes servicios bajo el cuidado amoroso de las Hermanas de AMICO y nuestro personal altamente capacitado.",
+
+      "INSTRUCCIONES_FOTOS": [
+        "Sube las fotos a assets/images/servicios/ con estos nombres exactos:",
+        "Fotos-Servicios-1.png → foto grande principal",
+        "Fotos-Servicios-2.png hasta Fotos-Servicios-8.png → 7 fotos pequeñas"
+      ],
+
+      "galeria": [
+        "assets/images/servicios/Fotos-Servicios-1.png",
+        "assets/images/servicios/Fotos-Servicios-2.png",
+        "assets/images/servicios/Fotos-Servicios-3.png",
+        "assets/images/servicios/Fotos-Servicios-4.png",
+        "assets/images/servicios/Fotos-Servicios-5.png",
+        "assets/images/servicios/Fotos-Servicios-6.png",
+        "assets/images/servicios/Fotos-Servicios-7.png",
+        "assets/images/servicios/Fotos-Servicios-8.png"
+      ],
+
+      "categorias": [
+        { "titulo": "Orientación",                                              "icono": "🙌" },
+        { "titulo": "Apoyo psico-emocional y espiritual y servicios sicológicos", "icono": "💜" },
+        { "titulo": "Acompañamiento espiritual",                                "icono": "🙏" }
+      ],
+
+      "grupos": [
+        { "titulo": "Servicios Educativos",   "icono": "📚",       "lista": ["Tutorías", "Lecto-escritura", "Estudio supervisado", "Apoyo de preparación de proyectos y tareas"] },
+        { "titulo": "Servicios a la Familia", "icono": "👨‍👩‍👧", "lista": ["Orientación familiar", "Equipos de recreación y casa convivencia"] },
+        { "titulo": "Servicios a la Comunidad", "icono": "🏘️",    "lista": ["Talleres y adiestramiento", "Actividades de impacto comunitario"] }
+      ],
+
+      "residencial": {
+        "titulo": "Servicio Residencial Cualificado",
+        "icono": "🏠",
+        "items": [
+          "Somos un centro de servicios integrales y residenciales de calidad a niños, orientado hacia el mayor bienestar de la familia y la sociedad puertorriqueña.",
+          "Proveemos servicios integrales y residenciales a menores, según sus necesidades físicas y emocionales, sirviendo como facilitadores para la integración de la familia.",
+          "Propósito del servicio — brindar servicios integrales a niños y jóvenes referidos por el Departamento de la Familia, con miras a lograr estabilidad emocional y la reunificación familiar según la naturaleza del caso, considerando el mejor interés y bienestar de la menor."
+        ]
       }
-    ]
-  },
+    },
 
-  "directores": {
-    "title": "Junta de Directores",
-    "subtitle": "Personas comprometidas que guían nuestra misión con dedicación y liderazgo.",
-
-    "INSTRUCCIONES": [
-      "Para cambiar nombre/cargo: edita los campos 'nombre', 'cargo' y 'descripcion'.",
-      "Para agregar foto: sube el archivo a assets/images/directores/ con el nombre exacto del campo 'foto'.",
-      "Si no hay foto, se mostrará un ícono automáticamente.",
-      "Para agregar director: copia un bloque {} y pégalo dentro de 'miembros', separado por coma.",
-      "Para eliminar: borra el bloque {} completo incluyendo la coma anterior.",
-      "Para la sección Administración: edita los bloques dentro de 'administracion'."
-    ],
-
-    "miembros": [
-      {
-        "nombre": "Teresita Loubriel Rosado, CPA",
-        "cargo": "Presidenta",
-        "descripcion": "Secretaria Retirada",
-        "foto": "assets/images/directores/presidenta.jpg"
+    "comoAyudar": {
+      "amigo": {
+        "titulo": "Conviértete en amigo",
+        "parrafos": [
+          "Los Amigos del Hogar de Niñas de Cupey son aquellas personas o entidades que endosen los fines de la institución y contribuyan a su sostenimiento económico, mediante donativos mensuales o anuales, desde tan sólo $10 mensuales o $120 anuales.",
+          "El 100% de los donativos al Hogar de Niñas de Cupey son deducibles de su planilla de contribución sobre ingresos de Puerto Rico. El Hogar también cuenta con la exención que brinda la sección 501(c)(3) del código de rentas internas federal."
+        ]
       },
-      {
-        "nombre": "José M. Izquierdo Encarnación, Ing.",
-        "cargo": "Vice-Presidente",
-        "descripcion": "Presidente Rotarios CPY",
-        "foto": "assets/images/directores/vicepresidente.jpg"
+      "voluntario": {
+        "titulo": "Conviértete en voluntario",
+        "intro": "Los voluntarios son personas que por determinación propia, ofrecen su tiempo, contactos o experiencia para ayudar a los niños o a la administración en diversas áreas, incluyendo, pero no limitado a:",
+        "lista": [
+          "Actividades y celebraciones",
+          "Tutorías",
+          "Mantenimiento de áreas verdes y recreativas",
+          "Reparaciones de la planta física",
+          "Plomería, electricidad y albañilería",
+          "Artículos para los salones",
+          "Donaciones de alimentos o productos para cubrir necesidades de El Hogar",
+          "Pases de cortesía",
+          "Efectos escolares"
+        ]
       },
-      {
-        "nombre": "Edna Jiménez, CPA",
-        "cargo": "Tesorera",
-        "descripcion": "",
-        "foto": "assets/images/directores/tesorera.jpg"
-      },
-      {
-        "nombre": "Lucy García Quevedo",
-        "cargo": "Secretaria",
-        "descripcion": "Psicóloga",
-        "foto": "assets/images/directores/secretaria.jpg"
-      },
-      {
-        "nombre": "Carlos A. Lázaro León, Ing.",
-        "cargo": "Vocal",
-        "descripcion": "Presidente Carlos A. Lázaro León & Assoc., LTD",
-        "foto": "assets/images/directores/vocal-lazaro.jpg"
-      },
-      {
-        "nombre": "Gia L. Morales Talavera",
-        "cargo": "Vocal",
-        "descripcion": "Procuradora/Abogada",
-        "foto": "assets/images/directores/vocal-morales.jpg"
-      },
-      {
-        "nombre": "Maribel Torres - Baerga",
-        "cargo": "Vocal",
-        "descripcion": "Trabajadora Social Clínica",
-        "foto": "assets/images/directores/vocal-torres.jpg"
-      },
-      {
-        "nombre": "Rebecca Molina",
-        "cargo": "Vocal",
-        "descripcion": "Administradora de Panel Clínico y Bienestar Salud",
-        "foto": "assets/images/directores/vocal-molina.jpg"
-      },
-      {
-        "nombre": "Lcdo. Roberto Montalvo",
-        "cargo": "Vocal",
-        "descripcion": "",
-        "foto": "assets/images/directores/vocal-montalvo.jpg"
+      "donar": {
+        "titulo": "Cómo donar",
+        "paypal": {
+          "titulo": "Pay Pal",
+          "url": "https://www.paypal.com/fundraiser/charity/1596853",
+          "boton": "Dona Hoy"
+        },
+        "athMovil": {
+          "titulo": "ATH Móvil",
+          "qr": "assets/images/como-ayudar/ath-movil-qr.png",
+          "usuario": "/HogardeNinosdeCupey",
+          "logo": "assets/images/como-ayudar/ath-movil-logo.png",
+          "INSTRUCCIONES": "Sube el QR de ATH Móvil como 'ath-movil-qr.png' y el logo como 'ath-movil-logo.png' en assets/images/como-ayudar/"
+        }
       }
-    ],
+    },
 
-    "administracion": {
-      "titulo": "Administración",
-      "miembros": [
+    "noticias": {
+      "title": "Noticias recientes",
+      "subtitle": "Mantente al día con las actividades y logros de nuestra comunidad.",
+
+      "INSTRUCCIONES": [
+        "Para AGREGAR una noticia: copia un bloque completo { } y pégalo al INICIO de 'eventos'.",
+        "slug: identificador único sin espacios ni acentos, ejemplo: 'gala-2025'",
+        "imagen: sube la foto principal a assets/images/noticias/ y escribe la ruta aquí.",
+        "cuerpo: contenido de la página completa. Tipos de bloque disponibles:",
+        "  { 'tipo': 'parrafo',   'texto': 'Texto del párrafo.' }",
+        "  { 'tipo': 'subtitulo', 'texto': '¿Dónde?' }",
+        "  { 'tipo': 'lista',     'items': ['item 1', 'item 2'] }",
+        "  { 'tipo': 'fotos',     'imagenes': ['assets/images/noticias/foto1.jpg'] }",
+        "Si no escribes 'cuerpo', la página mostrará solo la descripción corta."
+      ],
+
+      "eventos": [
         {
-          "nombre": "Sor Mirna Vélez",
-          "cargo": "Directora Ejecutiva",
-          "descripcion": "",
-          "foto": "assets/images/directores/directora-ejecutiva.jpg",
-          "tipo": "individual"
+          "titulo": "Graduación Clase 2025",
+          "slug": "graduacion-2025",
+          "fecha": "2025-05-30",
+          "descripcion": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza.",
+          "imagen": "assets/images/noticia-graduacion.jpg",
+          "categoria": "Logros",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza." },
+            { "tipo": "subtitulo", "texto": "Un día especial" },
+            { "tipo": "parrafo", "texto": "Este año marcamos un hito importante en la historia del Hogar. Nuestras graduadas han demostrado que con dedicación, amor y apoyo, es posible alcanzar las metas más altas." },
+            { "tipo": "parrafo", "texto": "¡Felicitamos a todas nuestras graduadas y a sus familias!" }
+          ]
         },
         {
-          "nombre": "Empleados Administrativos y Directora",
-          "cargo": "",
-          "descripcion": "",
-          "foto": "assets/images/directores/admin-empleados.jpg",
-          "tipo": "grupo"
+          "titulo": "Bohemia Bailable 2023",
+          "slug": "Bailable-2023",
+          "fecha": "2023-03-23",
+          "descripcion": "A beneficio del Hogar de Niñas de Cupey «Por un Nuevo Camino al Hogar». Los fondos recaudados serán utilizados para la reubicación de la entrada principal del Hogar.",
+          "imagen": "assets/images/noticias/noticia-Arte-Bohemia-2023.png",
+          "categoria": "Evento",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "A beneficio del Hogar de Niñas de Cupey «Por un Nuevo Camino al Hogar». Los fondos recaudados serán utilizados para la reubicación de la entrada principal del Hogar por un camino más accesible." },
+            { "tipo": "subtitulo", "texto": "¿Dónde?" },
+            { "tipo": "parrafo", "texto": "Plazoleta de Banco Popular en Popular Center, Hato Rey" },
+            { "tipo": "subtitulo", "texto": "¿Cuándo?" },
+            { "tipo": "parrafo", "texto": "23 de marzo de 2023\nDe 6:00 pm a 11:30 pm" },
+            { "tipo": "subtitulo", "texto": "Programa" },
+            { "tipo": "parrafo", "texto": "Habrá cena, bebidas y espectáculo musical." },
+            { "tipo": "parrafo", "texto": "Taquillas a $125 por persona\nLlama al 787-761-2805 o escribe a info@hogardeninasdecupey.org" },
+            { "tipo": "parrafo", "texto": "¡Contamos contigo, tus familiares y amigos!" }
+          ]
         },
         {
-          "nombre": "Tutoras y Coordinadoras Educativas",
-          "cargo": "",
-          "descripcion": "",
-          "foto": "assets/images/directores/admin-tutoras.jpg",
-          "tipo": "grupo"
+          "titulo": "Nuevo Programa de Arte",
+          "slug": "programa-arte-2025",
+          "fecha": "2025-04-10",
+          "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
+          "imagen": "assets/images/noticias/noticia-arte.jpg",
+          "categoria": "Programas",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales de Puerto Rico." },
+            { "tipo": "parrafo", "texto": "Las niñas están explorando su creatividad a través de pintura, escultura y arte digital, desarrollando habilidades que les servirán toda la vida." }
+          ]
         },
         {
-          "nombre": "Hermanas de Amigo",
-          "cargo": "",
-          "descripcion": "Hna. Jessica Alvarán, Hna. Rebecca Otorino, Hna. Josefina Calero, Hna. Sabrina Ulloa",
-          "foto": "assets/images/directores/admin-hermanas.jpg",
-          "tipo": "grupo"
+          "titulo": "Visita de Voluntarios",
+          "slug": "visita-voluntarios-2025",
+          "fecha": "2025-03-22",
+          "descripcion": "Un grupo de voluntarios de empresas locales visitó el hogar para renovar espacios comunes. Gracias a todos por su generoso tiempo y esfuerzo.",
+          "imagen": "assets/images/noticias/noticia-voluntarios.jpg",
+          "categoria": "Comunidad",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Un grupo de voluntarios de empresas locales visitó el Hogar de Niñas de Cupey para renovar espacios comunes." },
+            { "tipo": "parrafo", "texto": "Gracias a su dedicación y generosidad, nuestras niñas ahora cuentan con espacios más bonitos y funcionales." },
+            { "tipo": "parrafo", "texto": "¡Gracias a todos los voluntarios por su tiempo y esfuerzo!" }
+          ]
+        },
+        {
+          "titulo": "Torneo Deportivo",
+          "slug": "torneo-deportivo-2025",
+          "fecha": "2025-07-05",
+          "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
+          "imagen": "assets/images/noticias/noticia-deporte.jpg",
+          "categoria": "Evento",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Participa en nuestro torneo deportivo anual, abierto a toda la comunidad." },
+            { "tipo": "subtitulo", "texto": "Deportes" },
+            { "tipo": "lista", "items": ["Voleibol", "Baloncesto", "Atletismo"] },
+            { "tipo": "parrafo", "texto": "Los fondos recaudados apoyan directamente los programas del Hogar de Niñas de Cupey." },
+            { "tipo": "parrafo", "texto": "Para información e inscripciones: 787-761-2805" }
+          ]
+        },
+        {
+          "titulo": "¡Nos vamos de tour!",
+          "slug": "vamosdetour-2022",
+          "fecha": "2022-12-06",
+          "descripcion": "¡Nos vamos de tour! El Hogar de Niñas de Cupey te invita a compartir una noche de degustación de uvas de diversas partes del mundo.",
+          "imagen": "assets/images/noticias/Actividad-degustacion-de-Vino-2022.jpg",
+          "categoria": "Evento",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "El Hogar de Niñas de Cupey te invita a compartir una noche de degustación de uvas de diversas partes del mundo. Abre tu paladar con uvas de España, Italia, California, Argentina y Chile." },
+            { "tipo": "parrafo", "texto": "Paga tu boleto por ATH Móvil Donate HogardeNinosdeCupey" },
+            { "tipo": "parrafo", "texto": "Guarda la evidencia para reclamar las taquillas en la entrada." },
+            { "tipo": "parrafo", "texto": "Boleto $125 por persona / $225 pareja" },
+            { "tipo": "parrafo", "texto": "Información: www.hogardeninasdecupey.org" },
+            { "tipo": "parrafo", "texto": "¡Por un Hogar de lleno de amor y paz!" }
+          ]
         }
       ]
-    }
-  },
-
-  "patrocinadores": {
-    "title": "Patrocinadores",
-    "subtitle": "A lo largo de nuestra historia los siguientes auspiciadores han creído en nuestra misión:",
-
-    "INSTRUCCIONES": [
-      "Para cambiar un logo: sube la imagen a assets/images/patrocinadores/ con el nombre del campo 'logo'.",
-      "Para cambiar el link: edita el campo 'url' con la dirección web del patrocinador.",
-      "Para agregar un patrocinador: copia un bloque {} y pégalo dentro de 'lista', separado por coma.",
-      "Para eliminar: borra el bloque {} completo incluyendo la coma anterior."
-    ],
-
-    "lista": [
-      {
-        "nombre": "Fundación Banco Popular",
-        "logo": "assets/images/patrocinadores/banco-popular.png",
-        "url": "https://www.fundacionbancopopular.org/",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "Fundación MAPFRE",
-        "logo": "assets/images/patrocinadores/mapfre.png",
-        "url": "https://www.fundacionmapfre.org/en/",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "Fondos Unidos de Puerto Rico",
-        "logo": "assets/images/patrocinadores/fondos-unidos.png",
-        "url": "https://unitedwaypr.org/en/",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "Fundación Comunitaria de Puerto Rico",
-        "logo": "assets/images/patrocinadores/fundacion-comunitaria.png",
-        "url": "https://www.fcpr.org",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "HiTech Auto Care",
-        "logo": "assets/images/patrocinadores/hitech.png",
-        "url": "https://hitechautocarepr.com/en/",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "Hermanas Carvajal Fuentes",
-        "logo": "assets/images/patrocinadores/carvajal-fuentes.png",
-        "url": "http://www.premioshermanascarvajal.org/",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "CECFL",
-        "logo": "assets/images/patrocinadores/cecfl.png",
-        "url": "https://cecflpr.org/home",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "Departamento de Justicia",
-        "logo": "assets/images/patrocinadores/depto-justicia.png",
-        "url": "https://www.justicia.pr.gov/",
-        "linkText": "Clic para conocer más"
-      },
-      {
-        "nombre": "Fundación Ángel Ramos",
-        "logo": "assets/images/patrocinadores/angel-ramos.png",
-        "url": "https://www.fundacionangelramos.org/",
-        "linkText": "Clic para conocer más"
-      }
-    ]
-  },
-
-  "servicios": {
-    "title": "Nuestros servicios",
-    "descripcion": "Radicados de la naturaleza, en un enclave de paz dentro del área metropolitana, ofrecemos los siguientes servicios bajo el cuidado amoroso de las Hermanas de AMICO y nuestro personal altamente capacitado.",
-
-    "INSTRUCCIONES_FOTOS": [
-      "Sube las fotos a assets/images/servicios/ con estos nombres exactos:",
-      "Fotos-Servicios-1.png → foto grande principal",
-      "Fotos-Servicios-2.png hasta Fotos-Servicios-8.png → 7 fotos pequeñas",
-      "Al hacer clic en cualquier foto pequeña se abre en grande."
-    ],
-
-    "galeria": [
-      "assets/images/servicios/Fotos-Servicios-1.png",
-      "assets/images/servicios/Fotos-Servicios-2.png",
-      "assets/images/servicios/Fotos-Servicios-3.png",
-      "assets/images/servicios/Fotos-Servicios-4.png",
-      "assets/images/servicios/Fotos-Servicios-5.png",
-      "assets/images/servicios/Fotos-Servicios-6.png",
-      "assets/images/servicios/Fotos-Servicios-7.png",
-      "assets/images/servicios/Fotos-Servicios-8.png"
-    ],
-
-    "categorias": [
-      { "titulo": "Orientación", "icono": "🙌" },
-      { "titulo": "Apoyo psico-emocional y espiritual y servicios sicológicos", "icono": "💜" },
-      { "titulo": "Acompañamiento espiritual", "icono": "🙏" }
-    ],
-
-    "grupos": [
-      {
-        "titulo": "Servicios Educativos",
-        "icono": "📚",
-        "lista": ["Tutorías", "Lecto-escritura", "Estudio supervisado", "Apoyo de preparación de proyectos y tareas"]
-      },
-      {
-        "titulo": "Servicios a la Familia",
-        "icono": "👨‍👩‍👧",
-        "lista": ["Orientación familiar", "Equipos de recreación y casa convivencia"]
-      },
-      {
-        "titulo": "Servicios a la Comunidad",
-        "icono": "🏘️",
-        "lista": ["Talleres y adiestramiento", "Actividades de impacto comunitario"]
-      }
-    ],
-
-    "residencial": {
-      "titulo": "Servicio Residencial Cualificado",
-      "icono": "🏠",
-      "items": [
-        "Somos un centro de servicios integrales y residenciales de calidad a niños, orientado hacia el mayor bienestar de la familia y la sociedad puertorriqueña.",
-        "Proveemos servicios integrales y residenciales a menores, según sus necesidades físicas y emocionales, sirviendo como facilitadores para la integración de la familia.",
-        "Propósito del servicio — brindar servicios integrales a niños y jóvenes referidos por el Departamento de la Familia, con miras a lograr estabilidad emocional y la reunificación familiar según la naturaleza del caso, considerando el mejor interés y bienestar de la menor."
-      ]
-    }
-  },
-
-  "comoAyudar": {
-    "amigo": {
-      "titulo": "Conviértete en amigo",
-      "parrafos": [
-        "Los Amigos del Hogar de Niñas de Cupey son aquellas personas o entidades que endosen los fines de la institución y contribuyan a su sostenimiento económico, mediante donativos mensuales o anuales, desde tan sólo $10 mensuales o $120 anuales.",
-        "El 100% de los donativos al Hogar de Niñas de Cupey son deducibles de su planilla de contribución sobre ingresos de Puerto Rico. El Hogar también cuenta con la exención que brinda la sección 501(c)(3) del código de rentas internas federal."
-      ]
     },
-    "voluntario": {
-      "titulo": "Conviértete en voluntario",
-      "intro": "Los voluntarios son personas que por determinación propia, ofrecen su tiempo, contactos o experiencia para ayudar a los niños o a la administración en diversas áreas, incluyendo, pero no limitado a:",
-      "lista": [
-        "Actividades y celebraciones",
-        "Tutorías",
-        "Mantenimiento de áreas verdes y recreativas",
-        "Reparaciones de la planta física",
-        "Plomería, electricidad y albañilería",
-        "Artículos para los salones",
-        "Donaciones de alimentos o productos para cubrir necesidades de El Hogar",
-        "Pases de cortesía",
-        "Efectos escolares"
-      ]
-    },
-    "donar": {
-      "titulo": "Cómo donar",
-      "paypal": {
-        "titulo": "Pay Pal",
-        "url": "https://www.paypal.com/fundraiser/charity/1596853",
-        "boton": "Dona Hoy"
+
+    "contacto": {
+      "tituloInfo": "Información de oficina",
+      "tituloForm": "Contáctenos",
+      "tituloMapa": "Cómo llegar",
+      "info": {
+        "email": "info@hogardeninasdecupey.org",
+        "telefono": "787-761-2805 / 787-761-2822",
+        "horario": "Lunes a viernes de 8:00 am – 6:30 pm",
+        "direccion": "PO Box 261150 San Juan P.R. 00926-2636"
       },
-      "athMovil": {
-        "titulo": "ATH Móvil",
-        "qr": "assets/images/como-ayudar/ath-movil-qr.png",
-        "usuario": "/HogardeNinosdeCupey",
-        "logo": "assets/images/como-ayudar/ath-movil-logo.png",
-        "INSTRUCCIONES": "Sube el QR de ATH Móvil como 'ath-movil-qr.png' y el logo como 'ath-movil-logo.png' en assets/images/como-ayudar/"
-      }
+      "emailjs": {
+        "serviceId":  "service_zb40jqt",
+        "templateId": "template_4yfj68u",
+        "publicKey":  "r1DE8wGk5c9TXbulV"
+      },
+      "mapaUrl": "https://www.google.com/maps/place/Hogar+de+Ni%C3%B1as+de+Cupey/@18.35901,-66.06126,10z/data=!4m6!3m5!1s0x8c03681b7faaf513:0x3f5f874f6cf5c6c9!8m2!3d18.3590104!4d-66.06126!16s%2Fg%2F11c48fdv8j?hl=en-US&entry=ttu",
+      "mapaEmbed": "https://maps.google.com/maps?q=18.3590104,-66.06126&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    },
+
+    "footer": {
+      "texto": "© 2025 Hogar de Niñas Cupey. Todos los derechos reservados.",
+      "textoOrganizacion": "Organización sin fines de lucro 501(c)(3) registrada en Puerto Rico.",
+      "links": [
+        { "texto": "Política de Privacidad", "href": "#" },
+        { "texto": "Términos de Uso",        "href": "#" }
+      ]
     }
   },
 
-  "noticias": {
-    "title": "Noticias recientes",
-    "subtitle": "Mantente al día con las actividades y logros de nuestra comunidad.",
-
-    "INSTRUCCIONES": [
-      "Para AGREGAR una noticia: copia un bloque completo { } y pégalo al INICIO de 'eventos'.",
-      "slug: identificador único sin espacios ni acentos, ejemplo: 'gala-2025'",
-      "imagen: sube la foto principal a assets/images/noticias/ y escribe la ruta aquí.",
-      "cuerpo: contenido de la página completa. Tipos de bloque disponibles:",
-      "  { 'tipo': 'parrafo',   'texto': 'Texto del párrafo.' }",
-      "  { 'tipo': 'subtitulo', 'texto': '¿Dónde?' }",
-      "  { 'tipo': 'lista',     'items': ['item 1', 'item 2'] }",
-      "  { 'tipo': 'fotos',     'imagenes': ['assets/images/noticias/foto1.jpg', 'assets/images/noticias/foto2.jpg'] }",
-      "Si no escribes 'cuerpo', la página mostrará solo la descripción corta."
-    ],
-
-    "eventos": [
-      {
-        "titulo": "Graduación Clase 2025",
-        "slug": "graduacion-2025",
-        "fecha": "2025-05-30",
-        "descripcion": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza.",
-        "imagen": "assets/images/noticia-graduacion.jpg",
-        "categoria": "Logros",
-        "cuerpo": [
-          { "tipo": "parrafo", "texto": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza." },
-          { "tipo": "subtitulo", "texto": "Un día especial" },
-          { "tipo": "parrafo", "texto": "Este año marcamos un hito importante en la historia del Hogar. Nuestras graduadas han demostrado que con dedicación, amor y apoyo, es posible alcanzar las metas más altas." },
-          { "tipo": "parrafo", "texto": "¡Felicitamos a todas nuestras graduadas y a sus familias!" }
-        ]
+  "en": {
+    "ui": {
+      "nav": {
+        "inicio": "Home",
+        "quienesSomos": "About Us",
+        "historia": "History",
+        "directores": "Board of Directors",
+        "patrocinadores": "Sponsors",
+        "servicios": "Services",
+        "comoAyudar": "How to Help",
+        "noticias": "News",
+        "contacto": "Contact"
       },
-      {
-        "titulo": "Bohemia Bailable 2023",
-        "slug": "Bailable-2023",
-        "fecha": "2023-03-23",
-        "descripcion": "A beneficio del Hogar de Niñas de Cupey “Por un Nuevo Camino al Hogar“ Los fondos recaudados serán utilizados para la reubicación de la entrada principal del Hogar por un camino más accesible.",
-        "imagen": "assets/images/noticias/noticia-Arte-Bohemia-2023.png",
-        "categoria": "Evento",
-        "cuerpo": [
-          { "tipo": "parrafo", "texto": "A beneficio del Hogar de Niñas de Cupey “Por un Nuevo Camino al Hogar“ Los fondos recaudados serán utilizados para la reubicación de la entrada principal del Hogar por un camino más accesible." },
-          { "tipo": "subtitulo", "texto": "¿Dónde?" },
-          { "tipo": "parrafo", "texto": "Plazoleta de Banco Popular en Popular Center, Hato Rey" },
-          { "tipo": "subtitulo", "texto": "¿Cuándo?" },
-          { "tipo": "parrafo", "texto": "23 de marzo de 2023\nDe 6:00 pm a 11:30 pm" },
-          { "tipo": "subtitulo", "texto": "Programa" },
-          { "tipo": "parrafo", "texto": "Habrá cena, bebidas y espectáculo musical." },
-          { "tipo": "parrafo", "texto": "Taquillas a $125 por persona\nLlama al 787-761-2805 o escribe a info@hogardeninasdecupey.org" },
-          { "tipo": "parrafo", "texto": "¡Contamos contigo, tus familiares y amigos!" }
-        ]
+      "form": {
+        "nombre": "First Name",
+        "apellidos": "Last Name",
+        "email": "Email address",
+        "telefono": "Phone Number",
+        "direccion": "Address",
+        "linea1": "Line 1",
+        "linea2": "Line 2",
+        "ciudad": "City",
+        "estado": "State",
+        "postal": "ZIP Code",
+        "pais": "Country",
+        "tema": "Subject:",
+        "mensaje": "Your message",
+        "enviar": "SEND",
+        "enviando": "Sending...",
+        "placeholderNombre": "Enter your first name",
+        "placeholderApellidos": "Enter your last name",
+        "placeholderEmail": "Enter your email address",
+        "placeholderTelefono": "000-000-0000",
+        "placeholderLinea1": "Line 1",
+        "placeholderLinea2": "Line 2",
+        "placeholderCiudad": "City",
+        "placeholderEstado": "State",
+        "placeholderPostal": "00000",
+        "placeholderTema": "Subject:",
+        "placeholderMensaje": "Write a short message",
+        "seleccionePais": "Select Country",
+        "estadosUnidos": "United States",
+        "otro": "Other"
       },
-      {
-        "titulo": "Nuevo Programa de Arte",
-        "slug": "programa-arte-2025",
-        "fecha": "2025-04-10",
-        "descripcion": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales. Las niñas están explorando su creatividad de maneras increíbles.",
-        "imagen": "assets/images/noticias/noticia-arte.jpg",
-        "categoria": "Programas",
-        "cuerpo": [
-          { "tipo": "parrafo", "texto": "Lanzamos un nuevo programa de artes visuales en colaboración con artistas locales de Puerto Rico." },
-          { "tipo": "parrafo", "texto": "Las niñas están explorando su creatividad a través de pintura, escultura y arte digital, desarrollando habilidades que les servirán toda la vida." }
-        ]
-      },
-      {
-        "titulo": "Visita de Voluntarios",
-        "slug": "visita-voluntarios-2025",
-        "fecha": "2025-03-22",
-        "descripcion": "Un grupo de voluntarios de empresas locales visitó el hogar para renovar espacios comunes. Gracias a todos por su generoso tiempo y esfuerzo.",
-        "imagen": "assets/images/noticias/noticia-voluntarios.jpg",
-        "categoria": "Comunidad",
-        "cuerpo": [
-          { "tipo": "parrafo", "texto": "Un grupo de voluntarios de empresas locales visitó el Hogar de Niñas de Cupey para renovar espacios comunes." },
-          { "tipo": "parrafo", "texto": "Gracias a su dedicación y generosidad, nuestras niñas ahora cuentan con espacios más bonitos y funcionales." },
-          { "tipo": "parrafo", "texto": "¡Gracias a todos los voluntarios por su tiempo y esfuerzo!" }
-        ]
-      },
-      {
-        "titulo": "Torneo Deportivo",
-        "slug": "torneo-deportivo-2025",
-        "fecha": "2025-07-05",
-        "descripcion": "Participa en nuestro torneo deportivo anual. Competencias de voleibol, baloncesto y atletismo abiertas a la comunidad con fondos para el hogar.",
-        "imagen": "assets/images/noticias/noticia-deporte.jpg",
-        "categoria": "Evento",
-        "cuerpo": [
-          { "tipo": "parrafo", "texto": "Participa en nuestro torneo deportivo anual, abierto a toda la comunidad." },
-          { "tipo": "subtitulo", "texto": "Deportes" },
-          { "tipo": "lista", "items": ["Voleibol", "Baloncesto", "Atletismo"] },
-          { "tipo": "parrafo", "texto": "Los fondos recaudados apoyan directamente los programas del Hogar de Niñas de Cupey." },
-          { "tipo": "parrafo", "texto": "Para información e inscripciones: 787-761-2805" }
-        ]
-      },
-      {
-        "titulo": "¡Nos vamos de tour!",
-        "slug": "vamosdetour-2022!",
-        "fecha": "2022-12-06",
-        "descripcion": "¡Nos vamos de tour!",
-        "imagen": "assets/images/noticias/Actividad-degustacion-de-Vino-2022.jpg",
-        "categoria": "Evento",
-        "cuerpo": [
-          { "tipo": "parrafo", "texto": "El Hogar de Niñas de Cupey te invita a compartir una noche de degustación de uvas de diversas partes del mundo. Abre tu paladar con uvas de España, Italia, California, Argentina y Chile. Paga tu boleto por ATH Móvil Donate HogardeNinosdeCupey" },
-          { "tipo": "parrafo", "texto": "Guarda la evidencia para reclamar las taquillas en la entrada." },
-          { "tipo": "parrafo", "texto": "Boleto $125 por persona / $225 pareja" },
-          { "tipo": "parrafo", "texto": "Información: www.hogardeninasdecupey.org" },
-          { "tipo": "parrafo", "texto": "¡Por un Hogar de lleno de amor y paz!" }        
-        ]
+      "donateFab": "Donate Today",
+      "noticiaBack": "← Back to News",
+      "validacion": {
+        "email": "Please enter a valid email address.",
+        "mensaje": "Please write your message.",
+        "exito": "✅ Message sent successfully! We will be in touch soon.",
+        "error": "❌ There was an error sending. Please try again or contact us directly.",
+        "sinConfig": "⚙️ To activate the form, configure EmailJS in data/content.json."
       }
-    ]
-  },
+    },
 
-  "contacto": {
-    "tituloInfo": "Información de oficina",
-    "tituloForm": "Contáctenos",
-    "tituloMapa": "Cómo llegar",
-    "info": {
+    "site": {
+      "name": "Hogar de Niñas Cupey",
+      "tagline": "Transforming lives, building futures",
+      "description": "A non-profit organization dedicated to the comprehensive care, education, and development of vulnerable girls in Puerto Rico.",
       "email": "info@hogardeninasdecupey.org",
-      "telefono": "787-761-2805 / 787-761-2822",
-      "horario": "Lunes a viernes de 8:00 am – 6:30 pm",
-      "direccion": "PO Box 261150 San Juan P.R. 00926-2636"
+      "phone": "(787) 761-2805",
+      "address": "Cupey, San Juan, Puerto Rico",
+      "logo": "assets/images/Logo.png",
+      "socialMedia": {
+        "facebook": "https://www.facebook.com/hogardeninasdecupey",
+        "instagram": "https://www.instagram.com/hogardeninasdecupey"
+      },
+      "donateUrl": "#como-ayudar"
     },
-    "emailjs": {
-      "serviceId": "service_zb40jqt",
-      "templateId": "template_4yfj68u",
-      "publicKey": "r1DE8wGk5c9TXbulV"
-    },
-    "mapaUrl": "https://www.google.com/maps/place/Hogar+de+Ni%C3%B1as+de+Cupey/@18.35901,-66.06126,10z/data=!4m6!3m5!1s0x8c03681b7faaf513:0x3f5f874f6cf5c6c9!8m2!3d18.3590104!4d-66.06126!16s%2Fg%2F11c48fdv8j?hl=en-US&entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D",
-    "mapaEmbed": "https://maps.google.com/maps?q=18.3590104,-66.06126&t=&z=15&ie=UTF8&iwloc=&output=embed"
-  },
 
-  "footer": {
-    "texto": "© 2025 Hogar de Niñas Cupey. Todos los derechos reservados.",
-    "textoOrganizacion": "Organización sin fines de lucro 501(c)(3) registrada en Puerto Rico.",
-    "links": [
-      { "texto": "Política de Privacidad", "href": "#" },
-      { "texto": "Términos de Uso", "href": "#" }
-    ]
+    "hero": {
+      "title": "For Over 70 Years",
+      "subtitle": "serving children and youth in social and economic disadvantage, through comprehensive services in support of families and the community. We serve as a residential facility for girls and an educational program, always seeking the best interest and well-being of each child participant.",
+      "backgroundImage": "assets/images/hero-bg.jpg",
+      "cta": {
+        "primary": { "text": "Donate Today", "href": "#como-ayudar" }
+      }
+    },
+
+    "intro": {
+      "titulo": "70 years of history and now offering new services",
+      "parrafos": [
+        "For over 70 years we have helped thousands of boys and girls in social and economic disadvantage. We started as a children's home providing safe shelter, food and clothing. We then served exclusively as a home for girls who were victims of abuse or abandonment by their families and guardians, offering specialized support services in the areas of physical, mental and spiritual health.",
+        "Since August 2021 we opened a new educational center for boys and girls that offers services to families and the community. We also serve as a Residential Facility for girls."
+      ],
+      "subSecciones": [
+        {
+          "subtitulo": "Why the new services?",
+          "texto": "Numerous events have impacted the lives of Puerto Rican families over the last five years. Hurricanes, earthquakes and the COVID-19 pandemic have left a trail of hardship in the most vulnerable sectors and have placed our children in positions of greater vulnerability. The experience of distance learning due to the pandemic has placed thousands of children in situations of academic lag and various risk situations that will make it difficult for them to perform and develop in the future."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Our <strong>Mission</strong> is to provide comprehensive services of excellence to children and youth in social and economic disadvantage, seeking the best interest and well-being of minors based on Christian values."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Our <strong>Vision</strong> is to contribute to the formation of children capable of transforming their lives and positively impacting their family environment."
+        },
+        {
+          "subtitulo": "How can you help?",
+          "texto": "With a small monthly or annual amount you can become a friend of our organization. You can also volunteer by helping with various large and small tasks. At any time you can donate and sponsor the fundraising activities we do regularly. All help is welcome and allows us to continue our mission of love."
+        }
+      ],
+      "cta": { "text": "How can I help?", "href": "#como-ayudar" }
+    },
+
+    "quienesSomos": {
+      "title": "Who Are We?",
+      "mision": {
+        "titulo": "Our Mission",
+        "texto": "Hogar de Niñas Cupey is a non-profit organization dedicated to providing a safe home, quality education and comprehensive development to girls in situations of vulnerability, abandonment or risk in Puerto Rico. We work so that every girl has the opportunity to reach her full potential."
+      },
+      "vision": {
+        "titulo": "Our Vision",
+        "texto": "To be the reference home in Puerto Rico for the protection and comprehensive development of children, where every girl can grow in an environment of love, safety and faith, preparing to become a productive and fulfilled citizen."
+      },
+      "valores": [
+        { "icono": "❤️", "titulo": "Love",      "texto": "Every girl deserves unconditional love and a home where she feels safe." },
+        { "icono": "🎓", "titulo": "Education", "texto": "Education is the foundation for transforming lives and opening doors to the future." },
+        { "icono": "🙏", "titulo": "Faith",      "texto": "Our faith is the foundation that guides every action and decision." },
+        { "icono": "🤝", "titulo": "Community", "texto": "We work together with the community to create a lasting impact." }
+      ],
+      "estadisticas": [
+        { "numero": "60+",  "descripcion": "Years of service" },
+        { "numero": "500+", "descripcion": "Girls helped" },
+        { "numero": "100%", "descripcion": "Dedication and love" },
+        { "numero": "1",    "descripcion": "Great family" }
+      ]
+    },
+
+    "historia": {
+      "title": "70 years working for our community",
+      "logoMedio": "assets/images/historia/logo-historia.jpg",
+      "fotos": [
+        "assets/images/historia/foto-1.jpg",
+        "assets/images/historia/foto-2.jpg",
+        "assets/images/historia/foto-3.jpg",
+        "assets/images/historia/foto-4.jpg",
+        "assets/images/historia/foto-5.jpg"
+      ],
+      "secciones": [
+        {
+          "subtitulo": "History",
+          "texto": "For the past seventy years, we have helped thousands of boys and girls in social and economic disadvantage. Founded in 1950 as the Children's Home (Hogar del Niño), over thirty-two years we impacted thousands of youth who wandered the city of San Juan, providing them with safe shelter, food and clothing. Our work has always been oriented toward seeking the greatest well-being of minors. Our first location was on Arranga Street in Río Piedras and in 1958 we received a large plot of land as a donation in Cupey Alto where our current headquarters is located."
+        },
+        {
+          "subtitulo": "",
+          "texto": "From 1982, the Home came to be managed by the Congregation of the Sisters of Missionary Friendship in Cristo Obrero (AMICO), serving girls, which is why the name was later changed to Hogar de Niñas de Cupey. We provide residential services to girls who are victims of abuse or abandonment by their families and guardians, offering specialized support services in the areas of physical, mental and spiritual health, contributing to the healing and well-being of the girls."
+        },
+        {
+          "subtitulo": "",
+          "texto": "In the summer of 2021 and in response to the changes required of institutions housing minors to comply with the Federal Family First Act of 2018, we identified a new direction and expanded our services with an educational program for disadvantaged girls in the community, integrating the family."
+        },
+        {
+          "subtitulo": "Why the new services?",
+          "texto": "Numerous events have impacted the lives of Puerto Rican families over the last five years. Hurricanes, earthquakes and the COVID-19 pandemic have left a trail of hardship in the most vulnerable sectors and have placed our children in positions of greater vulnerability. The experience of distance learning due to the pandemic has placed thousands of children in situations of academic lag and various risk situations."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Faced with the new challenges our country has experienced and how they have negatively affected children, we wanted to respond positively by establishing a program of complementary services for children and family support, in order to prevent school failure. In August 2021, we opened our doors to boys and girls offering these new services."
+        },
+        {
+          "subtitulo": "",
+          "texto": "Resident girls in the Home benefit equally from our educational services."
+        }
+      ],
+      "paraQueExistimos": {
+        "subtitulo": "Why do we exist?",
+        "mision": {
+          "titulo": "Mission",
+          "texto": "To provide comprehensive services of excellence to children and youth in social and economic disadvantage, seeking the best interest and well-being of minors based on Christian values."
+        },
+        "vision": {
+          "titulo": "Vision",
+          "texto": "To contribute to the formation of children capable of transforming their lives and positively impacting their family environment."
+        },
+        "compromisos": {
+          "titulo": "Our commitments",
+          "lista": [
+            "Promoting responsibility",
+            "Family community building",
+            "Prevention of abuse",
+            "Values-centered education",
+            "Children as agents of family transformation",
+            "That every child has a place and is part of society, recognizing and valuing difference",
+            "Being an oasis in the lives of girls so they have other references for their adult life",
+            "Committed to gratitude, honesty, prudence, and humility"
+          ]
+        },
+        "fortalezas": {
+          "titulo": "Our strengths",
+          "lista": [
+            "Openness of the congregational charism to the signs of the times",
+            "Home infrastructure",
+            "Physical plant of the Home",
+            "Commitment of the Board of Directors and congregation to organizational continuity",
+            "Committed to populations in need, particularly children",
+            "Educational experience",
+            "Participation in programmatic design",
+            "Human Resources",
+            "Alliances for therapeutic services"
+          ]
+        }
+      }
+    },
+
+    "directores": {
+      "title": "Board of Directors",
+      "subtitle": "Committed people who guide our mission with dedication and leadership.",
+      "miembros": [
+        { "nombre": "Teresita Loubriel Rosado, CPA",    "cargo": "President",       "descripcion": "Retired Secretary",                                  "foto": "assets/images/directores/presidenta.jpg" },
+        { "nombre": "José M. Izquierdo Encarnación, Ing.", "cargo": "Vice-President","descripcion": "President, Rotarios CPY",                            "foto": "assets/images/directores/vicepresidente.jpg" },
+        { "nombre": "Edna Jiménez, CPA",                "cargo": "Treasurer",       "descripcion": "",                                                    "foto": "assets/images/directores/tesorera.jpg" },
+        { "nombre": "Lucy García Quevedo",              "cargo": "Secretary",       "descripcion": "Psychologist",                                        "foto": "assets/images/directores/secretaria.jpg" },
+        { "nombre": "Carlos A. Lázaro León, Ing.",       "cargo": "Board Member",    "descripcion": "President, Carlos A. Lázaro León & Assoc., LTD",     "foto": "assets/images/directores/vocal-lazaro.jpg" },
+        { "nombre": "Gia L. Morales Talavera",           "cargo": "Board Member",    "descripcion": "Attorney",                                            "foto": "assets/images/directores/vocal-morales.jpg" },
+        { "nombre": "Maribel Torres - Baerga",           "cargo": "Board Member",    "descripcion": "Clinical Social Worker",                              "foto": "assets/images/directores/vocal-torres.jpg" },
+        { "nombre": "Rebecca Molina",                    "cargo": "Board Member",    "descripcion": "Clinical Panel and Health Wellness Administrator",    "foto": "assets/images/directores/vocal-molina.jpg" },
+        { "nombre": "Lcdo. Roberto Montalvo",            "cargo": "Board Member",    "descripcion": "",                                                    "foto": "assets/images/directores/vocal-montalvo.jpg" }
+      ],
+      "administracion": {
+        "titulo": "Administration",
+        "miembros": [
+          { "nombre": "Sor Mirna Vélez",                      "cargo": "Executive Director",   "descripcion": "",                                                                                         "foto": "assets/images/directores/directora-ejecutiva.jpg", "tipo": "individual" },
+          { "nombre": "Administrative Staff and Director",     "cargo": "",                     "descripcion": "",                                                                                         "foto": "assets/images/directores/admin-empleados.jpg",     "tipo": "grupo" },
+          { "nombre": "Tutors and Educational Coordinators",   "cargo": "",                     "descripcion": "",                                                                                         "foto": "assets/images/directores/admin-tutoras.jpg",       "tipo": "grupo" },
+          { "nombre": "Sisters of Amigo",                      "cargo": "",                     "descripcion": "Sr. Jessica Alvarán, Sr. Rebecca Otorino, Sr. Josefina Calero, Sr. Sabrina Ulloa",       "foto": "assets/images/directores/admin-hermanas.jpg",       "tipo": "grupo" }
+        ]
+      }
+    },
+
+    "patrocinadores": {
+      "title": "Sponsors",
+      "subtitle": "Throughout our history, the following sponsors have believed in our mission:",
+      "lista": [
+        { "nombre": "Fundación Banco Popular",              "logo": "assets/images/patrocinadores/banco-popular.png",       "url": "https://www.fundacionbancopopular.org/",         "linkText": "Click to learn more" },
+        { "nombre": "Fundación MAPFRE",                     "logo": "assets/images/patrocinadores/mapfre.png",              "url": "https://www.fundacionmapfre.org/en/",            "linkText": "Click to learn more" },
+        { "nombre": "Fondos Unidos de Puerto Rico",         "logo": "assets/images/patrocinadores/fondos-unidos.png",       "url": "https://unitedwaypr.org/en/",                    "linkText": "Click to learn more" },
+        { "nombre": "Fundación Comunitaria de Puerto Rico", "logo": "assets/images/patrocinadores/fundacion-comunitaria.png","url": "https://www.fcpr.org",                           "linkText": "Click to learn more" },
+        { "nombre": "HiTech Auto Care",                     "logo": "assets/images/patrocinadores/hitech.png",              "url": "https://hitechautocarepr.com/en/",               "linkText": "Click to learn more" },
+        { "nombre": "Hermanas Carvajal Fuentes",            "logo": "assets/images/patrocinadores/carvajal-fuentes.png",    "url": "http://www.premioshermanascarvajal.org/",         "linkText": "Click to learn more" },
+        { "nombre": "CECFL",                                "logo": "assets/images/patrocinadores/cecfl.png",               "url": "https://cecflpr.org/home",                       "linkText": "Click to learn more" },
+        { "nombre": "Departamento de Justicia",             "logo": "assets/images/patrocinadores/depto-justicia.png",      "url": "https://www.justicia.pr.gov/",                   "linkText": "Click to learn more" },
+        { "nombre": "Fundación Ángel Ramos",                "logo": "assets/images/patrocinadores/angel-ramos.png",         "url": "https://www.fundacionangelramos.org/",           "linkText": "Click to learn more" }
+      ]
+    },
+
+    "servicios": {
+      "title": "Our Services",
+      "descripcion": "Located in nature, in a peaceful enclave within the metropolitan area, we offer the following services under the loving care of the Sisters of AMICO and our highly trained staff.",
+      "galeria": [
+        "assets/images/servicios/Fotos-Servicios-1.png",
+        "assets/images/servicios/Fotos-Servicios-2.png",
+        "assets/images/servicios/Fotos-Servicios-3.png",
+        "assets/images/servicios/Fotos-Servicios-4.png",
+        "assets/images/servicios/Fotos-Servicios-5.png",
+        "assets/images/servicios/Fotos-Servicios-6.png",
+        "assets/images/servicios/Fotos-Servicios-7.png",
+        "assets/images/servicios/Fotos-Servicios-8.png"
+      ],
+      "categorias": [
+        { "titulo": "Counseling",                                                     "icono": "🙌" },
+        { "titulo": "Psycho-emotional and spiritual support and psychological services","icono": "💜" },
+        { "titulo": "Spiritual accompaniment",                                        "icono": "🙏" }
+      ],
+      "grupos": [
+        { "titulo": "Educational Services",  "icono": "📚",       "lista": ["Tutoring", "Reading and writing", "Supervised study", "Project and homework preparation support"] },
+        { "titulo": "Family Services",       "icono": "👨‍👩‍👧", "lista": ["Family counseling", "Recreation and social gathering teams"] },
+        { "titulo": "Community Services",    "icono": "🏘️",       "lista": ["Workshops and training", "Community impact activities"] }
+      ],
+      "residencial": {
+        "titulo": "Qualified Residential Service",
+        "icono": "🏠",
+        "items": [
+          "We are a center for comprehensive and high-quality residential services for children, oriented toward the greatest well-being of the family and Puerto Rican society.",
+          "We provide comprehensive and residential services to minors, according to their physical and emotional needs, serving as facilitators for family integration.",
+          "Service purpose — to provide comprehensive services to children and youth referred by the Department of the Family, with the aim of achieving emotional stability and family reunification based on the nature of the case, considering the best interest and well-being of the minor."
+        ]
+      }
+    },
+
+    "comoAyudar": {
+      "amigo": {
+        "titulo": "Become a Friend",
+        "parrafos": [
+          "Friends of Hogar de Niñas de Cupey are those people or entities who endorse the institution's goals and contribute to its financial sustainability, through monthly or annual donations, from as little as $10 monthly or $120 annually.",
+          "100% of donations to Hogar de Niñas de Cupey are deductible from your Puerto Rico income tax return. The Home also has the exemption provided by section 501(c)(3) of the federal internal revenue code."
+        ]
+      },
+      "voluntario": {
+        "titulo": "Become a Volunteer",
+        "intro": "Volunteers are people who, by their own determination, offer their time, contacts or experience to help children or the administration in various areas, including but not limited to:",
+        "lista": [
+          "Activities and celebrations",
+          "Tutoring",
+          "Maintenance of green and recreational areas",
+          "Physical plant repairs",
+          "Plumbing, electrical and masonry work",
+          "Classroom supplies",
+          "Food or product donations to cover the Home's needs",
+          "Complimentary passes",
+          "School supplies"
+        ]
+      },
+      "donar": {
+        "titulo": "How to Donate",
+        "paypal": {
+          "titulo": "Pay Pal",
+          "url": "https://www.paypal.com/fundraiser/charity/1596853",
+          "boton": "Donate Today"
+        },
+        "athMovil": {
+          "titulo": "ATH Móvil",
+          "qr": "assets/images/como-ayudar/ath-movil-qr.png",
+          "usuario": "/HogardeNinosdeCupey",
+          "logo": "assets/images/como-ayudar/ath-movil-logo.png"
+        }
+      }
+    },
+
+    "noticias": {
+      "title": "Recent News",
+      "subtitle": "Stay up to date with our community's activities and achievements.",
+      "eventos": [
+        {
+          "titulo": "Graduación Clase 2025",
+          "slug": "graduacion-2025",
+          "fecha": "2025-05-30",
+          "descripcion": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza.",
+          "imagen": "assets/images/noticia-graduacion.jpg",
+          "categoria": "Achievements",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Con gran orgullo celebramos la graduación de nuestras jóvenes de cuarto año de escuela superior. Una jornada llena de logros y esperanza." },
+            { "tipo": "subtitulo", "texto": "A special day" },
+            { "tipo": "parrafo", "texto": "This year we marked an important milestone in the history of the Home. Our graduates have shown that with dedication, love and support, it is possible to reach the highest goals." },
+            { "tipo": "parrafo", "texto": "Congratulations to all our graduates and their families!" }
+          ]
+        },
+        {
+          "titulo": "Bohemia Bailable 2023",
+          "slug": "Bailable-2023",
+          "fecha": "2023-03-23",
+          "descripcion": "A benefit for Hogar de Niñas de Cupey «For a New Path to the Home». Funds raised will be used to relocate the main entrance of the Home.",
+          "imagen": "assets/images/noticias/noticia-Arte-Bohemia-2023.png",
+          "categoria": "Event",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "A benefit for Hogar de Niñas de Cupey «For a New Path to the Home». Funds raised will be used to relocate the main entrance of the Home to a more accessible path." },
+            { "tipo": "subtitulo", "texto": "Where?" },
+            { "tipo": "parrafo", "texto": "Banco Popular Plaza at Popular Center, Hato Rey" },
+            { "tipo": "subtitulo", "texto": "When?" },
+            { "tipo": "parrafo", "texto": "March 23, 2023\n6:00 pm to 11:30 pm" },
+            { "tipo": "subtitulo", "texto": "Program" },
+            { "tipo": "parrafo", "texto": "There will be dinner, drinks and musical entertainment." },
+            { "tipo": "parrafo", "texto": "Tickets at $125 per person\nCall 787-761-2805 or write to info@hogardeninasdecupey.org" },
+            { "tipo": "parrafo", "texto": "We count on you, your family and friends!" }
+          ]
+        },
+        {
+          "titulo": "New Art Program",
+          "slug": "programa-arte-2025",
+          "fecha": "2025-04-10",
+          "descripcion": "We launched a new visual arts program in collaboration with local artists. The girls are exploring their creativity in incredible ways.",
+          "imagen": "assets/images/noticias/noticia-arte.jpg",
+          "categoria": "Programs",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "We launched a new visual arts program in collaboration with local artists from Puerto Rico." },
+            { "tipo": "parrafo", "texto": "The girls are exploring their creativity through painting, sculpture and digital art, developing skills that will serve them for life." }
+          ]
+        },
+        {
+          "titulo": "Volunteer Visit",
+          "slug": "visita-voluntarios-2025",
+          "fecha": "2025-03-22",
+          "descripcion": "A group of volunteers from local companies visited the home to renovate common spaces. Thank you all for your generous time and effort.",
+          "imagen": "assets/images/noticias/noticia-voluntarios.jpg",
+          "categoria": "Community",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "A group of volunteers from local companies visited Hogar de Niñas de Cupey to renovate common spaces." },
+            { "tipo": "parrafo", "texto": "Thanks to their dedication and generosity, our girls now have more beautiful and functional spaces." },
+            { "tipo": "parrafo", "texto": "Thank you to all the volunteers for your time and effort!" }
+          ]
+        },
+        {
+          "titulo": "Sports Tournament",
+          "slug": "torneo-deportivo-2025",
+          "fecha": "2025-07-05",
+          "descripcion": "Join our annual sports tournament. Volleyball, basketball and track and field competitions open to the community with funds going to the home.",
+          "imagen": "assets/images/noticias/noticia-deporte.jpg",
+          "categoria": "Event",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Join our annual sports tournament, open to the entire community." },
+            { "tipo": "subtitulo", "texto": "Sports" },
+            { "tipo": "lista", "items": ["Volleyball", "Basketball", "Track and Field"] },
+            { "tipo": "parrafo", "texto": "Funds raised directly support Hogar de Niñas de Cupey's programs." },
+            { "tipo": "parrafo", "texto": "For information and registration: 787-761-2805" }
+          ]
+        },
+        {
+          "titulo": "We're going on tour!",
+          "slug": "vamosdetour-2022",
+          "fecha": "2022-12-06",
+          "descripcion": "Hogar de Niñas de Cupey invites you to enjoy a wine tasting evening featuring grapes from around the world.",
+          "imagen": "assets/images/noticias/Actividad-degustacion-de-Vino-2022.jpg",
+          "categoria": "Event",
+          "cuerpo": [
+            { "tipo": "parrafo", "texto": "Hogar de Niñas de Cupey invites you to enjoy a wine tasting evening featuring grapes from around the world. Open your palate to wines from Spain, Italy, California, Argentina and Chile." },
+            { "tipo": "parrafo", "texto": "Pay for your ticket via ATH Móvil Donate HogardeNinosdeCupey" },
+            { "tipo": "parrafo", "texto": "Save the receipt to claim your tickets at the entrance." },
+            { "tipo": "parrafo", "texto": "Ticket $125 per person / $225 per couple" },
+            { "tipo": "parrafo", "texto": "Information: www.hogardeninasdecupey.org" },
+            { "tipo": "parrafo", "texto": "For a Home full of love and peace!" }
+          ]
+        }
+      ]
+    },
+
+    "contacto": {
+      "tituloInfo": "Office Information",
+      "tituloForm": "Contact Us",
+      "tituloMapa": "How to Get Here",
+      "info": {
+        "email": "info@hogardeninasdecupey.org",
+        "telefono": "787-761-2805 / 787-761-2822",
+        "horario": "Monday to Friday 8:00 am – 6:30 pm",
+        "direccion": "PO Box 261150 San Juan P.R. 00926-2636"
+      },
+      "emailjs": {
+        "serviceId":  "service_zb40jqt",
+        "templateId": "template_4yfj68u",
+        "publicKey":  "r1DE8wGk5c9TXbulV"
+      },
+      "mapaUrl": "https://www.google.com/maps/place/Hogar+de+Ni%C3%B1as+de+Cupey/@18.35901,-66.06126,10z/data=!4m6!3m5!1s0x8c03681b7faaf513:0x3f5f874f6cf5c6c9!8m2!3d18.3590104!4d-66.06126!16s%2Fg%2F11c48fdv8j?hl=en-US&entry=ttu",
+      "mapaEmbed": "https://maps.google.com/maps?q=18.3590104,-66.06126&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    },
+
+    "footer": {
+      "texto": "© 2025 Hogar de Niñas Cupey. All rights reserved.",
+      "textoOrganizacion": "Non-profit organization 501(c)(3) registered in Puerto Rico.",
+      "links": [
+        { "texto": "Privacy Policy", "href": "#" },
+        { "texto": "Terms of Use",   "href": "#" }
+      ]
+    }
   }
 }
