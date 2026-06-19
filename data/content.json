@@ -526,6 +526,20 @@
       ],
       "eventos": [
         {
+          "titulo": "Nuevo Programa",
+          "slug": "nuevo-programa",
+          "fecha": "2026-06-19",
+          "descripcion": "Lanzamos un nuevo programa",
+          "imagen": "assets/images/noticias/noticia-NuevoPro.jpg",
+          "categoria": "Programas",
+          "cuerpo": [
+            {
+              "tipo": "parrafo",
+              "texto": "Las niñas están explorando su creatividad  que les servirán toda la vida."
+            }
+          ]
+        },
+        {
           "titulo": "Graduación Clase 2026",
           "slug": "graduacion-clase-2026",
           "fecha": "2026-06-30",
@@ -1234,6 +1248,20 @@
       "title": "Recent News",
       "subtitle": "Stay up to date with our community's activities and achievements.",
       "eventos": [
+        {
+          "titulo": "Nuevo Programa",
+          "slug": "nuevo-programa",
+          "fecha": "2026-06-19",
+          "descripcion": "Lanzamos un nuevo programa",
+          "imagen": "assets/images/noticias/noticia-NuevoPro.jpg",
+          "categoria": "Programas",
+          "cuerpo": [
+            {
+              "tipo": "parrafo",
+              "texto": "Las niñas están explorando su creatividad  que les servirán toda la vida."
+            }
+          ]
+        },
         {
           "titulo": "Graduación Clase 2026",
           "slug": "graduacion-clase-2026",
